@@ -1,0 +1,103 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Encuentra tu equilibrio interior</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #1f1333;
+      color: #f5f5f5;
+      text-align: center;
+    }
+    header {
+      padding: 30px 20px;
+    }
+    img {
+      max-width: 200px;
+      margin-bottom: 20px;
+    }
+    h1 {
+      font-size: 2em;
+      margin: 0;
+    }
+    h2 {
+      margin-top: 10px;
+      font-weight: normal;
+    }
+    .whatsapp-btn {
+      margin: 30px auto;
+      display: inline-block;
+      background-color: #25D366;
+      color: white;
+      padding: 15px 30px;
+      border-radius: 10px;
+      font-size: 18px;
+      text-decoration: none;
+    }
+    .whatsapp-btn:hover {
+      background-color: #1ebe5d;
+    }
+    .info-section {
+      padding: 40px 20px;
+      background-color: #2a1946;
+    }
+    .scroll-link {
+      color: #d7baff;
+      text-decoration: underline;
+      cursor: pointer;
+      font-weight: bold;
+    }
+  </style>
+
+  <!-- Meta Pixel Code -->
+  <script>
+    !function(f,b,e,v,n,t,s) {
+      if(f.fbq)return;n=f.fbq=function(){
+        n.callMethod ?
+        n.callMethod.apply(n,arguments) : n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n;
+      n.push=n;n.loaded=!0;n.version='2.0';
+      n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)
+    }(window, document,'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1883320975782578');
+    fbq('track', 'PageView');
+  </script>
+  <noscript>
+    <img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=1883320975782578&ev=PageView&noscript=1"/>
+  </noscript>
+</head>
+<body>
+  <header>
+    <img src="logotarot.png" alt="Bienestar Integral" />
+    <h1>Conectá con tu paz interior</h1>
+    <h2>Un espacio para tu armonía personal</h2>
+    <a href="https://wa.me/542235931151?text=Hola%2C%20quiero%20mi%20sesión%20de%20armonización%20energética"
+       onclick="fbq('track', 'Purchase', {value: 100.00, currency: 'ARS'});"
+       class="whatsapp-btn">Solicitar Sesión</a>
+    <div style="margin-top: 20px;">
+      <span class="scroll-link" onclick="document.getElementById('info').scrollIntoView({behavior: 'smooth'})">
+        Más info sobre el servicio
+      </span>
+    </div>
+  </header>
+
+  <section class="info-section" id="info">
+    <h2>✨ Bienestar emocional y energético ✨</h2>
+    <p>Técnica exclusiva para ayudarte a equilibrar tu energía<br>
+    y recuperar tu claridad mental y espiritual.</p>
+    <p><strong>🌿 Beneficios:</strong><br>
+    Libera tensiones, eleva tu frecuencia y conectá con tu propósito interior.</p>
+    <p><strong>🔒 Confidencial y personalizada:</strong><br>
+    Cada sesión es adaptada a lo que necesitás hoy.</p>
+    <p>Ideal para quienes buscan paz interior, foco emocional y renovación personal 🌙</p>
+  </section>
+</body>
+</html>
