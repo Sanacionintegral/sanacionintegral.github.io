@@ -80,7 +80,7 @@
     <h1>Conectá con tu paz interior</h1>
     <h2>Un espacio para tu armonía personal</h2>
     <a href="https://wa.me/542235931151?text=Hola%2C%20quiero%20mi%20sesión%20de%20armonización%20energética"
-       onclick="fbq('track', 'Purchase', {value: 100.00, currency: 'ARS'});"
+       onclick="fbq('trackCustom', 'ContactoWhatsApp'); registrarClick();"
        class="whatsapp-btn">Solicitar Sesión</a>
     <div style="margin-top: 20px;">
       <span class="scroll-link" onclick="document.getElementById('info').scrollIntoView({behavior: 'smooth'})">
@@ -99,5 +99,22 @@
     Cada sesión es adaptada a lo que necesitás hoy.</p>
     <p>Ideal para quienes buscan paz interior, foco emocional y renovación personal 🌙</p>
   </section>
+
+  <script>
+    function registrarClick() {
+      fetch("https://script.google.com/macros/s/AKfycbxG92SZbDbBCoo9PmhlyvHlK5zXitnI2RkGRC_k09LUqMJh6d2cQUGtUw0WjEjvmu8h/exec", {
+        method: "POST",
+        mode: "no-cors",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          evento: "ContactoWhatsApp",
+          fecha: new Date().toLocaleString(),
+          referencia: "sanacion-landing"
+        })
+      });
+    }
+  </script>
 </body>
 </html>
