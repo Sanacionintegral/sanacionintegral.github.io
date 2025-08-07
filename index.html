@@ -3,12 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Encuentra tu equilibrio interior</title>
-
-  <!-- ✅ META TAG DE VERIFICACIÓN DE DOMINIO FACEBOOK -->
-  <meta name="facebook-domain-verification" content="xm18876e6miyeuuckb5hx3wevih9cq" />
-
-
+  <title>Técnica de armonización energética</title>
   <style>
     body {
       margin: 0;
@@ -59,66 +54,83 @@
 
   <!-- Meta Pixel Code -->
   <script>
-    !function(f,b,e,v,n,t,s) {
-      if(f.fbq)return;n=f.fbq=function(){
-        n.callMethod ?
-        n.callMethod.apply(n,arguments) : n.queue.push(arguments)};
-      if(!f._fbq)f._fbq=n;
-      n.push=n;n.loaded=!0;n.version='2.0';
-      n.queue=[];t=b.createElement(e);t.async=!0;
-      t.src=v;s=b.getElementsByTagName(e)[0];
-      s.parentNode.insertBefore(t,s)
-    }(window, document,'script',
-      'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '1883320975782578');
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1800229220851364'); // TU NUEVO PIXEL
     fbq('track', 'PageView');
   </script>
-  <noscript>
-    <img height="1" width="1" style="display:none"
-    src="https://www.facebook.com/tr?id=1883320975782578&ev=PageView&noscript=1"/>
-  </noscript>
+
 </head>
 <body>
+
   <header>
-    <img src="logotarot.png" alt="Bienestar Integral" />
-    <h1>Conectá con tu paz interior</h1>
-    <h2>Un espacio para tu armonía personal</h2>
-    <a href="https://wa.me/542235931151?text=Hola%2C%20quiero%20mi%20sesión%20de%20armonización%20energética"
-       onclick="fbq('trackCustom', 'ContactoWhatsApp'); registrarClick();"
-       class="whatsapp-btn">Solicitar Sesión</a>
+    <img src="logotarot.png" alt="Logo Tarot" />
+    <h1>Técnica de armonización energética</h1>
+    <h2>Sanación energética y espiritual</h2>
+
+    <a href="https://wa.me/542235990257?text=Quiero%20saber%20más!!!"
+       onclick="trackCompra();"
+       class="whatsapp-btn">
+       Escribime por WhatsApp
+    </a>
+
     <div style="margin-top: 20px;">
       <span class="scroll-link" onclick="document.getElementById('info').scrollIntoView({behavior: 'smooth'})">
-        Más info sobre el servicio
+        Más info sobre la técnica
       </span>
     </div>
   </header>
 
   <section class="info-section" id="info">
-    <h2>✨ Bienestar emocional y energético ✨</h2>
-    <p>Técnica exclusiva para ayudarte a equilibrar tu energía<br>
-    y recuperar tu claridad mental y espiritual.</p>
-    <p><strong>🌿 Beneficios:</strong><br>
-    Libera tensiones, eleva tu frecuencia y conectá con tu propósito interior.</p>
-    <p><strong>🔒 Confidencial y personalizada:</strong><br>
-    Cada sesión es adaptada a lo que necesitás hoy.</p>
-    <p>Ideal para quienes buscan paz interior, foco emocional y renovación personal 🌙</p>
+    <h2>✨ Técnica de armonización energética ✨</h2>
+    <p>Elimina bajas vibraciones en forma inmediata 🙌✨<br>
+    Ideal para liberar tu campo energético y recuperar tu bienestar.</p>
+
+    <p><strong>🔘 Neutraliza:</strong><br>
+    Mal de ojo, envidia, magias, espíritu invasor, bajo astral y energías desencarnadas.</p>
+
+    <p><strong>🔘 Restaura tu equilibrio:</strong><br>
+    Alinea chakras, armoniza el palacio de cristal y corta ataduras y cadenas energéticas 🔗</p>
+
+    <p>Una herramienta poderosa para quienes buscan <br>
+    protección, claridad espiritual y paz interior.</p>
   </section>
 
+  <!-- Conversion API (CAPI) desde JS -->
   <script>
-    function registrarClick() {
-      fetch("https://script.google.com/macros/s/AKfycbwobKj2iyirISyPNMFH1k6mObN6-Gytwymyasx76FPFOYREALUF0PeUZ8-wi3nLOtHlAw/exec", {
+    function enviarEventoCompraCAPI() {
+      fetch("https://graph.facebook.com/v19.0/1800229220851364/events?access_token=EAAQhZBOBQhxcBPOsZCEhPmhWHQcEE0PzjYRyNDkz63TkR84Sm66bZBqXrLLuS7HAW91Fqn7kbTflzI1Nu9ppaywp4M6AqQhovjcupvSHtAIQ1LwRts3UzWrWIZCR9tZCy59xBmHexURBgBX7rkABKp9JEsHaoeIXYdxHIDH81kKBZCGoItox4AEiVs8hvEyAZDZD", {
         method: "POST",
-        mode: "no-cors",
-        headers: {
-          "Content-Type": "application/json"
-        },
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          evento: "ContactoWhatsApp",
-          fecha: new Date().toLocaleString(),
-          referencia: "sanacion-landing"
+          event_name: "Purchase",
+          event_time: Math.floor(Date.now() / 1000),
+          action_source: "website",
+          event_source_url: window.location.href,
+          user_data: {
+            client_ip_address: "", // Meta lo completa automáticamente
+            client_user_agent: navigator.userAgent
+          },
+          custom_data: {
+            currency: "USD",
+            value: 10
+          }
         })
       });
     }
+
+    function trackCompra() {
+      fbq('track', 'Purchase', {value: 10, currency: 'USD'});
+      enviarEventoCompraCAPI();
+    }
   </script>
+
 </body>
 </html>
+
