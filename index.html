@@ -3,56 +3,76 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Técnica de armonización energética</title>
+  <title>Reserva tu sesión de Sanación Energética – Confirmación</title>
+  <meta name="description" content="Confirmá tu sesión 1:1 de sanación energética a distancia. Trabajo con péndulo Karnak y lectura de cartas. Atención por WhatsApp.">
+
   <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #1f1333;
-      color: #f5f5f5;
-      text-align: center;
+    :root{
+      --bg:#1f1333; --card:#2a1946; --soft:#3a2163; --text:#f5f5f5;
+      --muted:#d7baff; --brand:#25D366; --brand-hover:#1ebe5d; --accent:#ffd66e;
     }
-    header {
-      padding: 30px 20px;
+    *{box-sizing:border-box}
+    body{
+      margin:0; font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial;
+      background: radial-gradient(1200px 800px at 20% -10%, #3b2a69 0%, #1f1333 40%, #1b0f2e 100%);
+      color:var(--text); line-height:1.5;
     }
-    img {
-      max-width: 200px;
-      margin-bottom: 20px;
+    header{padding:26px 18px 0}
+    .wrap{max-width:1050px;margin:0 auto}
+    .hero{
+      display:grid; gap:18px; align-items:center; padding:10px 0 28px;
     }
-    h1 {
-      font-size: 2em;
-      margin: 0;
+    @media(min-width:900px){.hero{grid-template-columns:1.1fr .9fr}}
+    .hero-img{
+      aspect-ratio: 1200 / 630; border-radius:16px; overflow:hidden;
+      border:1px solid rgba(214,186,255,.12); box-shadow:0 12px 40px rgba(0,0,0,.25);
+      background:center/cover no-repeat url('Portadalandig.png');
+      min-height:260px;
     }
-    h2 {
-      margin-top: 10px;
-      font-weight: normal;
+    .eyebrow{
+      color:var(--muted); font-weight:600; text-transform:uppercase;
+      font-size:12px; letter-spacing:.18em; margin-bottom:6px;
     }
-    .whatsapp-btn {
-      margin: 30px auto;
-      display: inline-block;
-      background-color: #25D366;
-      color: white;
-      padding: 15px 30px;
-      border-radius: 10px;
-      font-size: 18px;
-      text-decoration: none;
+    h1{margin:0 0 10px;font-size:clamp(26px,3.2vw,40px)}
+    .sub{color:#eee;opacity:.9;font-size:clamp(16px,2.2vw,18px);margin:0 0 14px}
+    .badge{
+      display:inline-flex;gap:8px;align-items:center;margin:8px 0 0;
+      background:rgba(255,214,110,.14); color:#ffe49a; border:1px solid rgba(255,214,110,.25);
+      padding:6px 10px;border-radius:999px;font-size:13px;font-weight:700
     }
-    .whatsapp-btn:hover {
-      background-color: #1ebe5d;
+    .cta-row{display:flex;gap:12px;flex-wrap:wrap;margin:14px 0 0}
+    .btn{
+      appearance:none;border:0;cursor:pointer;padding:14px 20px;border-radius:12px;
+      font-weight:800;font-size:16px;text-decoration:none;display:inline-flex;align-items:center;gap:10px
     }
-    .info-section {
-      padding: 40px 20px;
-      background-color: #2a1946;
+    .btn--primary{background:var(--brand);color:#083c22}
+    .btn--primary:hover{background:var(--brand-hover)}
+    .btn--ghost{background:transparent;border:1px solid #6e55a7;color:var(--muted)}
+    main{padding:0 18px 64px}
+    .grid{display:grid;gap:18px}
+    @media(min-width:900px){.grid{grid-template-columns:1.1fr .9fr}}
+    .card{
+      background:linear-gradient(180deg, var(--card), var(--soft));
+      border:1px solid rgba(214,186,255,.12); border-radius:18px; padding:22px 20px;
+      box-shadow:0 12px 40px rgba(0,0,0,.25)
     }
-    .scroll-link {
-      color: #d7baff;
-      text-decoration: underline;
-      cursor: pointer;
-      font-weight: bold;
+    h2{margin:0 0 10px;font-size:clamp(20px,2.6vw,28px)}
+    .list{margin:8px 0 0; padding:0; list-style:none}
+    .list li{margin:10px 0; padding-left:28px; position:relative}
+    .list li::before{content:"✨"; position:absolute; left:0; top:0}
+    .faq details{
+      background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);
+      border-radius:12px; padding:12px 14px; margin:8px 0
     }
+    .faq summary{cursor:pointer;font-weight:700}
+    .sticky-wa{
+      position:fixed; right:18px; bottom:18px; z-index:50
+    }
+    footer{padding:24px 18px 60px; text-align:center; color:#cbb8ff; opacity:.8}
+    .muted{opacity:.75}
   </style>
 
-  <!-- Meta Pixel Code -->
+  <!-- Meta Pixel Code (NO TOCAR) -->
   <script>
     !function(f,b,e,v,n,t,s)
     {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -65,44 +85,80 @@
     fbq('init', '1800229220851364'); // TU NUEVO PIXEL
     fbq('track', 'PageView');
   </script>
-
 </head>
 <body>
 
   <header>
-    <img src="logotarot.png" alt="Logo Tarot" />
-    <h1>Técnica de armonización energética</h1>
-    <h2>Sanación energética y espiritual</h2>
-
-    <a href="https://wa.me/542235285338?text=Quiero%20saber%20más!!!"
-       onclick="trackCompra();"
-       class="whatsapp-btn">
-       Escribime por WhatsApp
-    </a>
-
-    <div style="margin-top: 20px;">
-      <span class="scroll-link" onclick="document.getElementById('info').scrollIntoView({behavior: 'smooth'})">
-        Más info sobre la técnica
-      </span>
+    <div class="wrap hero">
+      <div>
+        <div class="eyebrow">Sesión 1:1 a distancia • Confirmación</div>
+        <h1>Confirmá tu sesión de <span style="color:var(--accent)">Sanación Energética</span></h1>
+        <p class="sub">Trabajo con <strong>péndulo Karnak</strong> y, si lo deseás, una breve <strong>lectura de cartas</strong> para orientar la sesión. Acompañamiento amoroso, confidencial y 100% online.</p>
+        <div class="badge">Atención por WhatsApp • En tiempo real</div>
+        <div class="cta-row">
+          <!-- CTA principal: trackCompra() se mantiene -->
+          <a class="btn btn--primary" href="https://wa.me/542235285338?text=Quiero%20confirmar%20mi%20sesión%20de%20sanación%201%3A1"
+             onclick="trackCompra()" target="_blank" rel="noopener">💬 Confirmar por WhatsApp</a>
+          <a class="btn btn--ghost" href="#como-funciona">¿Cómo funciona?</a>
+        </div>
+      </div>
+      <div class="hero-img" role="img" aria-label="Sanación 11.11 – Portada"></div>
     </div>
   </header>
 
-  <section class="info-section" id="info">
-    <h2>✨ Técnica de armonización energética ✨</h2>
-    <p>Elimina bajas vibraciones en forma inmediata 🙌✨<br>
-    Ideal para liberar tu campo energético y recuperar tu bienestar.</p>
+  <main>
+    <div class="wrap grid">
+      <section class="card">
+        <h2>¿Qué incluye la sesión?</h2>
+        <ul class="list">
+          <li>Limpieza y armonización energética (péndulo Karnak).</li>
+          <li>Alineación de chakras y alivio de energías densas.</li>
+          <li>Lectura de cartas (opcional) para enfocar el trabajo.</li>
+          <li>Cierre con recomendaciones simples para sostener el equilibrio.</li>
+        </ul>
+        <p style="margin-top:12px;opacity:.9">Duración aprox. 45 minutos • Modalidad remota (llamada de WhatsApp)</p>
+      </section>
 
-    <p><strong>🔘 Neutraliza:</strong><br>
-    Mal de ojo, envidia, magias, espíritu invasor, bajo astral y energías desencarnadas.</p>
+      <section class="card" id="como-funciona">
+        <h2>Cómo funciona (rápido)</h2>
+        <ol class="list" style="list-style:decimal;padding-left:20px">
+          <li>Me escribís por WhatsApp y coordinamos día y hora.</li>
+          <li>En la llamada, si querés, iniciamos con unas cartas.</li>
+          <li>Realizo la sanación con péndulo y te guío paso a paso.</li>
+          <li>Te comparto recomendaciones para seguir cuidando tu energía.</li>
+        </ol>
+        <div style="margin-top:14px">
+          <a class="btn btn--primary" href="https://wa.me/542235285338?text=Quiero%20confirmar%20mi%20sesión%20de%20sanación%201%3A1"
+             onclick="trackCompra()" target="_blank" rel="noopener">Confirmar por WhatsApp</a>
+        </div>
+      </section>
+    </div>
 
-    <p><strong>🔘 Restaura tu equilibrio:</strong><br>
-    Alinea chakras, armoniza el palacio de cristal y corta ataduras y cadenas energéticas 🔗</p>
+    <section class="wrap card faq" style="margin-top:18px">
+      <h2>Preguntas frecuentes</h2>
+      <details>
+        <summary>¿Necesito estar presente físicamente?</summary>
+        <p>No. La sesión es 100% a distancia por llamada de WhatsApp. La energía no depende de la presencia física.</p>
+      </details>
+      <details>
+        <summary>¿Es una clase o curso?</summary>
+        <p>No, es una <strong>sesión individual</strong> de sanación y acompañamiento energético.</p>
+      </details>
+      <details>
+        <summary>¿Cuántas sesiones necesito?</summary>
+        <p>Depende de cada proceso. Muchas personas sienten alivio desde el primer encuentro. Luego se evalúa si conviene continuar.</p>
+      </details>
+    </section>
+  </main>
 
-    <p>Una herramienta poderosa para quienes buscan <br>
-    protección, claridad espiritual y paz interior.</p>
-  </section>
+  <div class="sticky-wa">
+    <a class="btn btn--primary" href="https://wa.me/542235285338?text=Quiero%20confirmar%20mi%20sesión%20de%20sanación%201%3A1"
+       onclick="trackCompra()" target="_blank" rel="noopener">💬 Confirmar por WhatsApp</a>
+  </div>
 
-  <!-- Conversion API (CAPI) desde JS -->
+  <footer class="muted">© Sanación 11.11 — Confirmación de sesión</footer>
+
+  <!-- Conversion API (CAPI) desde JS — SE MANTIENE TAL CUAL -->
   <script>
     function enviarEventoCompraCAPI() {
       fetch("https://graph.facebook.com/v19.0/1800229220851364/events?access_token=EAAQhZBOBQhxcBPOsZCEhPmhWHQcEE0PzjYRyNDkz63TkR84Sm66bZBqXrLLuS7HAW91Fqn7kbTflzI1Nu9ppaywp4M6AqQhovjcupvSHtAIQ1LwRts3UzWrWIZCR9tZCy59xBmHexURBgBX7rkABKp9JEsHaoeIXYdxHIDH81kKBZCGoItox4AEiVs8hvEyAZDZD", {
@@ -133,4 +189,3 @@
 
 </body>
 </html>
-
