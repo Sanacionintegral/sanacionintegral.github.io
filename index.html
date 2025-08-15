@@ -177,39 +177,33 @@
 
   // Enviar Purchase por Pixel + CAPI con value/currency variables
   function trackCompra() {
-    try {
-      // Toma el valor/label del botón clickeado
-      const tgt   = (typeof event !== 'undefined' && event.currentTarget) ? event.currentTarget : null;
-      const value = tgt && tgt.dataset && tgt.dataset.valor ? Number(tgt.dataset.valor) : 12000;
-      const label = tgt && tgt.dataset && tgt.dataset.label ? tgt.dataset.label : 'Purchase – Sesión Holística';
+  try {
+    const tgt   = (typeof event !== 'undefined' && event.currentTarget) ? event.currentTarget : null;
+    const value = tgt && tgt.dataset && tgt.dataset.valor ? Number(tgt.dataset.valor) : 12000;
+    const label = tgt && tgt.dataset && tgt.dataset.label ? tgt.dataset.label : 'Purchase – Sesión Holística';
 
-      // Pixel (navegador)
-      if (window.fbq) {
-        fbq('track', 'Purchase', { value: value, currency: 'ARS', content_name: label });
-      }
+    // Generar un event_id simple
+    const eventId = 'eid_' + Date.now() + '_' + Math.random().toString(36).slice(2,8);
 
-      // CAPI (mismo valor/moneda)
-      fetch("https://graph.facebook.com/v19.0/1800229220851364/events?access_token=EAAQhZBOBQhxcBPOsZCEhPmhWHQcEE0PzjYRyNDkz63TkR84Sm66bZBqXrLLuS7HAW91Fqn7kbTflzI1Nu9ppaywp4M6AqQhovjcupvSHtAIQ1LwRts3UzWrWIZCR9tZCy59xBmHexURBgBX7rkABKp9JEsHaoeIXYdxHIDH81kKBZCGoItox4AEiVs8hvEyAZDZD", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          event_name: "Purchase",
-          event_time: Math.floor(Date.now() / 1000),
-          action_source: "website",
-          event_source_url: window.location.href,
-          user_data: {
-            client_ip_address: "", // Meta puede inferirlo
-            client_user_agent: navigator.userAgent
-          },
-          custom_data: {
-            currency: "ARS",
-            value: value,
-            content_name: label
-          }
-        })
-      });
-    } catch(e) { /* silencio para no romper el CTA */ }
-  }
+    if (window.fbq) {
+      fbq('track', 'Purchase', { value: value, currency: 'ARS', content_name: label, event_id: eventId });
+    }
+
+    fetch("https://graph.facebook.com/v19.0/1800229220851364/events?access_token=EAAQhZBOBQhxcBPOsZCEhPmhWHQcEE0PzjYRyNDkz63TkR84Sm66bZBqXrLLuS7HAW91Fqn7kbTflzI1Nu9ppaywp4M6AqQhovjcupvSHtAIQ1LwRts3UzWrWIZCR9tZCy59xBmHexURBgBX7rkABKp9JEsHaoeIXYdxHIDH81kKBZCGoItox4AEiVs8hvEyAZDZD", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        event_name: "Purchase",
+        event_time: Math.floor(Date.now() / 1000),
+        action_source: "website",
+        event_source_url: window.location.href,
+        event_id: eventId,               // ← mismo event_id
+        user_data: { client_ip_address: "", client_user_agent: navigator.userAgent },
+        custom_data: { currency: "ARS", value: value, content_name: label }
+      })
+    });
+  } catch(e) {}
+}
 </script>
 
 </body>
