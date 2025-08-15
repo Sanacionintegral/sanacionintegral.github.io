@@ -159,8 +159,36 @@
   <footer class="muted">© Sanación 11.11 — Confirmación de sesión</footer>
 
   <!-- Conversion API (CAPI) desde JS — SE MANTIENE TAL CUAL -->
-  <script>
-    function enviarEventoCompraCAPI() {
+ <script>
+  // ----- Config de valores por servicio (ARS) -----
+  const VAL_HOLISTICA = 12000; // CTA principal (Hero)
+  const VAL_CARTAS    =  8000; // CTA de la sección "¿Cómo funciona?"
+  const VAL_PENDULO   =  9000; // CTA flotante (sticky)
+
+  // Asigna data-* a cada CTA sin tocar el HTML
+  window.addEventListener('DOMContentLoaded', () => {
+    const ctas = document.querySelectorAll('a.btn.btn--primary');
+
+    // Asumiendo orden: [Hero], [Cómo funciona], [Sticky]
+    if (ctas[0]) { ctas[0].dataset.valor = VAL_HOLISTICA; ctas[0].dataset.label = 'Purchase – Sesión Holística'; }
+    if (ctas[1]) { ctas[1].dataset.valor = VAL_CARTAS;    ctas[1].dataset.label = 'Purchase – Lectura de cartas'; }
+    if (ctas[2]) { ctas[2].dataset.valor = VAL_PENDULO;   ctas[2].dataset.label = 'Purchase – Péndulo Karnak'; }
+  });
+
+  // Enviar Purchase por Pixel + CAPI con value/currency variables
+  function trackCompra() {
+    try {
+      // Toma el valor/label del botón clickeado
+      const tgt   = (typeof event !== 'undefined' && event.currentTarget) ? event.currentTarget : null;
+      const value = tgt && tgt.dataset && tgt.dataset.valor ? Number(tgt.dataset.valor) : 12000;
+      const label = tgt && tgt.dataset && tgt.dataset.label ? tgt.dataset.label : 'Purchase – Sesión Holística';
+
+      // Pixel (navegador)
+      if (window.fbq) {
+        fbq('track', 'Purchase', { value: value, currency: 'ARS', content_name: label });
+      }
+
+      // CAPI (mismo valor/moneda)
       fetch("https://graph.facebook.com/v19.0/1800229220851364/events?access_token=EAAQhZBOBQhxcBPOsZCEhPmhWHQcEE0PzjYRyNDkz63TkR84Sm66bZBqXrLLuS7HAW91Fqn7kbTflzI1Nu9ppaywp4M6AqQhovjcupvSHtAIQ1LwRts3UzWrWIZCR9tZCy59xBmHexURBgBX7rkABKp9JEsHaoeIXYdxHIDH81kKBZCGoItox4AEiVs8hvEyAZDZD", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -170,22 +198,19 @@
           action_source: "website",
           event_source_url: window.location.href,
           user_data: {
-            client_ip_address: "", // Meta lo completa automáticamente
+            client_ip_address: "", // Meta puede inferirlo
             client_user_agent: navigator.userAgent
           },
           custom_data: {
-            currency: "USD",
-            value: 10
+            currency: "ARS",
+            value: value,
+            content_name: label
           }
         })
       });
-    }
-
-    function trackCompra() {
-      fbq('track', 'Purchase', {value: 10, currency: 'USD'});
-      enviarEventoCompraCAPI();
-    }
-  </script>
+    } catch(e) { /* silencio para no romper el CTA */ }
+  }
+</script>
 
 </body>
 </html>
