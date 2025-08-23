@@ -72,17 +72,17 @@
     .muted{opacity:.75}
   </style>
 
-  <!-- Meta Pixel Code (NO TOCAR) -->
+  <!-- Meta Pixel -->
   <script>
-    !function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(window, document,'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '1800229220851364'); // TU NUEVO PIXEL
+    !function(f,b,e,v,n,t,s){
+      if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+      n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)
+    }(window, document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1800229220851364');  /* Pixel Sanación 11.11 */
     fbq('track', 'PageView');
   </script>
 </head>
@@ -96,9 +96,9 @@
         <p class="sub">Trabajo con <strong>péndulo Karnak</strong> y, previo hacemos una breve <strong>lectura de cartas</strong> para orientar la sesión. Acompañamiento amoroso, confidencial y 100% online.</p>
         <div class="badge">Atención por WhatsApp • En tiempo real</div>
         <div class="cta-row">
-          <!-- CTA principal: trackCompra() se mantiene -->
+          <!-- CTA principal -->
           <a class="btn btn--primary" href="https://wa.me/542235285338?text=Quiero%20confirmar%20mi%20sesión%20de%20sanación%2011%3A11"
-             onclick="trackCompra()" target="_blank" rel="noopener">💬 Confirmar por WhatsApp</a>
+             onclick="trackCompra(event)" target="_blank" rel="noopener">💬 Confirmar por WhatsApp</a>
           <a class="btn btn--ghost" href="#como-funciona">¿Cómo funciona?</a>
         </div>
       </div>
@@ -129,7 +129,7 @@
         </ol>
         <div style="margin-top:14px">
           <a class="btn btn--primary" href="https://wa.me/542235285338?text=Quiero%20confirmar%20mi%20sesión%20de%20sanación%201%3A1"
-             onclick="trackCompra()" target="_blank" rel="noopener">Confirmar por WhatsApp</a>
+             onclick="trackCompra(event)" target="_blank" rel="noopener">Confirmar por WhatsApp</a>
         </div>
       </section>
     </div>
@@ -157,58 +157,68 @@
 
   <div class="sticky-wa">
     <a class="btn btn--primary" href="https://wa.me/542235285338?text=Quiero%20confirmar%20mi%20sesión%20de%20sanación%201%3A1"
-       onclick="trackCompra()" target="_blank" rel="noopener">💬 Confirmar por WhatsApp</a>
+       onclick="trackCompra(event)" target="_blank" rel="noopener">💬 Confirmar por WhatsApp</a>
   </div>
 
   <footer class="muted">© Sanación 11.11 — Confirmación de sesión</footer>
 
-  <!-- Conversion API (CAPI) desde JS — SE MANTIENE TAL CUAL -->
- <script>
-  // ----- Config de valores por servicio (ARS) -----
-  const VAL_HOLISTICA = 12000; // CTA principal (Hero)
-  const VAL_CARTAS    =  8000; // CTA de la sección "¿Cómo funciona?"
-  const VAL_PENDULO   =  9000; // CTA flotante (sticky)
+  <!-- ====== PIXEL + CAPI (proxy Apps Script) ====== -->
+  <script>
+    // Valores reales (ARS)
+    const VAL_HOLISTICA = 18000;  // Sesión completa
+    const VAL_CARTAS    = 12000;  // Lectura
+    const VAL_PENDULO   = 12000;  // Péndulo
 
-  // Asigna data-* a cada CTA sin tocar el HTML
-  window.addEventListener('DOMContentLoaded', () => {
-    const ctas = document.querySelectorAll('a.btn.btn--primary');
+    // URL del Web App (Apps Script): pegá aquí tu /exec
+    const CAPI_WEB_APP = 'PONE_AQUI_TU_URL_EXEC';
 
-    // Asumiendo orden: [Hero], [Cómo funciona], [Sticky]
-    if (ctas[0]) { ctas[0].dataset.valor = VAL_HOLISTICA; ctas[0].dataset.label = 'Purchase – Sesión Holística'; }
-    if (ctas[1]) { ctas[1].dataset.valor = VAL_CARTAS;    ctas[1].dataset.label = 'Purchase – Lectura de cartas'; }
-    if (ctas[2]) { ctas[2].dataset.valor = VAL_PENDULO;   ctas[2].dataset.label = 'Purchase – Péndulo Karnak'; }
-  });
-
-  // Enviar Purchase por Pixel + CAPI con value/currency variables
-  function trackCompra() {
-  try {
-    const tgt   = (typeof event !== 'undefined' && event.currentTarget) ? event.currentTarget : null;
-    const value = tgt && tgt.dataset && tgt.dataset.valor ? Number(tgt.dataset.valor) : 12000;
-    const label = tgt && tgt.dataset && tgt.dataset.label ? tgt.dataset.label : 'Purchase – Sesión Holística';
-
-    // Generar un event_id simple
-    const eventId = 'eid_' + Date.now() + '_' + Math.random().toString(36).slice(2,8);
-
-    if (window.fbq) {
-      fbq('track', 'Purchase', { value: value, currency: 'ARS', content_name: label, event_id: eventId });
-    }
-
-    fetch("https://graph.facebook.com/v19.0/1800229220851364/events?access_token=EAAQhZBOBQhxcBPOsZCEhPmhWHQcEE0PzjYRyNDkz63TkR84Sm66bZBqXrLLuS7HAW91Fqn7kbTflzI1Nu9ppaywp4M6AqQhovjcupvSHtAIQ1LwRts3UzWrWIZCR9tZCy59xBmHexURBgBX7rkABKp9JEsHaoeIXYdxHIDH81kKBZCGoItox4AEiVs8hvEyAZDZD", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        event_name: "Purchase",
-        event_time: Math.floor(Date.now() / 1000),
-        action_source: "website",
-        event_source_url: window.location.href,
-        event_id: eventId,               // ← mismo event_id
-        user_data: { client_ip_address: "", client_user_agent: navigator.userAgent },
-        custom_data: { currency: "ARS", value: value, content_name: label }
-      })
+    // Mapear datasets a los CTAs (en orden: Hero, Cómo funciona, Sticky)
+    window.addEventListener('DOMContentLoaded', () => {
+      const ctas = document.querySelectorAll('a.btn.btn--primary');
+      if (ctas[0]) { ctas[0].dataset.valor = VAL_HOLISTICA; ctas[0].dataset.label = 'Purchase – Sesión Holística'; }
+      if (ctas[1]) { ctas[1].dataset.valor = VAL_CARTAS;    ctas[1].dataset.label = 'Purchase – Lectura de cartas'; }
+      if (ctas[2]) { ctas[2].dataset.valor = VAL_PENDULO;   ctas[2].dataset.label = 'Purchase – Péndulo Karnak'; }
     });
-  } catch(e) {}
-}
-</script>
 
+    // Utils
+    function getCookie(n){return document.cookie.split('; ').find(r=>r.startsWith(n+'='))?.split('=')[1]}
+    function getParam(n){try{return new URL(location.href).searchParams.get(n)||''}catch(e){return ''}}
+
+    // Disparo de compra (Pixel + Server) con dedupe
+    function trackCompra(ev){
+      try{
+        const tgt   = ev?.currentTarget || null;
+        const value = tgt?.dataset?.valor ? Number(tgt.dataset.valor) : VAL_HOLISTICA;
+        const label = tgt?.dataset?.label || 'Purchase – Sesión Holística';
+        const eventId = 'eid_' + Date.now() + '_' + Math.random().toString(36).slice(2,8);
+
+        // 1) Pixel (Browser)
+        if (window.fbq) fbq('track','Purchase',{ value, currency:'ARS', content_name:label, event_id:eventId });
+
+        // 2) Server (CAPI) vía Apps Script (token oculto)
+        const fbp = getCookie('_fbp') || '';
+        const fbc = getParam('fbclid') ? `fb.1.${Date.now()}.${getParam('fbclid')}` : (getCookie('_fbc')||'');
+        const payload = {
+          event_name:'Purchase',
+          value, currency:'ARS',
+          content_name:label,
+          event_id:eventId,
+          url:window.location.href,
+          ua:navigator.userAgent,
+          test_event_code:getParam('fb_test') || '',
+          fbp, fbc
+        };
+
+        const json = JSON.stringify(payload);
+        const blob = new Blob([json], {type:'text/plain'});
+        if (navigator.sendBeacon) {
+          navigator.sendBeacon(CAPI_WEB_APP, blob);
+        } else {
+          fetch(CAPI_WEB_APP, { method:'POST', body:json, headers:{'Content-Type':'text/plain'}, keepalive:true, mode:'no-cors' });
+        }
+      }catch(e){}
+    }
+  </script>
 </body>
 </html>
+
