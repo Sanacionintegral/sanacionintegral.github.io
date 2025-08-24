@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Reserva tu sesión de Sanación Energética – Confirmación</title>
   <meta name="description" content="Confirmá tu sesión de sanación energética a distancia. Trabajo con péndulo Karnak y lectura de cartas. Atención por WhatsApp.">
-
   <style>
     :root{
       --bg:#1f1333; --card:#2a1946; --soft:#3a2163; --text:#f5f5f5;
@@ -40,14 +39,12 @@
       background:rgba(255,214,110,.14); color:#ffe49a; border:1px solid rgba(255,214,110,.25);
       padding:6px 10px;border-radius:999px;font-size:13px;font-weight:700
     }
-    .cta-row{display:flex;gap:12px;flex-wrap:wrap;margin:14px 0 0}
     .btn{
       appearance:none;border:0;cursor:pointer;padding:14px 20px;border-radius:12px;
       font-weight:800;font-size:16px;text-decoration:none;display:inline-flex;align-items:center;gap:10px
     }
     .btn--primary{background:var(--brand);color:#083c22}
     .btn--primary:hover{background:var(--brand-hover)}
-    .btn--ghost{background:transparent;border:1px solid #6e55a7;color:var(--muted)}
     main{padding:0 18px 64px}
     .grid{display:grid;gap:18px}
     @media(min-width:900px){.grid{grid-template-columns:1.1fr .9fr}}
@@ -65,14 +62,10 @@
       border-radius:12px; padding:12px 14px; margin:8px 0
     }
     .faq summary{cursor:pointer;font-weight:700}
-    .sticky-wa{
-      position:fixed; right:18px; bottom:18px; z-index:50
-    }
+    .sticky-wa{position:fixed; right:18px; bottom:18px; z-index:50}
     footer{padding:24px 18px 60px; text-align:center; color:#cbb8ff; opacity:.8}
     .muted{opacity:.75}
   </style>
-
-  <!-- Meta Pixel -->
   <script>
     !function(f,b,e,v,n,t,s){
       if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -82,12 +75,11 @@
       t.src=v;s=b.getElementsByTagName(e)[0];
       s.parentNode.insertBefore(t,s)
     }(window, document,'script','https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '1800229220851364');  /* Pixel Sanación 11.11 */
+    fbq('init', '1800229220851364');
     fbq('track', 'PageView');
   </script>
 </head>
 <body>
-
   <header>
     <div class="wrap hero">
       <div>
@@ -95,17 +87,10 @@
         <h1>Confirmá tu sesión de <span style="color:var(--accent)">Sanación Energética</span></h1>
         <p class="sub">Trabajo con <strong>péndulo Karnak</strong> y, previo hacemos una breve <strong>lectura de cartas</strong> para orientar la sesión. Acompañamiento amoroso, confidencial y 100% online.</p>
         <div class="badge">Atención por WhatsApp • En tiempo real</div>
-        <div class="cta-row">
-          <!-- CTA principal -->
-          <a class="btn btn--primary" href="https://wa.me/542235285338?text=Quiero%20confirmar%20mi%20sesión%20de%20sanación%2011%3A11"
-             onclick="trackCompra(event)" target="_blank" rel="noopener">💬 Confirmar por WhatsApp</a>
-          <a class="btn btn--ghost" href="#como-funciona">¿Cómo funciona?</a>
-        </div>
       </div>
       <div class="hero-img" role="img" aria-label="Sanación 11.11 – Portada"></div>
     </div>
   </header>
-
   <main>
     <div class="wrap grid">
       <section class="card">
@@ -118,97 +103,32 @@
         </ul>
         <p style="margin-top:12px;opacity:.9">Duración aprox. 45 minutos • valor de la sesion completa $ 18.000 • Modalidad remota (llamada de WhatsApp)</p>
       </section>
-
-      <section class="card" id="como-funciona">
-        <h2>Cómo funciona (rápido)</h2>
-        <ol class="list" style="list-style:decimal;padding-left:20px">
-          <li>Me escribís por WhatsApp y coordinamos día y hora.</li>
-          <li>En la Videollamada, iniciamos con unas cartas.</li>
-          <li>Realizo la sanación con péndulo y te guío paso a paso.</li>
-          <li>Te comparto recomendaciones para seguir cuidando tu energía.</li>
-        </ol>
-        <div style="margin-top:14px">
-          <a class="btn btn--primary" href="https://wa.me/542235285338?text=Quiero%20confirmar%20mi%20sesión%20de%20sanación%201%3A1"
-             onclick="trackCompra(event)" target="_blank" rel="noopener">Confirmar por WhatsApp</a>
-        </div>
+      <section class="card faq">
+        <h2>Preguntas frecuentes</h2>
+        <details><summary>¿Tiene costo?</summary><p>Sí. Tarot $12.000, Péndulo $12.000, Sesión completa $18.000.</p></details>
+        <details><summary>¿Necesito estar presente físicamente?</summary><p>No, es 100% a distancia por llamada de WhatsApp.</p></details>
+        <details><summary>¿Es una clase o curso?</summary><p>No, es una sesión individual de acompañamiento energético.</p></details>
+        <details><summary>¿Cuántas sesiones necesito?</summary><p>Depende. Muchas personas sienten cambios desde el primer encuentro.</p></details>
       </section>
     </div>
-
-    <section class="wrap card faq" style="margin-top:18px">
-      <h2>Preguntas frecuentes</h2>
-       <details>
-        <summary>¿Tiene costo?</summary>
-        <p>Si tiene costo, dependiendo de lo que solicites. (Tarot $ 12.000) - (Pendulo $ 12.000) - (Sesion Completa $18.000).</p>
-      </details>
-      <details>
-        <summary>¿Necesito estar presente físicamente?</summary>
-        <p>No. La sesión es 100% a distancia por llamada de WhatsApp. La energía no depende de la presencia física.</p>
-      </details>
-      <details>
-        <summary>¿Es una clase o curso?</summary>
-        <p>No, es una <strong>sesión individual</strong> de sanación y acompañamiento energético.</p>
-      </details>
-      <details>
-        <summary>¿Cuántas sesiones necesito?</summary>
-        <p>Depende de cada proceso. Muchas personas sienten alivio desde el primer encuentro. Luego se evalúa si conviene continuar.</p>
-      </details>
-    </section>
   </main>
-
   <div class="sticky-wa">
-    <a class="btn btn--primary" href="https://wa.me/542235285338?text=Quiero%20confirmar%20mi%20sesión%20de%20sanación%201%3A1"
-       onclick="trackCompra(event)" target="_blank" rel="noopener">💬 Confirmar por WhatsApp</a>
+    <a class="btn btn--primary" href="https://wa.me/542235285338?text=Quiero%20confirmar%20mi%20sesión%20de%20sanación%201%3A1" onclick="trackCompra(event)" data-label="Sanacion 11.11 - Confirmación" target="_blank" rel="noopener">💬 Confirmar por WhatsApp</a>
   </div>
-
   <footer class="muted">© Sanación 11.11 — Confirmación de sesión</footer>
-
-  <!-- ====== PIXEL + CAPI (proxy Apps Script) ====== -->
   <script>
-    // Valores reales (ARS)
-    const VAL_HOLISTICA = 18000;  // Sesión completa
-    const VAL_CARTAS    = 12000;  // Lectura
-    const VAL_PENDULO   = 12000;  // Péndulo
-
-    // URL del Web App (Apps Script): pegá aquí tu /exec
-    const CAPI_WEB_APP = 'PONE_AQUI_TU_URL_EXEC';
-
-    // Mapear datasets a los CTAs (en orden: Hero, Cómo funciona, Sticky)
-    window.addEventListener('DOMContentLoaded', () => {
-      const ctas = document.querySelectorAll('a.btn.btn--primary');
-      if (ctas[0]) { ctas[0].dataset.valor = VAL_HOLISTICA; ctas[0].dataset.label = 'Purchase – Sesión Holística'; }
-      if (ctas[1]) { ctas[1].dataset.valor = VAL_CARTAS;    ctas[1].dataset.label = 'Purchase – Lectura de cartas'; }
-      if (ctas[2]) { ctas[2].dataset.valor = VAL_PENDULO;   ctas[2].dataset.label = 'Purchase – Péndulo Karnak'; }
-    });
-
-    // Utils
+    const CAPI_WEB_APP = 'https://script.google.com/macros/s/AKfycbwUJaNzSQOiQPxv519cl91202q5U_lBnMqDdkUAru9Kn36amQmq04Xs9gJbmNS5zQ4/exec';
     function getCookie(n){return document.cookie.split('; ').find(r=>r.startsWith(n+'='))?.split('=')[1]}
     function getParam(n){try{return new URL(location.href).searchParams.get(n)||''}catch(e){return ''}}
-
-    // Disparo de compra (Pixel + Server) con dedupe
     function trackCompra(ev){
       try{
-        const tgt   = ev?.currentTarget || null;
-        const value = tgt?.dataset?.valor ? Number(tgt.dataset.valor) : VAL_HOLISTICA;
-        const label = tgt?.dataset?.label || 'Purchase – Sesión Holística';
+        const value = 12000;
+        const label = ev?.currentTarget?.dataset?.label || 'Purchase – Sanación 11.11';
         const eventId = 'eid_' + Date.now() + '_' + Math.random().toString(36).slice(2,8);
-
-        // 1) Pixel (Browser)
-        if (window.fbq) fbq('track','Purchase',{ value, currency:'ARS', content_name:label, event_id:eventId });
-
-        // 2) Server (CAPI) vía Apps Script (token oculto)
+        if (window.fbq) fbq('track', 'Purchase', { value, currency: 'ARS', content_name: label, event_id: eventId });
         const fbp = getCookie('_fbp') || '';
         const fbc = getParam('fbclid') ? `fb.1.${Date.now()}.${getParam('fbclid')}` : (getCookie('_fbc')||'');
-        const payload = {
-          event_name:'Purchase',
-          value, currency:'ARS',
-          content_name:label,
-          event_id:eventId,
-          url:window.location.href,
-          ua:navigator.userAgent,
-          test_event_code:getParam('fb_test') || '',
-          fbp, fbc
-        };
-
+        const payload = { event_name: 'Purchase', value, currency: 'ARS', content_name: label, event_id: eventId, url: window.location.href, ua: navigator.userAgent, test_event_code: getParam('fb_test') || '', fbp, fbc };
         const json = JSON.stringify(payload);
         const blob = new Blob([json], {type:'text/plain'});
         if (navigator.sendBeacon) {
@@ -221,4 +141,5 @@
   </script>
 </body>
 </html>
+
 
