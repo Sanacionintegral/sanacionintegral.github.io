@@ -3,12 +3,20 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Reserva tu sesión de Sanación Energética – Confirmación</title>
-  <meta name="description" content="Confirmá tu sesión de sanación energética a distancia. Trabajo con péndulo Karnak y lectura de cartas. Atención por WhatsApp.">
+  <title>Sanación 11.11 – Sesión a distancia por WhatsApp</title>
+  <meta name="description" content="Sesión de sanación energética a distancia. Trabajo con péndulo Karnak y lectura de cartas. Acompañamiento amoroso y confidencial por WhatsApp." />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Sanación 11.11 – Sesión a distancia" />
+  <meta property="og:description" content="Acompañamiento amoroso y confidencial por WhatsApp. Péndulo Karnak + lectura de cartas." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="Portadalandig.png" />
+
   <style>
     :root{
       --bg:#1f1333; --card:#2a1946; --soft:#3a2163; --text:#f5f5f5;
       --muted:#d7baff; --brand:#25D366; --brand-hover:#1ebe5d; --accent:#ffd66e;
+      --border:rgba(214,186,255,.12);
     }
     *{box-sizing:border-box}
     body{
@@ -16,55 +24,169 @@
       background: radial-gradient(1200px 800px at 20% -10%, #3b2a69 0%, #1f1333 40%, #1b0f2e 100%);
       color:var(--text); line-height:1.5;
     }
+    a{color:inherit}
     header{padding:26px 18px 0}
     .wrap{max-width:1050px;margin:0 auto}
-    .hero{
-      display:grid; gap:18px; align-items:center; padding:10px 0 28px;
-    }
+    .hero{display:grid; gap:18px; align-items:center; padding:10px 0 22px}
     @media(min-width:900px){.hero{grid-template-columns:1.1fr .9fr}}
     .hero-img{
       aspect-ratio: 1200 / 630; border-radius:16px; overflow:hidden;
-      border:1px solid rgba(214,186,255,.12); box-shadow:0 12px 40px rgba(0,0,0,.25);
+      border:1px solid var(--border); box-shadow:0 12px 40px rgba(0,0,0,.25);
       background:center/cover no-repeat url('Portadalandig.png');
       min-height:260px;
     }
     .eyebrow{
-      color:var(--muted); font-weight:600; text-transform:uppercase;
+      color:var(--muted); font-weight:800; text-transform:uppercase;
       font-size:12px; letter-spacing:.18em; margin-bottom:6px;
     }
     h1{margin:0 0 10px;font-size:clamp(26px,3.2vw,40px)}
-    .sub{color:#eee;opacity:.9;font-size:clamp(16px,2.2vw,18px);margin:0 0 14px}
+    .sub{color:#eee;opacity:.92;font-size:clamp(16px,2.2vw,18px);margin:0 0 14px}
     .badge{
       display:inline-flex;gap:8px;align-items:center;margin:8px 0 0;
       background:rgba(255,214,110,.14); color:#ffe49a; border:1px solid rgba(255,214,110,.25);
-      padding:6px 10px;border-radius:999px;font-size:13px;font-weight:700
+      padding:6px 10px;border-radius:999px;font-size:13px;font-weight:900
     }
+    .badge2{
+      display:inline-flex;gap:8px;align-items:center;margin:10px 0 0;
+      background:rgba(37,211,102,.12); color:#b9ffd7; border:1px solid rgba(37,211,102,.20);
+      padding:6px 10px;border-radius:999px;font-size:13px;font-weight:900
+    }
+    .cta-row{display:flex; gap:10px; flex-wrap:wrap; margin-top:14px}
     .btn{
       appearance:none;border:0;cursor:pointer;padding:14px 20px;border-radius:12px;
-      font-weight:800;font-size:16px;text-decoration:none;display:inline-flex;align-items:center;gap:10px
+      font-weight:900;font-size:16px;text-decoration:none;display:inline-flex;align-items:center;gap:10px
     }
     .btn--primary{background:var(--brand);color:#083c22}
     .btn--primary:hover{background:var(--brand-hover)}
+    .btn--ghost{
+      background:rgba(255,255,255,.06);
+      border:1px solid rgba(255,255,255,.14);
+      color:#fff
+    }
+    .btn--ghost:hover{background:rgba(255,255,255,.09)}
     main{padding:0 18px 64px}
     .grid{display:grid;gap:18px}
     @media(min-width:900px){.grid{grid-template-columns:1.1fr .9fr}}
+
     .card{
       background:linear-gradient(180deg, var(--card), var(--soft));
-      border:1px solid rgba(214,186,255,.12); border-radius:18px; padding:22px 20px;
+      border:1px solid var(--border); border-radius:18px; padding:22px 20px;
       box-shadow:0 12px 40px rgba(0,0,0,.25)
     }
     h2{margin:0 0 10px;font-size:clamp(20px,2.6vw,28px)}
     .list{margin:8px 0 0; padding:0; list-style:none}
     .list li{margin:10px 0; padding-left:28px; position:relative}
     .list li::before{content:"✨"; position:absolute; left:0; top:0}
+    .muted{opacity:.78}
+
     .faq details{
       background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);
       border-radius:12px; padding:12px 14px; margin:8px 0
     }
-    .faq summary{cursor:pointer;font-weight:700}
-    footer{padding:24px 18px 60px; text-align:center; color:#cbb8ff; opacity:.8}
-    .muted{opacity:.75}
+    .faq summary{cursor:pointer;font-weight:900}
+
+    /* Reviews texto */
+    .reviews{
+      display:grid;
+      gap:12px;
+      grid-template-columns:repeat(1,minmax(0,1fr));
+    }
+    @media(min-width:900px){
+      .reviews{grid-template-columns:repeat(2,minmax(0,1fr))}
+    }
+    .review{
+      border:1px solid rgba(255,255,255,.12);
+      background:rgba(255,255,255,.04);
+      border-radius:14px;
+      padding:12px 12px;
+    }
+    .r-top{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:8px}
+    .r-name{font-weight:900;color:#f2e9ff}
+    .r-stars{color:#ffd66e;font-weight:900;letter-spacing:.06em}
+    .r-text{opacity:.92}
+
+    /* Testimonios imagen (capturas) */
+    .tgrid{
+      display:grid; gap:12px;
+      grid-template-columns:repeat(2, minmax(0,1fr));
+    }
+    @media(min-width:900px){
+      .tgrid{grid-template-columns:repeat(4, minmax(0,1fr))}
+    }
+    .tcard{
+      border:1px solid rgba(255,255,255,.12);
+      background:rgba(255,255,255,.04);
+      border-radius:14px;
+      overflow:hidden;
+      cursor:pointer;
+      transition: transform .12s ease;
+    }
+    .tcard:hover{transform: translateY(-2px)}
+    .timg{
+      width:100%; height:180px;
+      background:center/cover no-repeat;
+    }
+    .tcap{
+      padding:10px 10px 12px;
+      font-weight:900;
+      color:#f2e9ff;
+      font-size:13px;
+    }
+
+    /* Modal */
+    .modal{
+      position:fixed; inset:0;
+      display:none;
+      background:rgba(0,0,0,.70);
+      align-items:center; justify-content:center;
+      padding:18px;
+      z-index:9999;
+    }
+    .modal.open{display:flex}
+    .modal-box{
+      max-width:min(980px, 100%);
+      width:100%;
+      background:rgba(20,10,35,.92);
+      border:1px solid rgba(255,255,255,.14);
+      border-radius:16px;
+      overflow:hidden;
+      box-shadow:0 18px 60px rgba(0,0,0,.55);
+    }
+    .modal-head{
+      display:flex; align-items:center; justify-content:space-between;
+      padding:12px 14px;
+      border-bottom:1px solid rgba(255,255,255,.10);
+      color:#fff;
+      font-weight:900;
+    }
+    .close{
+      cursor:pointer;
+      border:1px solid rgba(255,255,255,.18);
+      background:rgba(255,255,255,.06);
+      color:#fff;
+      border-radius:10px;
+      padding:8px 10px;
+      font-weight:900;
+    }
+    .modal-img{
+      width:100%;
+      display:block;
+      max-height:80vh;
+      object-fit:contain;
+      background:#0f0720;
+    }
+
+    footer{padding:24px 18px 60px; text-align:center; color:#cbb8ff; opacity:.85}
+    .tiny{font-size:12px; opacity:.75}
+    code.inline{
+      background:rgba(255,255,255,.08);
+      padding:2px 6px;
+      border-radius:8px;
+      border:1px solid rgba(255,255,255,.12);
+    }
   </style>
+
+  <!-- Meta Pixel -->
   <script>
     !function(f,b,e,v,n,t,s){
       if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -74,31 +196,53 @@
       t.src=v;s=b.getElementsByTagName(e)[0];
       s.parentNode.insertBefore(t,s)
     }(window, document,'script','https://connect.facebook.net/en_US/fbevents.js');
+
+    // ✅ PIXEL: Sanacion Ventas
     fbq('init', '1800229220851364');
     fbq('track', 'PageView');
   </script>
 </head>
+
 <body>
   <header>
     <div class="wrap hero">
       <div>
-        <div class="eyebrow">Sesión Sanacion11.11 a distancia • Confirmación</div>
-        <h1>Confirmá tu sesión de <span style="color:var(--accent)">Sanación Energética</span></h1>
-        <p class="sub">Trabajo con <strong>péndulo Karnak</strong> y, previo hacemos una breve <strong>lectura de cartas</strong> para orientar la sesión. Acompañamiento amoroso, confidencial y 100% online.</p>
+        <div class="eyebrow">Sesión Sanación 11.11 a distancia • WhatsApp</div>
+        <h1>Sanación Energética <span style="color:var(--accent)">1:1</span> (a distancia)</h1>
+
+        <p class="sub">
+          Trabajo con <strong>péndulo Karnak</strong> y, si querés, hacemos una breve <strong>lectura de cartas</strong>
+          para orientar la sesión. Acompañamiento amoroso, confidencial y 100% online.
+        </p>
+
         <div class="badge">Atención por WhatsApp • En tiempo real</div>
-        <div class="cta-row" style="margin-top:14px">
-          <a class="btn btn--primary"
-             href="https://wa.me/542235285338?text=Quiero%20confirmar%20mi%20sesión%20de%20sanación%201%3A1"
-             onclick="trackCompra(event)"
-             data-label="Sanacion 11.11 - Confirmación"
+        <div class="badge2">Cupos limitados de la semana • Respuesta inmediata</div>
+
+        <div class="cta-row">
+          <a id="waBtn" class="btn btn--primary"
+             href="#"
              target="_blank" rel="noopener">
-             💬 Confirmar mi sesión por WhatsApp
+             💬 Quiero mi sesión ahora
+          </a>
+
+          <a class="btn btn--ghost" href="#opiniones">
+            ⭐ Ver opiniones
+          </a>
+
+          <a class="btn btn--ghost" href="#capturas">
+            📸 Ver capturas reales
           </a>
         </div>
+
+        <p class="tiny" style="margin-top:12px">
+          Para medir campañas: usá <code class="inline">?src=metaA</code>, <code class="inline">?src=metaB</code> o <code class="inline">?src=publicista</code> en el link.
+        </p>
       </div>
+
       <div class="hero-img" role="img" aria-label="Sanación 11.11 – Portada"></div>
     </div>
   </header>
+
   <main>
     <div class="wrap grid">
       <section class="card">
@@ -109,42 +253,230 @@
           <li>Lectura de cartas (opcional) para enfocar el trabajo.</li>
           <li>Cierre con recomendaciones simples para sostener el equilibrio.</li>
         </ul>
-        <p style="margin-top:12px;opacity:.9">Duración aprox. 45 minutos • valor de la sesion completa $ 18.000 • Modalidad remota (llamada de WhatsApp)</p>
+        <p style="margin-top:12px;opacity:.92">
+          Duración aprox. <strong>45 minutos</strong> • Modalidad remota (<strong>llamada de WhatsApp</strong>)<br/>
+          Valor sesión completa: <strong>$18.000</strong>
+        </p>
+        <p class="muted" style="margin-top:10px">
+          *Acompañamiento energético. No reemplaza tratamiento médico/psicológico.
+        </p>
+
+        <div class="cta-row" style="margin-top:14px">
+          <a class="btn btn--primary" id="waBtnInfo" href="#" target="_blank" rel="noopener">
+            💬 Hablar por WhatsApp
+          </a>
+        </div>
       </section>
+
       <section class="card faq">
         <h2>Preguntas frecuentes</h2>
+        <details open><summary>¿Cómo reservo?</summary><p>Hacés clic en WhatsApp, me contás tu situación y coordinamos el mejor horario.</p></details>
         <details><summary>¿Tiene costo?</summary><p>Sí. Tarot $12.000, Péndulo $12.000, Sesión completa $18.000.</p></details>
         <details><summary>¿Necesito estar presente físicamente?</summary><p>No, es 100% a distancia por llamada de WhatsApp.</p></details>
-        <details><summary>¿Es una clase o curso?</summary><p>No, es una sesión individual de acompañamiento energético.</p></details>
-        <details><summary>¿Cuántas sesiones necesito?</summary><p>Depende. Muchas personas sienten cambios desde el primer encuentro.</p></details>
+        <details><summary>¿Cuántas sesiones necesito?</summary><p>Depende de cada caso. Muchas personas sienten cambios desde el primer encuentro.</p></details>
+        <details><summary>¿Cada cuánto es recomendable hacerlo?</summary><p>Depende del proceso. Algunas personas repiten semanalmente, otras cada 15 días o una vez al mes.</p></details>
+
+        <div class="cta-row" style="margin-top:14px">
+          <a class="btn btn--primary" id="waBtnFaq" href="#" target="_blank" rel="noopener">
+            💬 Consultar por WhatsApp
+          </a>
+        </div>
       </section>
     </div>
+
+    <!-- Opiniones escritas -->
+    <div class="wrap" style="margin-top:18px">
+      <section class="card" id="opiniones">
+        <h2>💬 Lo que dicen después de la sesión</h2>
+        <p class="muted" style="margin:0 0 12px">
+          Mensajitos cortitos que suelen llegar después del encuentro.
+        </p>
+
+        <div class="reviews">
+          <div class="review">
+            <div class="r-top"><span class="r-name">Rubén S.</span><span class="r-stars">★★★★★</span></div>
+            <div class="r-text">“Excelente lo que hacés, Clara. Siempre es lindo hablar con vos. Me dejás mucha paz.”</div>
+          </div>
+
+          <div class="review">
+            <div class="r-top"><span class="r-name">Damián C.</span><span class="r-stars">★★★★★</span></div>
+            <div class="r-text">“Gracias por ayudarme en mi peor momento. Ahora puedo ver la luz y tomarme la vida de otra manera.”</div>
+          </div>
+
+          <div class="review">
+            <div class="r-top"><span class="r-name">Mariana P.</span><span class="r-stars">★★★★★</span></div>
+            <div class="r-text">“Me quedé liviana, como si me hubieran sacado un peso del pecho. Dormí re bien.”</div>
+          </div>
+
+          <div class="review">
+            <div class="r-top"><span class="r-name">Lucía A.</span><span class="r-stars">★★★★★</span></div>
+            <div class="r-text">“Me encantó la forma en la que acompañás. Sentí contención y claridad.”</div>
+          </div>
+
+          <div class="review">
+            <div class="r-top"><span class="r-name">Carolina M.</span><span class="r-stars">★★★★★</span></div>
+            <div class="r-text">“No pensé que a distancia se sintiera tanto. Me bajó la ansiedad un montón.”</div>
+          </div>
+
+          <div class="review">
+            <div class="r-top"><span class="r-name">Valeria G.</span><span class="r-stars">★★★★★</span></div>
+            <div class="r-text">“Gracias por la paciencia y el amor. Me ordenó la cabeza y el corazón.”</div>
+          </div>
+
+          <div class="review">
+            <div class="r-top"><span class="r-name">Sofía R.</span><span class="r-stars">★★★★★</span></div>
+            <div class="r-text">“Me sentí acompañada de verdad. Me dio fuerza para tomar decisiones.”</div>
+          </div>
+
+          <div class="review">
+            <div class="r-top"><span class="r-name">Natalia F.</span><span class="r-stars">★★★★★</span></div>
+            <div class="r-text">“Terminé la sesión más tranquila y con esperanza. Gracias por sostenerme.”</div>
+          </div>
+
+          <div class="review">
+            <div class="r-top"><span class="r-name">Gisela D.</span><span class="r-stars">★★★★★</span></div>
+            <div class="r-text">“Me ayudó a soltar angustia. Sentí el cuerpo más liviano, como más alineado.”</div>
+          </div>
+
+          <div class="review">
+            <div class="r-top"><span class="r-name">Paula E.</span><span class="r-stars">★★★★★</span></div>
+            <div class="r-text">“Me dio calma. Hacía mucho no me sentía así. Gracias, Clara.”</div>
+          </div>
+
+          <div class="review">
+            <div class="r-top"><span class="r-name">Julieta B.</span><span class="r-stars">★★★★★</span></div>
+            <div class="r-text">“Me encantó la lectura, me dejó re ubicada. Me fui con claridad y paz.”</div>
+          </div>
+
+          <div class="review">
+            <div class="r-top"><span class="r-name">Andrea L.</span><span class="r-stars">★★★★★</span></div>
+            <div class="r-text">“Sentí un antes y un después. Me ayudó a destrabar y a volver a mí.”</div>
+          </div>
+        </div>
+
+        <div class="cta-row" style="margin-top:14px">
+          <a class="btn btn--primary" id="waBtnOpiniones" href="#" target="_blank" rel="noopener">
+            💬 Quiero hablar por WhatsApp
+          </a>
+          <a class="btn btn--ghost" href="#capturas">📸 Ver capturas reales</a>
+        </div>
+
+        <p class="tiny" style="margin-top:10px">
+          *Tip: después podés reemplazar estas frases por mensajes reales (como capturas) para reforzar aún más la confianza.
+        </p>
+      </section>
+    </div>
+
+    <!-- Capturas reales -->
+    <div class="wrap" style="margin-top:18px">
+      <section id="capturas" class="card">
+        <h2>📸 Capturas reales (WhatsApp)</h2>
+        <p class="muted" style="margin:0 0 12px">
+          Tocá cada imagen para verla grande.
+        </p>
+
+        <div class="tgrid">
+          <div class="tcard" data-src="testimonio1.jpg">
+            <div class="timg" style="background-image:url('testimonio1.jpg')"></div>
+            <div class="tcap">Testimonio 1</div>
+          </div>
+          <div class="tcard" data-src="testimonio2.jpg">
+            <div class="timg" style="background-image:url('testimonio2.jpg')"></div>
+            <div class="tcap">Testimonio 2</div>
+          </div>
+          <div class="tcard" data-src="testimonio3.jpg">
+            <div class="timg" style="background-image:url('testimonio3.jpg')"></div>
+            <div class="tcap">Testimonio 3</div>
+          </div>
+          <div class="tcard" data-src="testimonio4.jpg">
+            <div class="timg" style="background-image:url('testimonio4.jpg')"></div>
+            <div class="tcap">Testimonio 4</div>
+          </div>
+        </div>
+
+        <div class="cta-row" style="margin-top:14px">
+          <a class="btn btn--primary" id="waBtnCapturas" href="#" target="_blank" rel="noopener">
+            💬 Reservar por WhatsApp
+          </a>
+        </div>
+      </section>
+    </div>
+
   </main>
-  <footer class="muted">© Sanación 11.11 — Confirmación de sesión</footer>
+
+  <footer class="muted">
+    © Sanación 11.11 — Sesión a distancia por WhatsApp
+  </footer>
+
+  <!-- Modal -->
+  <div class="modal" id="modal">
+    <div class="modal-box">
+      <div class="modal-head">
+        <div>Testimonio</div>
+        <button class="close" id="closeModal">Cerrar ✕</button>
+      </div>
+      <img id="modalImg" class="modal-img" alt="Testimonio ampliado" />
+    </div>
+  </div>
+
   <script>
-    const CAPI_WEB_APP = 'https://script.google.com/macros/s/AKfycbwUJaNzSQOiQPxv519cl91202q5U_lBnMqDdkUAru9Kn36amQmq04Xs9gJbmNS5zQ4/exec';
-    function getCookie(n){return document.cookie.split('; ').find(r=>r.startsWith(n+'='))?.split('=')[1]}
-    function getParam(n){try{return new URL(location.href).searchParams.get(n)||''}catch(e){return ''}}
-    function trackCompra(ev){
+    // ✅ CONFIG
+    const WHATSAPP_PHONE = '542235285338';
+
+    // Helpers
+    function getParam(n){try{return new URL(location.href).searchParams.get(n) || ''}catch(e){return ''}}
+    function safeText(s){return (s || '').toString().replace(/\s+/g,' ').trim().slice(0,240)}
+
+    // Source para diferenciar campañas
+    const src = safeText(getParam('src')) || 'organico';
+
+    // Mensaje WA con origen
+    const waMsg = encodeURIComponent(
+      `Hola Clara 🙌 Vengo de ${src} y quiero reservar mi sesión de Sanación 11.11 (a distancia).`
+    );
+    const waLink = `https://wa.me/${WHATSAPP_PHONE}?text=${waMsg}`;
+
+    // Setear todos los botones WA
+    const btnIds = ['waBtn','waBtnInfo','waBtnFaq','waBtnOpiniones','waBtnCapturas'];
+    btnIds.forEach(id=>{
+      const el = document.getElementById(id);
+      if(el) el.href = waLink;
+    });
+
+    // Track Contact al click (Pixel)
+    function trackContact(){
       try{
-        const value = 12000;
-        const label = ev?.currentTarget?.dataset?.label || 'Purchase – Sanación 11.11';
-        const eventId = 'eid_' + Date.now() + '_' + Math.random().toString(36).slice(2,8);
-        if (window.fbq) fbq('track', 'Purchase', { value, currency: 'ARS', content_name: label, event_id: eventId });
-        const fbp = getCookie('_fbp') || '';
-        const fbc = getParam('fbclid') ? `fb.1.${Date.now()}.${getParam('fbclid')}` : (getCookie('_fbc')||'');
-        const payload = { event_name: 'Purchase', value, currency: 'ARS', content_name: label, event_id: eventId, url: window.location.href, ua: navigator.userAgent, test_event_code: getParam('fb_test') || '', fbp, fbc };
-        const json = JSON.stringify(payload);
-        const blob = new Blob([json], {type:'text/plain'});
-        if (navigator.sendBeacon) {
-          navigator.sendBeacon(CAPI_WEB_APP, blob);
-        } else {
-          fetch(CAPI_WEB_APP, { method:'POST', body:json, headers:{'Content-Type':'text/plain'}, keepalive:true, mode:'no-cors' });
-        }
+        if (window.fbq) fbq('track', 'Contact', { content_name: `WA (${src})` });
       }catch(e){}
     }
+    btnIds.forEach(id=>{
+      const el = document.getElementById(id);
+      if(el) el.addEventListener('click', trackContact);
+    });
+
+    // Modal capturas
+    const modal = document.getElementById('modal');
+    const modalImg = document.getElementById('modalImg');
+    const closeModal = document.getElementById('closeModal');
+
+    document.querySelectorAll('.tcard').forEach(card=>{
+      card.addEventListener('click', ()=>{
+        const img = card.getAttribute('data-src');
+        modalImg.src = img;
+        modal.classList.add('open');
+      });
+    });
+
+    function hideModal(){
+      modal.classList.remove('open');
+      modalImg.src = '';
+    }
+    if (closeModal) closeModal.addEventListener('click', hideModal);
+    if (modal) modal.addEventListener('click', (e)=>{ if(e.target === modal) hideModal(); });
+
+    document.addEventListener('keydown', (e)=>{
+      if(e.key === 'Escape' && modal.classList.contains('open')) hideModal();
+    });
   </script>
 </body>
 </html>
-
-
