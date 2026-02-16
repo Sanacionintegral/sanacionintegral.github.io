@@ -4,11 +4,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sanación 11.11 – Sesiones a distancia por WhatsApp</title>
-  <meta name="description" content="Sesiones a distancia por WhatsApp. Cruz de Ankh, Péndulo Karnak, Biodecodificación y Lectura Evolutiva. Acompañamiento amoroso y confidencial." />
+  <meta name="description" content="Sesiones a distancia por WhatsApp. Cruz de Ankh, Péndulo Karnak, Biodecodificación, Mesa Cuántica y Lectura Evolutiva. Acompañamiento amoroso y confidencial." />
 
   <!-- Open Graph -->
   <meta property="og:title" content="Sanación 11.11 – Sesiones a distancia" />
-  <meta property="og:description" content="Acompañamiento amoroso y confidencial por WhatsApp. Cruz de Ankh, Karnak, Biodecodificación y Lectura Evolutiva." />
+  <meta property="og:description" content="Acompañamiento amoroso y confidencial por WhatsApp. Cruz de Ankh, Karnak, Biodecodificación, Mesa Cuántica y Lectura Evolutiva." />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="Portadalandig.png" />
 
@@ -97,14 +97,11 @@
 
     /* Cómo funciona */
     .steps{
-      display:grid;
-      gap:12px;
+      display:grid; gap:12px;
       grid-template-columns:repeat(1,minmax(0,1fr));
       margin-top:12px;
     }
-    @media(min-width:900px){
-      .steps{grid-template-columns:repeat(3,minmax(0,1fr))}
-    }
+    @media(min-width:900px){.steps{grid-template-columns:repeat(3,minmax(0,1fr))}}
     .step{
       border:1px solid rgba(255,255,255,.12);
       background:rgba(255,255,255,.04);
@@ -115,13 +112,10 @@
 
     /* Reviews texto */
     .reviews{
-      display:grid;
-      gap:12px;
+      display:grid; gap:12px;
       grid-template-columns:repeat(1,minmax(0,1fr));
     }
-    @media(min-width:900px){
-      .reviews{grid-template-columns:repeat(2,minmax(0,1fr))}
-    }
+    @media(min-width:900px){.reviews{grid-template-columns:repeat(2,minmax(0,1fr))}}
     .review{
       border:1px solid rgba(255,255,255,.12);
       background:rgba(255,255,255,.04);
@@ -133,14 +127,13 @@
     .r-stars{color:#ffd66e;font-weight:900;letter-spacing:.06em}
     .r-text{opacity:.92}
 
-    /* Capturas reales */
+    /* Grillas de imágenes (testimonios y valores) */
     .tgrid{
       display:grid; gap:12px;
       grid-template-columns:repeat(2, minmax(0,1fr));
     }
-    @media(min-width:900px){
-      .tgrid{grid-template-columns:repeat(4, minmax(0,1fr))}
-    }
+    @media(min-width:900px){.tgrid{grid-template-columns:repeat(4, minmax(0,1fr))}}
+
     .tcard{
       border:1px solid rgba(255,255,255,.12);
       background:rgba(255,255,255,.04);
@@ -208,10 +201,7 @@
     }
 
     /* Tabla de precios */
-    .prices{
-      display:grid; gap:10px;
-      margin-top:12px;
-    }
+    .prices{display:grid; gap:10px; margin-top:12px;}
     .price-row{
       display:flex; justify-content:space-between; align-items:center; gap:12px;
       padding:12px 12px;
@@ -221,10 +211,7 @@
       font-weight:900;
     }
     .price-row span{opacity:.95}
-    .price{
-      color:#ffe49a;
-      white-space:nowrap;
-    }
+    .price{color:#ffe49a; white-space:nowrap;}
 
     /* Instagram */
     .ig{
@@ -236,12 +223,9 @@
       margin-top:12px;
       font-weight:900;
     }
-    .ig a{
-      text-decoration:none;
-      color:#ffe49a;
-    }
+    .ig a{text-decoration:none;color:#ffe49a;}
 
-    /* WhatsApp flotante */
+    /* WhatsApp flotante (Martín) */
     .wa-float{
       position:fixed;
       right:16px;
@@ -260,14 +244,8 @@
       border:1px solid rgba(255,255,255,.18);
     }
     .wa-float:hover{background:var(--brand-hover)}
-    .wa-float small{
-      display:none;
-      font-weight:900;
-      opacity:.85;
-    }
-    @media(min-width:900px){
-      .wa-float small{display:inline}
-    }
+    .wa-float small{display:none;font-weight:900;opacity:.85;}
+    @media(min-width:900px){.wa-float small{display:inline}}
 
     footer{padding:24px 18px 60px; text-align:center; color:#cbb8ff; opacity:.85}
     .tiny{font-size:12px; opacity:.78}
@@ -290,9 +268,9 @@
 </head>
 
 <body>
-  <!-- WhatsApp flotante -->
-  <a id="waFloat" class="wa-float" href="#" target="_blank" rel="noopener">
-    💬 WhatsApp <small>Reservar sesión</small>
+  <!-- WhatsApp flotante (Martín) -->
+  <a id="waFloatMartin" class="wa-float" href="#" target="_blank" rel="noopener">
+    📅 Turno <small>con Martín</small>
   </a>
 
   <header>
@@ -311,12 +289,16 @@
         <div class="badge2">Cupos semanales limitados • Respuesta rápida</div>
 
         <div class="cta-row">
-          <a id="waBtn" class="btn btn--primary" href="#" target="_blank" rel="noopener">
-            💬 Reservar por WhatsApp
+          <a id="waMartinHero" class="btn btn--primary" href="#" target="_blank" rel="noopener">
+            📅 Sacar turno (Martín)
+          </a>
+          <a id="waClaraHero" class="btn btn--ghost" href="#" target="_blank" rel="noopener">
+            💬 Hablar con Clara
           </a>
           <a class="btn btn--ghost" href="#como">🧩 Cómo funciona</a>
           <a class="btn btn--ghost" href="#servicios">✨ Servicios</a>
           <a class="btn btn--ghost" href="#opiniones">⭐ Opiniones</a>
+          <a class="btn btn--ghost" href="#valoresimg">💳 Valores en imágenes</a>
         </div>
 
         <div class="ig">
@@ -340,22 +322,25 @@
         <h2>🧩 Cómo funciona (simple y claro)</h2>
         <div class="steps">
           <div class="step">
-            <b>1) Me escribís</b><br/>
-            Tocás el botón de WhatsApp y me contás en pocas palabras cómo te sentís y qué te gustaría trabajar.
+            <b>1) Escribís</b><br/>
+            Podés sacar turno con Martín o hablar con Clara para despejar dudas.
           </div>
           <div class="step">
             <b>2) Coordinamos</b><br/>
-            Elegimos el servicio y acordamos un horario. Todo es a distancia por llamada de WhatsApp.
+            Elegimos el servicio y acordamos un horario. Todo es a distancia por WhatsApp.
           </div>
           <div class="step">
-            <b>3) Hacemos la sesión</b><br/>
-            Te acompaño con respeto y calidez. No se fuerza nada: vamos a tu ritmo.
+            <b>3) Sesión</b><br/>
+            Acompañamiento amoroso y confidencial. Vamos a tu ritmo.
           </div>
         </div>
 
         <div class="cta-row" style="margin-top:14px">
-          <a class="btn btn--primary" id="waBtnComo" href="#" target="_blank" rel="noopener">
-            💬 Quiero reservar por WhatsApp
+          <a class="btn btn--primary" id="waMartinComo" href="#" target="_blank" rel="noopener">
+            📅 Sacar turno (Martín)
+          </a>
+          <a class="btn btn--ghost" id="waClaraComo" href="#" target="_blank" rel="noopener">
+            💬 Hablar con Clara
           </a>
         </div>
       </section>
@@ -393,17 +378,24 @@
           <li>Te acompaña a tomar decisiones con más claridad y serenidad.</li>
         </ul>
 
+        <h3>🌌 Mesa Cuántica</h3>
+        <ul class="list">
+          <li>Armonización profunda para recuperar equilibrio y calma.</li>
+          <li>Apoya limpieza emocional y desbloqueos.</li>
+          <li>Ideal si sentís saturación o estrés.</li>
+        </ul>
+
         <h3>🪞 Lectura evolutiva (no tarot)</h3>
         <ul class="list">
-          <li>Lectura orientada a tu proceso actual: lo que necesitás ver y comprender.</li>
+          <li>Lectura orientada a tu proceso actual.</li>
           <li>Guía para elegir próximos pasos con más conciencia.</li>
-          <li>Ideal si estás en dudas, cambios o decisiones importantes.</li>
+          <li>Ideal si estás en cambios o decisiones importantes.</li>
         </ul>
 
         <h3>🏠 Limpieza de hogares o espacios</h3>
         <ul class="list">
-          <li>Armonización energética del hogar/espacio (consultar según el caso).</li>
-          <li>Ideal para ambientes cargados, insomnio o sensación “pesada”.</li>
+          <li>Armonización energética del hogar/espacio (consultar).</li>
+          <li>Ideal para ambientes cargados o sensación “pesada”.</li>
         </ul>
       </section>
 
@@ -414,21 +406,79 @@
           <div class="price-row"><span>Péndulo Karnak</span><span class="price">$ 25.000</span></div>
           <div class="price-row"><span>Sesión completa (ambas)</span><span class="price">$ 48.000</span></div>
           <div class="price-row"><span>Biodecodificación</span><span class="price">$ 30.000</span></div>
-          <div class="price-row"><span>Mesa Cuantica</span><span class="price">$ 30.000</span></div>
+          <div class="price-row"><span>Mesa Cuántica</span><span class="price">$ 30.000</span></div>
           <div class="price-row"><span>Cruz de Ankh</span><span class="price">$ 25.000</span></div>
-          <div class="price-row"><span>Sesión Sanacion Integra Incluye: Lectura Evolutiva - Pendulo Karnak - Cruz de Ankh- Mesa Cuantica</span><span class="price">$ 80.000</span></div>
+          <div class="price-row"><span>Sesión Sanación Integral (incluye todo)</span><span class="price">$ 80.000</span></div>
           <div class="price-row"><span>Limpieza de hogares/espacios</span><span class="price">Consultar</span></div>
         </div>
 
         <h2 style="margin-top:18px">Preguntas frecuentes</h2>
-        <details open><summary>¿Cómo reservo?</summary><p>Hacés clic en WhatsApp y coordinamos el mejor horario.</p></details>
+        <details open><summary>¿Cómo reservo?</summary><p>Podés sacar turno con Martín o hablar con Clara para despejar dudas.</p></details>
         <details><summary>¿Necesito estar presente físicamente?</summary><p>No, es 100% a distancia por llamada de WhatsApp.</p></details>
         <details><summary>¿Cuánto dura?</summary><p>En general entre 45 y 60 minutos, según el trabajo del día.</p></details>
-        <details><summary>¿Cada cuánto conviene hacerlo?</summary><p>Depende del proceso: algunas personas semanal, otras cada 15 días o una vez al mes.</p></details>
 
         <div class="cta-row" style="margin-top:14px">
-          <a class="btn btn--primary" id="waBtnInfo" href="#" target="_blank" rel="noopener">
-            💬 Consultar por WhatsApp
+          <a class="btn btn--primary" id="waMartinInfo" href="#" target="_blank" rel="noopener">
+            📅 Sacar turno (Martín)
+          </a>
+          <a class="btn btn--ghost" id="waClaraInfo" href="#" target="_blank" rel="noopener">
+            💬 Hablar con Clara
+          </a>
+        </div>
+      </section>
+    </div>
+
+    <!-- Valores en imágenes -->
+    <div class="wrap" style="margin-top:18px">
+      <section id="valoresimg" class="card">
+        <h2>💳 Valores en imágenes</h2>
+        <p class="muted" style="margin:0 0 12px">
+          Tocá cada imagen para verla grande. Para cambiar precios, reemplazás la imagen en GitHub con el mismo nombre.
+        </p>
+
+        <div class="tgrid">
+          <div class="tcard" data-src="biodecodificacion.jpeg">
+            <img class="timgimg" src="biodecodificacion.jpeg" alt="Biodecodificación">
+            <div class="tcap">Biodecodificación</div>
+          </div>
+
+          <div class="tcard" data-src="sesion-sanadora.jpeg">
+            <img class="timgimg" src="sesion-sanadora.jpeg" alt="Sesión Sanadora">
+            <div class="tcap">Sesión Sanadora</div>
+          </div>
+
+          <div class="tcard" data-src="pendulo-karnak-y-cruz-de-ankn.jpeg">
+            <img class="timgimg" src="pendulo-karnak-y-cruz-de-ankn.jpeg" alt="Péndulo Karnak y Cruz de Ankh">
+            <div class="tcap">Karnak + Cruz de Ankh</div>
+          </div>
+
+          <div class="tcard" data-src="sesion-holistica.jpeg">
+            <img class="timgimg" src="sesion-holistica.jpeg" alt="Sesión Holística">
+            <div class="tcap">Sesión Holística</div>
+          </div>
+
+          <div class="tcard" data-src="pendulo-karnak.jpeg">
+            <img class="timgimg" src="pendulo-karnak.jpeg" alt="Péndulo Karnak">
+            <div class="tcap">Péndulo Karnak</div>
+          </div>
+
+          <div class="tcard" data-src="mesa-cuantica.jpeg">
+            <img class="timgimg" src="mesa-cuantica.jpeg" alt="Mesa Cuántica">
+            <div class="tcap">Mesa Cuántica</div>
+          </div>
+
+          <div class="tcard" data-src="lectura.jpeg">
+            <img class="timgimg" src="lectura.jpeg" alt="Lectura Evolutiva">
+            <div class="tcap">Lectura Evolutiva</div>
+          </div>
+        </div>
+
+        <div class="cta-row" style="margin-top:14px">
+          <a class="btn btn--primary" id="waMartinValoresImg" href="#" target="_blank" rel="noopener">
+            📅 Sacar turno (Martín)
+          </a>
+          <a class="btn btn--ghost" id="waClaraValoresImg" href="#" target="_blank" rel="noopener">
+            💬 Hablar con Clara
           </a>
         </div>
       </section>
@@ -438,64 +488,23 @@
     <div class="wrap" style="margin-top:18px">
       <section class="card" id="opiniones">
         <h2>💬 Lo que dicen después de la sesión</h2>
-        <p class="muted" style="margin:0 0 12px">
-          Mensajitos cortitos que suelen llegar después del encuentro.
-        </p>
+        <p class="muted" style="margin:0 0 12px">Mensajitos cortitos que suelen llegar después del encuentro.</p>
 
         <div class="reviews">
-          <div class="review">
-            <div class="r-top"><span class="r-name">Rubén S.</span><span class="r-stars">★★★★★</span></div>
-            <div class="r-text">“Excelente lo que hacés, Clara. Siempre es lindo hablar con vos. Me dejás mucha paz.”</div>
-          </div>
-          <div class="review">
-            <div class="r-top"><span class="r-name">Damián C.</span><span class="r-stars">★★★★★</span></div>
-            <div class="r-text">“Gracias por ayudarme en mi peor momento. Ahora puedo ver la luz y tomarme la vida de otra manera.”</div>
-          </div>
-          <div class="review">
-            <div class="r-top"><span class="r-name">Mariana P.</span><span class="r-stars">★★★★★</span></div>
-            <div class="r-text">“Me quedé liviana, como si me hubieran sacado un peso del pecho. Dormí re bien.”</div>
-          </div>
-          <div class="review">
-            <div class="r-top"><span class="r-name">Lucía A.</span><span class="r-stars">★★★★★</span></div>
-            <div class="r-text">“Me encantó la forma en la que acompañás. Sentí contención y claridad.”</div>
-          </div>
-          <div class="review">
-            <div class="r-top"><span class="r-name">Carolina M.</span><span class="r-stars">★★★★★</span></div>
-            <div class="r-text">“No pensé que a distancia se sintiera tanto. Me bajó la ansiedad un montón.”</div>
-          </div>
-          <div class="review">
-            <div class="r-top"><span class="r-name">Valeria G.</span><span class="r-stars">★★★★★</span></div>
-            <div class="r-text">“Gracias por la paciencia y el amor. Me ordenó la cabeza y el corazón.”</div>
-          </div>
-          <div class="review">
-            <div class="r-top"><span class="r-name">Sofía R.</span><span class="r-stars">★★★★★</span></div>
-            <div class="r-text">“Me sentí acompañada de verdad. Me dio fuerza para tomar decisiones.”</div>
-          </div>
-          <div class="review">
-            <div class="r-top"><span class="r-name">Natalia F.</span><span class="r-stars">★★★★★</span></div>
-            <div class="r-text">“Terminé la sesión más tranquila y con esperanza. Gracias por sostenerme.”</div>
-          </div>
-          <div class="review">
-            <div class="r-top"><span class="r-name">Gisela D.</span><span class="r-stars">★★★★★</span></div>
-            <div class="r-text">“Me ayudó a soltar angustia. Sentí el cuerpo más liviano, como más alineado.”</div>
-          </div>
-          <div class="review">
-            <div class="r-top"><span class="r-name">Paula E.</span><span class="r-stars">★★★★★</span></div>
-            <div class="r-text">“Me dio calma. Hacía mucho no me sentía así. Gracias, Clara.”</div>
-          </div>
-          <div class="review">
-            <div class="r-top"><span class="r-name">Julieta B.</span><span class="r-stars">★★★★★</span></div>
-            <div class="r-text">“Me fui con claridad y paz. Una experiencia hermosa.”</div>
-          </div>
-          <div class="review">
-            <div class="r-top"><span class="r-name">Andrea L.</span><span class="r-stars">★★★★★</span></div>
-            <div class="r-text">“Sentí un antes y un después. Me ayudó a destrabar y a volver a mí.”</div>
-          </div>
+          <div class="review"><div class="r-top"><span class="r-name">Rubén S.</span><span class="r-stars">★★★★★</span></div><div class="r-text">“Excelente lo que hacés, Clara. Siempre es lindo hablar con vos. Me dejás mucha paz.”</div></div>
+          <div class="review"><div class="r-top"><span class="r-name">Damián C.</span><span class="r-stars">★★★★★</span></div><div class="r-text">“Gracias por ayudarme en mi peor momento. Ahora puedo ver la luz y tomarme la vida de otra manera.”</div></div>
+          <div class="review"><div class="r-top"><span class="r-name">Mariana P.</span><span class="r-stars">★★★★★</span></div><div class="r-text">“Me quedé liviana, como si me hubieran sacado un peso del pecho. Dormí re bien.”</div></div>
+          <div class="review"><div class="r-top"><span class="r-name">Lucía A.</span><span class="r-stars">★★★★★</span></div><div class="r-text">“Me encantó la forma en la que acompañás. Sentí contención y claridad.”</div></div>
+          <div class="review"><div class="r-top"><span class="r-name">Carolina M.</span><span class="r-stars">★★★★★</span></div><div class="r-text">“No pensé que a distancia se sintiera tanto. Me bajó la ansiedad un montón.”</div></div>
+          <div class="review"><div class="r-top"><span class="r-name">Valeria G.</span><span class="r-stars">★★★★★</span></div><div class="r-text">“Gracias por la paciencia y el amor. Me ordenó la cabeza y el corazón.”</div></div>
         </div>
 
         <div class="cta-row" style="margin-top:14px">
-          <a class="btn btn--primary" id="waBtnOpiniones" href="#" target="_blank" rel="noopener">
-            💬 Quiero reservar por WhatsApp
+          <a class="btn btn--primary" id="waMartinOpiniones" href="#" target="_blank" rel="noopener">
+            📅 Sacar turno (Martín)
+          </a>
+          <a class="btn btn--ghost" id="waClaraOpiniones" href="#" target="_blank" rel="noopener">
+            💬 Hablar con Clara
           </a>
           <a class="btn btn--ghost" href="#capturas">📸 Ver capturas</a>
         </div>
@@ -506,32 +515,21 @@
     <div class="wrap" style="margin-top:18px">
       <section id="capturas" class="card">
         <h2>📸 Capturas reales (WhatsApp)</h2>
-        <p class="muted" style="margin:0 0 12px">
-          Tocá cada imagen para verla grande.
-        </p>
+        <p class="muted" style="margin:0 0 12px">Tocá cada imagen para verla grande.</p>
 
         <div class="tgrid">
-          <div class="tcard" data-src="testimonio1.jpeg">
-            <img class="timgimg" src="testimonio1.jpeg" alt="Testimonio 1">
-            <div class="tcap">Testimonio 1</div>
-          </div>
-          <div class="tcard" data-src="testimonio2.jpeg">
-            <img class="timgimg" src="testimonio2.jpeg" alt="Testimonio 2">
-            <div class="tcap">Testimonio 2</div>
-          </div>
-          <div class="tcard" data-src="testimonio3.jpeg">
-            <img class="timgimg" src="testimonio3.jpeg" alt="Testimonio 3">
-            <div class="tcap">Testimonio 3</div>
-          </div>
-          <div class="tcard" data-src="testimonio4.jpeg">
-            <img class="timgimg" src="testimonio4.jpeg" alt="Testimonio 4">
-            <div class="tcap">Testimonio 4</div>
-          </div>
+          <div class="tcard" data-src="testimonio1.jpeg"><img class="timgimg" src="testimonio1.jpeg" alt="Testimonio 1"><div class="tcap">Testimonio 1</div></div>
+          <div class="tcard" data-src="testimonio2.jpeg"><img class="timgimg" src="testimonio2.jpeg" alt="Testimonio 2"><div class="tcap">Testimonio 2</div></div>
+          <div class="tcard" data-src="testimonio3.jpeg"><img class="timgimg" src="testimonio3.jpeg" alt="Testimonio 3"><div class="tcap">Testimonio 3</div></div>
+          <div class="tcard" data-src="testimonio4.jpeg"><img class="timgimg" src="testimonio4.jpeg" alt="Testimonio 4"><div class="tcap">Testimonio 4</div></div>
         </div>
 
         <div class="cta-row" style="margin-top:14px">
-          <a class="btn btn--primary" id="waBtnCapturas" href="#" target="_blank" rel="noopener">
-            💬 Reservar por WhatsApp
+          <a class="btn btn--primary" id="waMartinCapturas" href="#" target="_blank" rel="noopener">
+            📅 Sacar turno (Martín)
+          </a>
+          <a class="btn btn--ghost" id="waClaraCapturas" href="#" target="_blank" rel="noopener">
+            💬 Hablar con Clara
           </a>
         </div>
       </section>
@@ -539,46 +537,73 @@
 
   </main>
 
-  <footer class="muted">
-    © Sanación 11.11 — Sesiones a distancia por WhatsApp
-  </footer>
+  <footer class="muted">© Sanación 11.11 — Sesiones a distancia por WhatsApp</footer>
 
   <!-- Modal -->
   <div class="modal" id="modal">
     <div class="modal-box">
       <div class="modal-head">
-        <div>Testimonio</div>
+        <div>Imagen</div>
         <button class="close" id="closeModal">Cerrar ✕</button>
       </div>
-      <img id="modalImg" class="modal-img" alt="Testimonio ampliado" />
+      <img id="modalImg" class="modal-img" alt="Imagen ampliada" />
     </div>
   </div>
 
   <script>
-    // ✅ WhatsApp (mensaje único)
-    const WHATSAPP_PHONE = '542235285338';
-    const waMsg = encodeURIComponent('Hola Clara \uD83D\uDE4C\u2728, quiero reservar una sesión.');
-    const waLink = `https://wa.me/${WHATSAPP_PHONE}?text=${waMsg}`;
+    // ==========================
+    // 📲 WhatsApp (2 números)
+    // ==========================
+    const PHONE_MARTIN = '542235285338';   // Martín (el número que ya tenías)
+    const PHONE_CLARA  = '542235931151';   // Clara (2235931151)
 
-    // Botones WA
-    const btnIds = ['waBtn','waBtnComo','waBtnInfo','waBtnOpiniones','waBtnCapturas','waFloat'];
-    btnIds.forEach(id=>{
+    const msgMartin = encodeURIComponent('Hola Martín 🙌✨, quiero sacar un turno.');
+    const msgClara  = encodeURIComponent('Hola Clara 🙌✨, quiero reservar una sesión.');
+
+    const linkMartin = `https://wa.me/${PHONE_MARTIN}?text=${msgMartin}`;
+    const linkClara  = `https://wa.me/${PHONE_CLARA}?text=${msgClara}`;
+
+    // IDs para Martín
+    const martinIds = [
+      'waFloatMartin',
+      'waMartinHero','waMartinComo','waMartinInfo','waMartinValoresImg',
+      'waMartinOpiniones','waMartinCapturas'
+    ];
+
+    // IDs para Clara
+    const claraIds = [
+      'waClaraHero','waClaraComo','waClaraInfo','waClaraValoresImg',
+      'waClaraOpiniones','waClaraCapturas'
+    ];
+
+    martinIds.forEach(id=>{
       const el = document.getElementById(id);
-      if(el) el.href = waLink;
+      if(el) el.href = linkMartin;
     });
 
-    // Track Contact al click (Pixel)
-    function trackContact(){
-      try{
-        if (window.fbq) fbq('track', 'Contact', { content_name: 'WA - Reserva' });
-      }catch(e){}
+    claraIds.forEach(id=>{
+      const el = document.getElementById(id);
+      if(el) el.href = linkClara;
+    });
+
+    // Pixel track Contact separado
+    function trackContact(label){
+      try{ if (window.fbq) fbq('track', 'Contact', { content_name: label }); }catch(e){}
     }
-    btnIds.forEach(id=>{
+
+    martinIds.forEach(id=>{
       const el = document.getElementById(id);
-      if(el) el.addEventListener('click', trackContact);
+      if(el) el.addEventListener('click', ()=>trackContact('WA - Martin'));
     });
 
-    // Modal capturas
+    claraIds.forEach(id=>{
+      const el = document.getElementById(id);
+      if(el) el.addEventListener('click', ()=>trackContact('WA - Clara'));
+    });
+
+    // ==========================
+    // 🖼 Modal (para todas las .tcard)
+    // ==========================
     const modal = document.getElementById('modal');
     const modalImg = document.getElementById('modalImg');
     const closeModal = document.getElementById('closeModal');
@@ -586,6 +611,7 @@
     document.querySelectorAll('.tcard').forEach(card=>{
       card.addEventListener('click', ()=>{
         const img = card.getAttribute('data-src');
+        if(!img) return;
         modalImg.src = img;
         modal.classList.add('open');
       });
@@ -604,4 +630,5 @@
   </script>
 </body>
 </html>
+
 
