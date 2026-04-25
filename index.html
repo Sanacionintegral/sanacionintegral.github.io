@@ -3,632 +3,222 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sanación 11.11 – Sesiones a distancia por WhatsApp</title>
-  <meta name="description" content="Sesiones a distancia por WhatsApp. Cruz de Ankh, Péndulo Karnak, Biodecodificación, Mesa Cuántica y Lectura Evolutiva. Acompañamiento amoroso y confidencial." />
+  <title>Sanación 11.11 – Acompañamiento energético</title>
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="Sanación 11.11 – Sesiones a distancia" />
-  <meta property="og:description" content="Acompañamiento amoroso y confidencial por WhatsApp. Cruz de Ankh, Karnak, Biodecodificación, Mesa Cuántica y Lectura Evolutiva." />
+  <meta name="description" content="Acompañamiento energético a distancia por WhatsApp. Sesiones de armonización, lectura evolutiva y limpieza energética." />
+
+  <meta property="og:title" content="Sanación 11.11" />
+  <meta property="og:description" content="Acompañamiento energético a distancia por WhatsApp." />
   <meta property="og:type" content="website" />
-  <meta property="og:image" content="Portadalandig.png" />
+  <meta property="og:image" content="https://tudominio.com/Portadalandig.png" />
 
   <style>
     :root{
       --bg:#1f1333; --card:#2a1946; --soft:#3a2163; --text:#f5f5f5;
-      --muted:#d7baff; --brand:#25D366; --brand-hover:#1ebe5d; --accent:#ffd66e;
-      --border:rgba(214,186,255,.12);
+      --muted:#d7baff; --brand:#25D366; --brand-hover:#1ebe5d;
+      --accent:#ffd66e; --border:rgba(214,186,255,.12);
     }
+
     *{box-sizing:border-box}
+
     body{
-      margin:0; font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial;
+      margin:0; font-family:system-ui,-apple-system,Segoe UI,Roboto;
       background: radial-gradient(1200px 800px at 20% -10%, #3b2a69 0%, #1f1333 40%, #1b0f2e 100%);
-      color:var(--text); line-height:1.5;
+      color:var(--text);
+      line-height:1.5;
     }
-    a{color:inherit}
-    header{padding:26px 18px 0}
-    .wrap{max-width:1050px;margin:0 auto}
-    .hero{display:grid; gap:18px; align-items:center; padding:10px 0 22px}
+
+    .wrap{max-width:1050px;margin:auto;padding:0 18px}
+
+    /* HERO SIMPLIFICADO */
+    header{padding:30px 0 10px}
+
+    .hero{
+      display:grid;
+      gap:18px;
+      grid-template-columns:1fr;
+      align-items:center;
+    }
+
     @media(min-width:900px){.hero{grid-template-columns:1.1fr .9fr}}
-    .hero-img{
-      aspect-ratio: 1200 / 630; border-radius:16px; overflow:hidden;
-      border:1px solid var(--border); box-shadow:0 12px 40px rgba(0,0,0,.25);
-      background:center/cover no-repeat url('Portadalandig.png');
-      min-height:260px;
+
+    .hero-card{
+      padding:10px 0;
     }
-    .eyebrow{
-      color:var(--muted); font-weight:900; text-transform:uppercase;
-      font-size:12px; letter-spacing:.18em; margin-bottom:6px;
+
+    h1{font-size:clamp(28px,3vw,42px);margin:0}
+
+    .sub{opacity:.9;margin-top:10px}
+
+    .cta{
+      margin-top:18px;
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
     }
-    h1{margin:0 0 10px;font-size:clamp(26px,3.2vw,40px)}
-    .sub{color:#eee;opacity:.92;font-size:clamp(16px,2.2vw,18px);margin:0 0 14px}
-    .badge{
-      display:inline-flex;gap:8px;align-items:center;margin:8px 0 0;
-      background:rgba(255,214,110,.14); color:#ffe49a; border:1px solid rgba(255,214,110,.25);
-      padding:6px 10px;border-radius:999px;font-size:13px;font-weight:900
-    }
-    .badge2{
-      display:inline-flex;gap:8px;align-items:center;margin:10px 0 0;
-      background:rgba(37,211,102,.12); color:#b9ffd7; border:1px solid rgba(37,211,102,.20);
-      padding:6px 10px;border-radius:999px;font-size:13px;font-weight:900
-    }
-    .cta-row{display:flex; gap:10px; flex-wrap:wrap; margin-top:14px}
+
     .btn{
-      appearance:none;border:0;cursor:pointer;padding:14px 20px;border-radius:12px;
-      font-weight:900;font-size:16px;text-decoration:none;display:inline-flex;align-items:center;gap:10px
+      padding:14px 18px;
+      border-radius:12px;
+      font-weight:900;
+      text-decoration:none;
+      display:inline-flex;
+      gap:8px;
+      align-items:center;
     }
-    .btn--primary{background:var(--brand);color:#083c22}
-    .btn--primary:hover{background:var(--brand-hover)}
-    .btn--ghost{
-      background:rgba(255,255,255,.06);
-      border:1px solid rgba(255,255,255,.14);
-      color:#fff
+
+    .primary{background:var(--brand);color:#083c22}
+    .ghost{border:1px solid rgba(255,255,255,.15);color:#fff;background:rgba(255,255,255,.06)}
+
+    .hero-img{
+      border-radius:16px;
+      min-height:280px;
+      background:url('Portadalandig.png') center/cover;
+      border:1px solid var(--border);
     }
-    .btn--ghost:hover{background:rgba(255,255,255,.09)}
-    main{padding:0 18px 64px}
-    .grid{display:grid;gap:18px}
-    @media(min-width:900px){.grid{grid-template-columns:1.1fr .9fr}}
+
+    /* SECCIONES */
+    section{margin:26px 0}
 
     .card{
-      background:linear-gradient(180deg, var(--card), var(--soft));
-      border:1px solid var(--border); border-radius:18px; padding:22px 20px;
-      box-shadow:0 12px 40px rgba(0,0,0,.25)
-    }
-    h2{margin:0 0 10px;font-size:clamp(20px,2.6vw,28px)}
-    h3{margin:16px 0 10px;font-size:18px}
-    .list{margin:10px 0 0; padding:0; list-style:none}
-    .list li{margin:10px 0; padding-left:28px; position:relative}
-    .list li::before{content:"✨"; position:absolute; left:0; top:0}
-    .muted{opacity:.78}
-
-    .pill{
-      display:inline-flex;align-items:center;gap:8px;
-      padding:6px 10px;border-radius:999px;
-      border:1px solid rgba(255,255,255,.14);
-      background:rgba(255,255,255,.06);
-      font-weight:900;font-size:13px;
-      margin:6px 8px 0 0;
-    }
-
-    .faq details{
-      background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);
-      border-radius:12px; padding:12px 14px; margin:8px 0
-    }
-    .faq summary{cursor:pointer;font-weight:900}
-
-    /* Cómo funciona */
-    .steps{
-      display:grid; gap:12px;
-      grid-template-columns:repeat(1,minmax(0,1fr));
-      margin-top:12px;
-    }
-    @media(min-width:900px){.steps{grid-template-columns:repeat(3,minmax(0,1fr))}}
-    .step{
-      border:1px solid rgba(255,255,255,.12);
-      background:rgba(255,255,255,.04);
-      border-radius:14px;
-      padding:14px 14px;
-    }
-    .step b{color:#ffe49a}
-
-    /* Reviews texto */
-    .reviews{
-      display:grid; gap:12px;
-      grid-template-columns:repeat(1,minmax(0,1fr));
-    }
-    @media(min-width:900px){.reviews{grid-template-columns:repeat(2,minmax(0,1fr))}}
-    .review{
-      border:1px solid rgba(255,255,255,.12);
-      background:rgba(255,255,255,.04);
-      border-radius:14px;
-      padding:12px 12px;
-    }
-    .r-top{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:8px}
-    .r-name{font-weight:900;color:#f2e9ff}
-    .r-stars{color:#ffd66e;font-weight:900;letter-spacing:.06em}
-    .r-text{opacity:.92}
-
-    /* Grillas de imágenes (testimonios y valores) */
-    .tgrid{
-      display:grid; gap:12px;
-      grid-template-columns:repeat(2, minmax(0,1fr));
-    }
-    @media(min-width:900px){.tgrid{grid-template-columns:repeat(4, minmax(0,1fr))}}
-
-    .tcard{
-      border:1px solid rgba(255,255,255,.12);
-      background:rgba(255,255,255,.04);
-      border-radius:14px;
-      overflow:hidden;
-      cursor:pointer;
-      transition: transform .12s ease;
-    }
-    .tcard:hover{transform: translateY(-2px)}
-    .timgimg{
-      width:100%;
-      height:180px;
-      object-fit:cover;
-      display:block;
-      background:#0f0720;
-    }
-    .tcap{
-      padding:10px 10px 12px;
-      font-weight:900;
-      color:#f2e9ff;
-      font-size:13px;
-    }
-
-    /* Modal */
-    .modal{
-      position:fixed; inset:0;
-      display:none;
-      background:rgba(0,0,0,.70);
-      align-items:center; justify-content:center;
-      padding:18px;
-      z-index:9999;
-    }
-    .modal.open{display:flex}
-    .modal-box{
-      max-width:min(980px, 100%);
-      width:100%;
-      background:rgba(20,10,35,.92);
-      border:1px solid rgba(255,255,255,.14);
+      background:linear-gradient(180deg,var(--card),var(--soft));
+      border:1px solid var(--border);
       border-radius:16px;
-      overflow:hidden;
-      box-shadow:0 18px 60px rgba(0,0,0,.55);
-    }
-    .modal-head{
-      display:flex; align-items:center; justify-content:space-between;
-      padding:12px 14px;
-      border-bottom:1px solid rgba(255,255,255,.10);
-      color:#fff;
-      font-weight:900;
-    }
-    .close{
-      cursor:pointer;
-      border:1px solid rgba(255,255,255,.18);
-      background:rgba(255,255,255,.06);
-      color:#fff;
-      border-radius:10px;
-      padding:8px 10px;
-      font-weight:900;
-    }
-    .modal-img{
-      width:100%;
-      display:block;
-      max-height:80vh;
-      object-fit:contain;
-      background:#0f0720;
+      padding:20px;
     }
 
-    /* Tabla de precios */
-    .prices{display:grid; gap:10px; margin-top:12px;}
-    .price-row{
-      display:flex; justify-content:space-between; align-items:center; gap:12px;
-      padding:12px 12px;
+    h2{margin:0 0 12px;font-size:22px}
+
+    /* BENEFICIOS */
+    .grid{
+      display:grid;
+      gap:12px;
+    }
+
+    @media(min-width:900px){.grid{grid-template-columns:repeat(3,1fr)}}
+
+    .item{
+      padding:14px;
       border-radius:14px;
-      border:1px solid rgba(255,255,255,.12);
+      border:1px solid rgba(255,255,255,.1);
       background:rgba(255,255,255,.04);
-      font-weight:900;
     }
-    .price-row span{opacity:.95}
-    .price{color:#ffe49a; white-space:nowrap;}
 
-    /* Instagram */
-    .ig{
-      display:flex; align-items:center; justify-content:space-between; gap:12px;
-      border:1px solid rgba(255,255,255,.12);
-      background:rgba(255,255,255,.04);
-      border-radius:14px;
-      padding:12px 12px;
-      margin-top:12px;
-      font-weight:900;
+    /* SERVICIOS LISTA LIMPIA */
+    .service{
+      margin:10px 0;
+      padding:10px 0;
+      border-bottom:1px solid rgba(255,255,255,.08);
     }
-    .ig a{text-decoration:none;color:#ffe49a;}
 
-    /* WhatsApp flotante (Martín) */
-    .wa-float{
-      position:fixed;
-      right:16px;
-      bottom:16px;
-      z-index:9998;
-      display:inline-flex;
-      align-items:center;
+    .service:last-child{border:none}
+
+    /* TESTIMONIOS */
+    .reviews{
+      display:grid;
       gap:10px;
-      padding:12px 14px;
-      border-radius:999px;
-      background:var(--brand);
-      color:#083c22;
-      text-decoration:none;
-      font-weight:950;
-      box-shadow:0 14px 40px rgba(0,0,0,.35);
-      border:1px solid rgba(255,255,255,.18);
     }
-    .wa-float:hover{background:var(--brand-hover)}
-    .wa-float small{display:none;font-weight:900;opacity:.85;}
-    @media(min-width:900px){.wa-float small{display:inline}}
 
-    footer{padding:24px 18px 60px; text-align:center; color:#cbb8ff; opacity:.85}
-    .tiny{font-size:12px; opacity:.78}
+    @media(min-width:900px){.reviews{grid-template-columns:repeat(2,1fr)}}
+
+    .review{
+      padding:14px;
+      border-radius:14px;
+      background:rgba(255,255,255,.04);
+      border:1px solid rgba(255,255,255,.1);
+    }
+
+    .name{font-weight:900;color:#ffe49a}
+
+    /* PRECIOS LIMPIOS */
+    .price{
+      display:flex;
+      justify-content:space-between;
+      padding:10px 0;
+      border-bottom:1px solid rgba(255,255,255,.08);
+    }
+
+    .price:last-child{border:none}
+
+    .value{color:#ffe49a;font-weight:900}
+
+    /* CTA FINAL */
+    .final{
+      text-align:center;
+      padding:20px;
+    }
+
+    footer{opacity:.7;text-align:center;padding:30px 0;font-size:12px}
+
   </style>
-
-  <!-- Meta Pixel -->
-  <script>
-    !function(f,b,e,v,n,t,s){
-      if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-      n.queue=[];t=b.createElement(e);t.async=!0;
-      t.src=v;s=b.getElementsByTagName(e)[0];
-      s.parentNode.insertBefore(t,s)
-    }(window, document,'script','https://connect.facebook.net/en_US/fbevents.js');
-
-    fbq('init', '1800229220851364');
-    fbq('track', 'PageView');
-  </script>
 </head>
 
 <body>
-  <!-- WhatsApp flotante (Martín) -->
-  <a id="waFloatMartin" class="wa-float" href="#" target="_blank" rel="noopener">
-    📅 Turno <small>con Martín</small>
-  </a>
 
-  <header>
-    <div class="wrap hero">
-      <div>
-        <div class="eyebrow">Sanación 11.11 • Sesiones a distancia por WhatsApp</div>
-        <h1>Un espacio amoroso para <span style="color:var(--accent)">volver a vos</span></h1>
+<header class="wrap hero">
+  <div class="hero-card">
+    <h1>Sanación 11.11</h1>
+    <p class="sub">Acompañamiento energético a distancia por WhatsApp. Orden, limpieza y claridad emocional en procesos personales.</p>
 
-        <p class="sub">
-          Si estás atravesando ansiedad, angustia, cansancio emocional, bloqueos o un momento de confusión,
-          acá tenés un espacio cuidado para ser acompañada/o con respeto, calma y contención.
-          Vamos paso a paso, sin apuro, para que puedas recuperar claridad y equilibrio.
-        </p>
-
-        <div class="badge">Atención por WhatsApp • 100% a distancia</div>
-        <div class="badge2">Cupos semanales limitados • Respuesta rápida</div>
-
-        <div class="cta-row">
-          <a id="waMartinHero" class="btn btn--primary" href="#" target="_blank" rel="noopener">
-            📅 Sacar turno (Martín)
-          </a>
-          <a id="waClaraHero" class="btn btn--ghost" href="#" target="_blank" rel="noopener">
-            💬 Hablar con Clara
-          </a>
-          <a class="btn btn--ghost" href="#como">🧩 Cómo funciona</a>
-          <a class="btn btn--ghost" href="#servicios">✨ Servicios</a>
-          <a class="btn btn--ghost" href="#opiniones">⭐ Opiniones</a>
-          <a class="btn btn--ghost" href="#valoresimg">💳 Valores en imágenes</a>
-        </div>
-
-        <div class="ig">
-          <span>📍 Instagram:</span>
-          <a href="https://www.instagram.com/sanacion11.11/" target="_blank" rel="noopener">@sanacion11.11</a>
-        </div>
-
-        <p class="tiny" style="margin-top:12px">
-          *Acompañamiento energético. No reemplaza tratamiento médico/psicológico.
-        </p>
-      </div>
-
-      <div class="hero-img" role="img" aria-label="Sanación 11.11 – Portada"></div>
-    </div>
-  </header>
-
-  <main>
-    <!-- Cómo funciona -->
-    <div class="wrap" style="margin-top:18px">
-      <section class="card" id="como">
-        <h2>🧩 Cómo funciona (simple y claro)</h2>
-        <div class="steps">
-          <div class="step">
-            <b>1) Escribís</b><br/>
-            Podés sacar turno con Martín o hablar con Clara para despejar dudas.
-          </div>
-          <div class="step">
-            <b>2) Coordinamos</b><br/>
-            Elegimos el servicio y acordamos un horario. Todo es a distancia por WhatsApp.
-          </div>
-          <div class="step">
-            <b>3) Sesión</b><br/>
-            Acompañamiento amoroso y confidencial. Vamos a tu ritmo.
-          </div>
-        </div>
-
-        <div class="cta-row" style="margin-top:14px">
-          <a class="btn btn--primary" id="waMartinComo" href="#" target="_blank" rel="noopener">
-            📅 Sacar turno (Martín)
-          </a>
-          <a class="btn btn--ghost" id="waClaraComo" href="#" target="_blank" rel="noopener">
-            💬 Hablar con Clara
-          </a>
-        </div>
-      </section>
-    </div>
-
-    <div class="wrap grid">
-      <section class="card" id="servicios">
-        <h2>Servicios y beneficios</h2>
-
-        <div style="margin-top:8px">
-          <span class="pill">🗝️ A distancia</span>
-          <span class="pill">🤍 Confidencial</span>
-          <span class="pill">🌿 Acompañamiento amoroso</span>
-          <span class="pill">📲 Por WhatsApp</span>
-        </div>
-
-        <h3>☥ Cruz de Ankh</h3>
-        <ul class="list">
-          <li>Armonización y fortalecimiento del campo energético.</li>
-          <li>Apoya procesos de claridad, protección y orden interno.</li>
-          <li>Ideal si sentís carga, bloqueo o cansancio emocional.</li>
-        </ul>
-
-        <h3>🔮 Péndulo Karnak</h3>
-        <ul class="list">
-          <li>Limpieza energética profunda y liberación de densidades.</li>
-          <li>Alineación de chakras y armonización vibratoria.</li>
-          <li>Ayuda a recuperar calma, descanso y sensación de liviandad.</li>
-        </ul>
-
-        <h3>🧠 Biodecodificación</h3>
-        <ul class="list">
-          <li>Exploración del sentido emocional detrás de lo que te está pasando.</li>
-          <li>Ordena patrones, creencias y emociones que se repiten.</li>
-          <li>Te acompaña a tomar decisiones con más claridad y serenidad.</li>
-        </ul>
-
-        <h3>🌌 Mesa Cuántica</h3>
-        <ul class="list">
-          <li>Armonización profunda para recuperar equilibrio y calma.</li>
-          <li>Apoya limpieza emocional y desbloqueos.</li>
-          <li>Ideal si sentís saturación o estrés.</li>
-        </ul>
-
-        <h3>🪞 Lectura evolutiva (no tarot)</h3>
-        <ul class="list">
-          <li>Lectura orientada a tu proceso actual.</li>
-          <li>Guía para elegir próximos pasos con más conciencia.</li>
-          <li>Ideal si estás en cambios o decisiones importantes.</li>
-        </ul>
-
-        <h3>🏠 Limpieza de hogares o espacios</h3>
-        <ul class="list">
-          <li>Armonización energética del hogar/espacio (consultar).</li>
-          <li>Ideal para ambientes cargados o sensación “pesada”.</li>
-        </ul>
-      </section>
-
-      <section class="card faq" id="precios">
-        <h2>Valores</h2>
-        <div class="prices">
-          <div class="price-row"><span>Lectura evolutiva</span><span class="price">$ 25.000</span></div>
-          <div class="price-row"><span>Péndulo Karnak</span><span class="price">$ 25.000</span></div>
-          <div class="price-row"><span>Sesión completa (ambas)</span><span class="price">$ 48.000</span></div>
-          <div class="price-row"><span>Biodecodificación</span><span class="price">$ 30.000</span></div>
-          <div class="price-row"><span>Mesa Cuántica</span><span class="price">$ 30.000</span></div>
-          <div class="price-row"><span>Cruz de Ankh</span><span class="price">$ 25.000</span></div>
-          <div class="price-row"><span>Sesión Sanación Integral (incluye todo)</span><span class="price">$ 80.000</span></div>
-          <div class="price-row"><span>Limpieza de hogares/espacios</span><span class="price">Consultar</span></div>
-        </div>
-
-        <h2 style="margin-top:18px">Preguntas frecuentes</h2>
-        <details open><summary>¿Cómo reservo?</summary><p>Podés sacar turno con Martín o hablar con Clara para despejar dudas.</p></details>
-        <details><summary>¿Necesito estar presente físicamente?</summary><p>No, es 100% a distancia por llamada de WhatsApp.</p></details>
-        <details><summary>¿Cuánto dura?</summary><p>En general entre 45 y 60 minutos, según el trabajo del día.</p></details>
-
-        <div class="cta-row" style="margin-top:14px">
-          <a class="btn btn--primary" id="waMartinInfo" href="#" target="_blank" rel="noopener">
-            📅 Sacar turno (Martín)
-          </a>
-          <a class="btn btn--ghost" id="waClaraInfo" href="#" target="_blank" rel="noopener">
-            💬 Hablar con Clara
-          </a>
-        </div>
-      </section>
-    </div>
-
-    <!-- Valores en imágenes -->
-    <div class="wrap" style="margin-top:18px">
-      <section id="valoresimg" class="card">
-        <h2>💳 Valores en imágenes</h2>
-        <p class="muted" style="margin:0 0 12px">
-          Tocá cada imagen para verla grande.
-        </p>
-
-        <div class="tgrid">
-          <div class="tcard" data-src="biodecodificacion.jpeg">
-            <img class="timgimg" src="biodecodificacion.jpeg" alt="Biodecodificación">
-            <div class="tcap">Biodecodificación</div>
-          </div>
-
-          <div class="tcard" data-src="sesion-sanadora.jpeg">
-            <img class="timgimg" src="sesion-sanadora.jpeg" alt="Sesión Sanadora">
-            <div class="tcap">Sesión Sanadora</div>
-          </div>
-
-          <div class="tcard" data-src="pendulo-karnak-y-cruz-de-ankn.jpeg">
-            <img class="timgimg" src="pendulo-karnak-y-cruz-de-ankn.jpeg" alt="Péndulo Karnak y Cruz de Ankh">
-            <div class="tcap">Karnak + Cruz de Ankh</div>
-          </div>
-
-          <div class="tcard" data-src="sesion-holistica.jpeg">
-            <img class="timgimg" src="sesion-holistica.jpeg" alt="Sesión Holística">
-            <div class="tcap">Sesión Holística</div>
-          </div>
-
-          <div class="tcard" data-src="pendulo-karnak.jpeg">
-            <img class="timgimg" src="pendulo-karnak.jpeg" alt="Péndulo Karnak">
-            <div class="tcap">Péndulo Karnak</div>
-          </div>
-
-          <div class="tcard" data-src="mesa-cuantica.jpeg">
-            <img class="timgimg" src="mesa-cuantica.jpeg" alt="Mesa Cuántica">
-            <div class="tcap">Mesa Cuántica</div>
-          </div>
-
-          <div class="tcard" data-src="lectura.jpeg">
-            <img class="timgimg" src="lectura.jpeg" alt="Lectura Evolutiva">
-            <div class="tcap">Lectura Evolutiva</div>
-          </div>
-        </div>
-
-        <div class="cta-row" style="margin-top:14px">
-          <a class="btn btn--primary" id="waMartinValoresImg" href="#" target="_blank" rel="noopener">
-            📅 Sacar turno (Martín)
-          </a>
-          <a class="btn btn--ghost" id="waClaraValoresImg" href="#" target="_blank" rel="noopener">
-            💬 Hablar con Clara
-          </a>
-        </div>
-      </section>
-    </div>
-
-    <!-- Opiniones escritas -->
-    <div class="wrap" style="margin-top:18px">
-      <section class="card" id="opiniones">
-        <h2>💬 Lo que dicen después de la sesión</h2>
-        <p class="muted" style="margin:0 0 12px">Mensajitos cortitos que suelen llegar después del encuentro.</p>
-
-        <div class="reviews">
-          <div class="review"><div class="r-top"><span class="r-name">Rubén S.</span><span class="r-stars">★★★★★</span></div><div class="r-text">“Excelente lo que hacés, Clara. Siempre es lindo hablar con vos. Me dejás mucha paz.”</div></div>
-          <div class="review"><div class="r-top"><span class="r-name">Damián C.</span><span class="r-stars">★★★★★</span></div><div class="r-text">“Gracias por ayudarme en mi peor momento. Ahora puedo ver la luz y tomarme la vida de otra manera.”</div></div>
-          <div class="review"><div class="r-top"><span class="r-name">Mariana P.</span><span class="r-stars">★★★★★</span></div><div class="r-text">“Me quedé liviana, como si me hubieran sacado un peso del pecho. Dormí re bien.”</div></div>
-          <div class="review"><div class="r-top"><span class="r-name">Lucía A.</span><span class="r-stars">★★★★★</span></div><div class="r-text">“Me encantó la forma en la que acompañás. Sentí contención y claridad.”</div></div>
-          <div class="review"><div class="r-top"><span class="r-name">Carolina M.</span><span class="r-stars">★★★★★</span></div><div class="r-text">“No pensé que a distancia se sintiera tanto. Me bajó la ansiedad un montón.”</div></div>
-          <div class="review"><div class="r-top"><span class="r-name">Valeria G.</span><span class="r-stars">★★★★★</span></div><div class="r-text">“Gracias por la paciencia y el amor. Me ordenó la cabeza y el corazón.”</div></div>
-        </div>
-
-        <div class="cta-row" style="margin-top:14px">
-          <a class="btn btn--primary" id="waMartinOpiniones" href="#" target="_blank" rel="noopener">
-            📅 Sacar turno (Martín)
-          </a>
-          <a class="btn btn--ghost" id="waClaraOpiniones" href="#" target="_blank" rel="noopener">
-            💬 Hablar con Clara
-          </a>
-          <a class="btn btn--ghost" href="#capturas">📸 Ver capturas</a>
-        </div>
-      </section>
-    </div>
-
-    <!-- Capturas reales -->
-    <div class="wrap" style="margin-top:18px">
-      <section id="capturas" class="card">
-        <h2>📸 Capturas reales (WhatsApp)</h2>
-        <p class="muted" style="margin:0 0 12px">Tocá cada imagen para verla grande.</p>
-
-        <div class="tgrid">
-          <div class="tcard" data-src="testimonio1.jpeg"><img class="timgimg" src="testimonio1.jpeg" alt="Testimonio 1"><div class="tcap">Testimonio 1</div></div>
-          <div class="tcard" data-src="testimonio2.jpeg"><img class="timgimg" src="testimonio2.jpeg" alt="Testimonio 2"><div class="tcap">Testimonio 2</div></div>
-          <div class="tcard" data-src="testimonio3.jpeg"><img class="timgimg" src="testimonio3.jpeg" alt="Testimonio 3"><div class="tcap">Testimonio 3</div></div>
-          <div class="tcard" data-src="testimonio4.jpeg"><img class="timgimg" src="testimonio4.jpeg" alt="Testimonio 4"><div class="tcap">Testimonio 4</div></div>
-        </div>
-
-        <div class="cta-row" style="margin-top:14px">
-          <a class="btn btn--primary" id="waMartinCapturas" href="#" target="_blank" rel="noopener">
-            📅 Sacar turno (Martín)
-          </a>
-          <a class="btn btn--ghost" id="waClaraCapturas" href="#" target="_blank" rel="noopener">
-            💬 Hablar con Clara
-          </a>
-        </div>
-      </section>
-    </div>
-
-  </main>
-
-  <footer class="muted">© Sanación 11.11 — Sesiones a distancia por WhatsApp</footer>
-
-  <!-- Modal -->
-  <div class="modal" id="modal">
-    <div class="modal-box">
-      <div class="modal-head">
-        <div>Imagen</div>
-        <button class="close" id="closeModal">Cerrar ✕</button>
-      </div>
-      <img id="modalImg" class="modal-img" alt="Imagen ampliada" />
+    <div class="cta">
+      <a class="btn primary" href="https://wa.me/542236914775?text=Quiero%20una%20sesión">📅 Sacar turno</a>
+      <a class="btn ghost" href="#servicios">Ver servicios</a>
     </div>
   </div>
 
-  <script>
-    // ==========================
-    // 📲 WhatsApp (2 números)
-    // ==========================
-    const PHONE_MARTIN = '542236914775';   // Martín (el número que ya tenías)
-    const PHONE_CLARA  = '542235931151';   // Clara (2235931151)
+  <div class="hero-img"></div>
+</header>
 
-    const msgMartin = encodeURIComponent('Hola Martín 🙌✨, quiero sacar un turno.');
-    const msgClara  = encodeURIComponent('Hola Clara 🙌✨, quiero reservar una sesión.');
+<main class="wrap">
 
-    const linkMartin = `https://wa.me/${PHONE_MARTIN}?text=${msgMartin}`;
-    const linkClara  = `https://wa.me/${PHONE_CLARA}?text=${msgClara}`;
+<section class="card">
+  <h2>Qué podés esperar</h2>
+  <div class="grid">
+    <div class="item">✔ Acompañamiento emocional y energético</div>
+    <div class="item">✔ Procesos de limpieza y orden interno</div>
+    <div class="item">✔ Lectura y claridad sobre tu situación actual</div>
+  </div>
+</section>
 
-    // IDs para Martín
-    const martinIds = [
-      'waFloatMartin',
-      'waMartinHero','waMartinComo','waMartinInfo','waMartinValoresImg',
-      'waMartinOpiniones','waMartinCapturas'
-    ];
+<section class="card" id="servicios">
+  <h2>Servicios</h2>
 
-    // IDs para Clara
-    const claraIds = [
-      'waClaraHero','waClaraComo','waClaraInfo','waClaraValoresImg',
-      'waClaraOpiniones','waClaraCapturas'
-    ];
+  <div class="service">☥ Cruz de Ankh – armonización energética</div>
+  <div class="service">🔮 Péndulo Karnak – limpieza y desbloqueo</div>
+  <div class="service">🧠 Biodecodificación – comprensión emocional</div>
+  <div class="service">🌌 Mesa Cuántica – reequilibrio energético</div>
+  <div class="service">🪞 Lectura evolutiva – orientación personal</div>
+</section>
 
-    martinIds.forEach(id=>{
-      const el = document.getElementById(id);
-      if(el) el.href = linkMartin;
-    });
+<section class="card">
+  <h2>Testimonios</h2>
+  <div class="reviews">
+    <div class="review"><div class="name">Mariana</div>“Me sentí mucho más liviana después de la sesión.”</div>
+    <div class="review"><div class="name">Lucía</div>“Claridad mental y calma emocional.”</div>
+    <div class="review"><div class="name">Carolina</div>“No pensé que a distancia funcionara tan bien.”</div>
+    <div class="review"><div class="name">Damián</div>“Me ayudó a ordenar un momento difícil.”</div>
+  </div>
+</section>
 
-    claraIds.forEach(id=>{
-      const el = document.getElementById(id);
-      if(el) el.href = linkClara;
-    });
+<section class="card">
+  <h2>Valores</h2>
 
-    // Pixel track Contact separado
-    function trackContact(label){
-      try{ if (window.fbq) fbq('track', 'Contact', { content_name: label }); }catch(e){}
-    }
+  <div class="price"><span>Lectura evolutiva</span><span class="value">$25.000</span></div>
+  <div class="price"><span>Péndulo Karnak</span><span class="value">$25.000</span></div>
+  <div class="price"><span>Biodecodificación</span><span class="value">$30.000</span></div>
+  <div class="price"><span>Mesa Cuántica</span><span class="value">$30.000</span></div>
+  <div class="price"><span>Sesión integral</span><span class="value">$80.000</span></div>
+</section>
 
-    martinIds.forEach(id=>{
-      const el = document.getElementById(id);
-      if(el) el.addEventListener('click', ()=>trackContact('WA - Martin'));
-    });
+<section class="card final">
+  <h2>Si sentís que es para vos</h2>
+  <a class="btn primary" href="https://wa.me/542236914775?text=Quiero%20reservar%20una%20sesión">📅 Reservar por WhatsApp</a>
+</section>
 
-    claraIds.forEach(id=>{
-      const el = document.getElementById(id);
-      if(el) el.addEventListener('click', ()=>trackContact('WA - Clara'));
-    });
+</main>
 
-    // ==========================
-    // 🖼 Modal (para todas las .tcard)
-    // ==========================
-    const modal = document.getElementById('modal');
-    const modalImg = document.getElementById('modalImg');
-    const closeModal = document.getElementById('closeModal');
+<footer>Sanación 11.11 — Acompañamiento energético</footer>
 
-    document.querySelectorAll('.tcard').forEach(card=>{
-      card.addEventListener('click', ()=>{
-        const img = card.getAttribute('data-src');
-        if(!img) return;
-        modalImg.src = img;
-        modal.classList.add('open');
-      });
-    });
-
-    function hideModal(){
-      modal.classList.remove('open');
-      modalImg.src = '';
-    }
-    if (closeModal) closeModal.addEventListener('click', hideModal);
-    if (modal) modal.addEventListener('click', (e)=>{ if(e.target === modal) hideModal(); });
-
-    document.addEventListener('keydown', (e)=>{
-      if(e.key === 'Escape' && modal.classList.contains('open')) hideModal();
-    });
-  </script>
 </body>
 </html>
-
 
