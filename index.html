@@ -4,13 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sanación 11.11 – Acompañamiento energético</title>
-
   <meta name="description" content="Acompañamiento energético a distancia por WhatsApp. Orden emocional, limpieza energética y claridad personal." />
-
-  <meta property="og:title" content="Sanación 11.11" />
-  <meta property="og:description" content="Acompañamiento energético a distancia por WhatsApp." />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="https://tudominio.com/Portadalandig.png" />
 
   <style>
     :root{
@@ -20,31 +14,19 @@
     }
 
     *{box-sizing:border-box}
-
     body{
       margin:0; font-family:system-ui,-apple-system,Segoe UI,Roboto;
       background: radial-gradient(1200px 800px at 20% -10%, #3b2a69 0%, #1f1333 40%, #1b0f2e 100%);
-      color:var(--text);
-      line-height:1.5;
+      color:var(--text); line-height:1.5;
     }
 
     .wrap{max-width:1050px;margin:auto;padding:0 18px}
-
     header{padding:34px 0 10px}
-
-    .hero{
-      display:grid;
-      gap:18px;
-      grid-template-columns:1fr;
-      align-items:center;
-    }
-
+    .hero{display:grid; gap:18px; grid-template-columns:1fr; align-items:center;}
     @media(min-width:900px){.hero{grid-template-columns:1.1fr .9fr}}
 
     h1{font-size:clamp(28px,3vw,42px);margin:0}
-
     .sub{opacity:.9;margin-top:10px}
-
     .cta{margin-top:18px;display:flex;gap:10px;flex-wrap:wrap}
 
     .btn{
@@ -52,26 +34,21 @@
       text-decoration:none;display:inline-flex;gap:8px;align-items:center;
       transition: background 0.3s;
     }
-
     .primary{background:var(--brand);color:#083c22}
-    .primary:hover{background:var(--brand-hover)}
     .ghost{border:1px solid rgba(255,255,255,.15);color:#fff;background:rgba(255,255,255,.06)}
 
-    .hero-img {
-  border-radius: 16px;
-  min-height: 280px;
-  /* Corregido con P mayúscula según tu raíz de archivos */
-  background: url('Portadalandig.png') center/cover; 
-  border: 1px solid var(--border);
-}
+    .hero-img{
+      border-radius:16px; min-height:320px;
+      /* Agregamos ?v=1 para que el navegador NO use la imagen vieja guardada */
+      background: url('Portadalandig.png?v=1') center/cover no-repeat;
+      border: 1px solid var(--border);
+      background-color: var(--card); /* Color de respaldo si la imagen falla */
+    }
 
     section{margin:26px 0}
-
     .card{
       background:linear-gradient(180deg,var(--card),var(--soft));
-      border:1px solid var(--border);
-      border-radius:16px;
-      padding:20px;
+      border:1px solid var(--border); border-radius:16px; padding:20px;
     }
 
     h2{margin:0 0 12px;font-size:22px}
@@ -80,21 +57,11 @@
     .grid{display:grid;gap:12px}
     @media(min-width:900px){.grid{grid-template-columns:repeat(3,1fr)}}
 
-    .item{
-      padding:14px;border-radius:14px;
-      background:rgba(255,255,255,.04);
-      border:1px solid rgba(255,255,255,.1);
-    }
-
+    .item{padding:14px;border-radius:14px; background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.1);}
     .reviews{display:grid;gap:10px}
     @media(min-width:900px){.reviews{grid-template-columns:repeat(2,1fr)}}
 
-    .review{
-      padding:14px;border-radius:14px;
-      background:rgba(255,255,255,.04);
-      border:1px solid rgba(255,255,255,.1);
-    }
-
+    .review{padding:14px;border-radius:14px; background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.1);}
     .name{font-weight:900;color:#ffe49a}
 
     .price-row{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid rgba(255,255,255,.05)}
@@ -102,92 +69,71 @@
     .value{color:#ffe49a;font-weight:900}
 
     .featured-price{
-      background: rgba(255, 214, 110, 0.1);
-      border: 1px solid var(--accent);
-      padding: 20px;
-      border-radius: 14px;
-      text-align: center;
-      margin-bottom: 30px;
+      background: rgba(255, 214, 110, 0.1); border: 1px solid var(--accent);
+      padding: 20px; border-radius: 14px; text-align: center; margin-bottom: 30px;
     }
-
-    .final{text-align:center;padding:20px}
 
     footer{opacity:.7;text-align:center;padding:30px 0;font-size:12px}
   </style>
 </head>
-
 <body>
 
 <header class="wrap hero">
   <div>
     <h1>Si estás sintiendo ansiedad, cansancio o confusión…</h1>
     <p class="sub">No es casualidad que estés buscando respuestas. Acá tenés un espacio para ordenar lo que te está pasando.</p>
-
     <div class="cta">
       <a class="btn primary" href="https://wa.me/542235931151?text=Quiero%20una%20sesión">📅 Reservar sesión</a>
       <a class="btn ghost" href="#costos">Ver Inversión</a>
     </div>
   </div>
-
   <div class="hero-img"></div>
 </header>
 
 <main class="wrap">
+  <section class="card">
+    <h2>Acá no estás solo/a en esto</h2>
+    <div class="grid">
+      <div class="item">✔ Acompañamiento sin juicio</div>
+      <div class="item">✔ Proceso guiado paso a paso</div>
+      <div class="item">✔ Espacio de calma y orden emocional</div>
+    </div>
+  </section>
 
-<section class="card">
-  <h2>Acá no estás solo/a en esto</h2>
-  <div class="grid">
-    <div class="item">✔ Acompañamiento sin juicio</div>
-    <div class="item">✔ Proceso guiado paso a paso</div>
-    <div class="item">✔ Espacio de calma y orden emocional</div>
-  </div>
-</section>
+  <section class="featured-price" id="costos">
+    <h2 style="color:var(--accent); margin-bottom:5px;">🌟 Sesión Completa Especial</h2>
+    <p style="margin-bottom:15px; opacity:0.9;">Lectura Evolutiva + Péndulo + Armonización.</p>
+    <div style="font-size:32px; font-weight:900; color:#fff; margin-bottom:10px;">$11.000</div>
+    <p style="font-size:14px; color:var(--muted);">Modalidad: Devolución personalizada por Audio y PDF.</p>
+  </section>
 
-<!-- OFERTA DESTACADA -->
-<section class="featured-price" id="costos">
-  <h2 style="color:var(--accent); margin-bottom:5px;">🌟 Sesión Completa Especial</h2>
-  <p style="margin-bottom:15px; opacity:0.9;">Incluye Lectura Evolutiva + Péndulo + Armonización.</p>
-  <div style="font-size:32px; font-weight:900; color:#fff; margin-bottom:10px;">$11.000</div>
-  <p style="font-size:14px; color:var(--muted);">Modalidad: Devolución personalizada por Audio y PDF.</p>
-</section>
+  <section class="card">
+    <h2>Otras modalidades de Sesión</h2>
+    <h3>🎥 Sesiones por Videollamada</h3>
+    <div class="price-row"><span>Péndulo / Lectura / Cruz</span><span class="value">$15.000</span></div>
+    <div class="price-row"><span>Biodecodificación</span><span class="value">$30.000</span></div>
+    <div class="price-row"><span>Mesa Cuántica</span><span class="value">$30.000</span></div>
 
-<section class="card">
-  <h2>Otras modalidades de Sesión</h2>
+    <h3 style="margin-top:30px;">🎧 Devolución por Audio y PDF</h3>
+    <div class="price-row"><span>Péndulo / Lectura / Cruz</span><span class="value">$8.000</span></div>
+    <div class="price-row"><span>Biodecodificación</span><span class="value">$15.000</span></div>
+    <div class="price-row"><span>Mesa Cuántica</span><span class="value">$15.000</span></div>
+  </section>
 
-  <!-- VIDEOLLAMADA -->
-  <h3>🎥 Sesiones por Videollamada</h3>
-  <p style="font-size:13px; opacity:0.7; margin-bottom:15px;">Encuentro en vivo de 45-60 min para trabajar juntos.</p>
-  <div class="price-row"><span>Péndulo Karnak</span><span class="value">$15.000</span></div>
-  <div class="price-row"><span>Lectura Evolutiva</span><span class="value">$15.000</span></div>
-  <div class="price-row"><span>Cruz de Ankh</span><span class="value">$15.000</span></div>
-  <div class="price-row"><span>Biodecodificación</span><span class="value">$30.000</span></div>
-  <div class="price-row"><span>Mesa Cuántica</span><span class="value">$30.000</span></div>
+  <section class="card">
+    <h2>Lo que suelen sentir después</h2>
+    <div class="reviews">
+      <div class="review"><div class="name">Mariana</div>“Me sentí más liviana y en paz.”</div>
+      <div class="review"><div class="name">Lucía</div>“Claridad mental inmediata.”</div>
+      <div class="review"><div class="name">Carolina</div>“Bajó muchísimo mi ansiedad.”</div>
+      <div class="review"><div class="name">Damián</div>“Me ordenó emocionalmente.”</div>
+    </div>
+  </section>
 
-  <!-- AUDIO Y PDF -->
-  <h3 style="margin-top:30px;">🎧 Devolución por Audio y PDF</h3>
-  <p style="font-size:13px; opacity:0.7; margin-bottom:15px;">Recibí el trabajo energético detallado directamente en tu WhatsApp.</p>
-  <div class="price-row"><span>Péndulo Karnak</span><span class="value">$8.000</span></div>
-  <div class="price-row"><span>Lectura Evolutiva</span><span class="value">$8.000</span></div>
-  <div class="price-row"><span>Cruz de Ankh</span><span class="value">$8.000</span></div>
-  <div class="price-row"><span>Biodecodificación</span><span class="value">$15.000</span></div>
-  <div class="price-row"><span>Mesa Cuántica</span><span class="value">$15.000</span></div>
-</section>
-
-<section class="card">
-  <h2>Lo que suelen sentir después</h2>
-  <div class="reviews">
-    <div class="review"><div class="name">Mariana</div>“Me sentí más liviana y en paz.”</div>
-    <div class="review"><div class="name">Lucía</div>“Claridad mental inmediata.”</div>
-    <div class="review"><div class="name">Carolina</div>“Bajó muchísimo mi ansiedad.”</div>
-    <div class="review"><div class="name">Damián</div>“Me ordenó emocionalmente.”</div>
-  </div>
-</section>
-
-<section class="card final">
-  <h2>Si sentís que es para vos</h2>
-  <a class="btn primary" href="https://wa.me/542235931151?text=Hola,%20vi%20la%20web%20y%20quiero%20reservar%20una%20sesión">📅 Hablar por WhatsApp</a>
-</section>
-
+  <section class="card" style="text-align:center;">
+    <h2>Si sentís que es para vos</h2>
+    <a class="btn primary" href="https://wa.me/542235931151?text=Hola,%20vi%20la%20web%20y%20quiero%20reservar">📅 Hablar por WhatsApp</a>
+  </section>
 </main>
 
 <footer>Sanación 11.11 — Acompañamiento energético</footer>
