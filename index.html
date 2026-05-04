@@ -6,7 +6,7 @@
   <title>Sanación 11.11 – Acompañamiento energético</title>
   <meta name="description" content="Acompañamiento energético a distancia por WhatsApp. Orden emocional, limpieza energética y claridad personal." />
 
-  <!-- Meta Pixel Code -->
+  <!-- Meta Pixel Code (INTACTO) -->
   <script>
     !function(f,b,e,v,n,t,s)
     {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -30,105 +30,136 @@
   /></noscript>
 
   <style>
-    :root{
-      --bg:#1f1333; --card:#2a1946; --soft:#3a2163; --text:#f5f5f5;
-      --muted:#d7baff; --brand:#25D366; --brand-hover:#1ebe5d;
-      --accent:#ffd66e; --border:rgba(214,186,255,.12);
+    :root {
+      /* Nueva Paleta Armoniosa */
+      --primary: #5c4b8a; /* Violeta místico suave */
+      --secondary: #a288d9; /* Lavanda */
+      --accent: #d4af37; /* Oro para resaltar */
+      --bg: #fdfbff; /* Fondo claro y limpio */
+      --card-bg: #ffffff;
+      --text: #332d3d;
+      --whatsapp: #25D366;
+      --border: rgba(92, 75, 138, 0.1);
     }
 
-    *{box-sizing:border-box; scroll-behavior: smooth;}
-    body{
-      margin:0; font-family:system-ui,-apple-system,Segoe UI,Roboto;
-      background: radial-gradient(1200px 800px at 20% -10%, #3b2a69 0%, #1f1333 40%, #1b0f2e 100%);
-      color:var(--text); line-height:1.5;
+    * { box-sizing: border-box; scroll-behavior: smooth; }
+    body {
+      margin: 0; font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--bg);
+      color: var(--text); line-height: 1.6;
     }
 
-    .wrap{max-width:1050px;margin:auto;padding:0 18px}
-    header{padding:34px 0 10px}
-    .hero{display:grid; gap:24px; grid-template-columns:1fr; align-items:center;}
-    @media(min-width:900px){.hero{grid-template-columns:1.1fr .9fr}}
-
-    h1{font-size:clamp(30px,4vw,48px); margin:0; line-height:1.1; font-weight:800;}
-    .sub{opacity:.9; margin-top:15px; font-size:18px;}
-    .cta{margin-top:24px; display:flex; gap:12px; flex-wrap:wrap}
-
-    .btn{
-      padding:16px 24px; border-radius:14px; font-weight:900;
-      text-decoration:none; display:inline-flex; gap:8px; align-items:center;
-      transition: all 0.3s; cursor: pointer; border: none;
+    /* Navbar */
+    nav {
+      position: sticky; top: 0; background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px); z-index: 1000;
+      border-bottom: 1px solid var(--border); box-shadow: 0 2px 10px rgba(0,0,0,0.05);
     }
-    .primary{background:var(--brand); color:#083c22; box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);}
-    .primary:hover{background:var(--brand-hover); transform: translateY(-2px);}
-    .ghost{border:1px solid rgba(255,255,255,.2); color:#fff; background:rgba(255,255,255,.06)}
-    .ghost:hover{background:rgba(255,255,255,.12)}
+    .nav-container {
+      max-width: 1050px; margin: auto; display: flex; justify-content: space-between;
+      align-items: center; padding: 15px 20px;
+    }
+    .logo { font-weight: 800; font-size: 1.4rem; color: var(--primary); text-decoration: none; }
+    .nav-links { display: flex; gap: 20px; list-style: none; margin: 0; padding: 0; }
+    .nav-links a { text-decoration: none; color: var(--text); font-weight: 600; font-size: 0.9rem; transition: 0.3s; }
+    .nav-links a:hover { color: var(--primary); }
 
-    .hero-img{
-      border-radius:24px; min-height:380px;
+    /* Dropdown Precios */
+    .dropdown { position: relative; }
+    .dropdown-content {
+      display: none; position: absolute; background: white; min-width: 200px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.1); border-radius: 8px; top: 100%;
+    }
+    .dropdown:hover .dropdown-content { display: block; }
+    .dropdown-content a {
+      padding: 12px 16px; display: block; border-bottom: 1px solid #f0f0f0;
+      font-size: 13px;
+    }
+
+    .wrap { max-width: 1050px; margin: auto; padding: 0 20px; }
+    
+    /* Hero Section */
+    .hero { padding: 80px 0 60px; display: grid; gap: 40px; grid-template-columns: 1fr; align-items: center; }
+    @media(min-width: 900px){ .hero { grid-template-columns: 1.1fr 0.9fr; } }
+    
+    h1 { font-size: clamp(32px, 5vw, 48px); color: var(--primary); margin: 0; line-height: 1.2; }
+    .sub { font-size: 20px; margin-top: 20px; color: #666; }
+
+    .btn {
+      padding: 14px 28px; border-radius: 30px; font-weight: 700;
+      text-decoration: none; display: inline-flex; align-items: center; gap: 8px;
+      transition: 0.3s; border: none; cursor: pointer;
+    }
+    .primary { background: var(--whatsapp); color: white; box-shadow: 0 4px 15px rgba(37,211,102,0.3); }
+    .primary:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(37,211,102,0.4); }
+
+    .hero-img {
+      border-radius: 30px; min-height: 400px;
       background: url('https://github.com/Sanacionintegral/sanacionintegral.github.io/blob/main/Portadalandig.png?raw=true') center/cover no-repeat;
-      border: 1px solid var(--border); box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.1);
     }
 
-    section{margin:40px 0}
-    .card{
-      background:linear-gradient(180deg,var(--card),var(--soft));
-      border:1px solid var(--border); border-radius:20px; padding:24px;
+    /* Cards */
+    .section-title { text-align: center; margin-bottom: 40px; color: var(--primary); }
+    .card { background: white; border-radius: 24px; padding: 40px; box-shadow: 0 10px 30px rgba(92,75,138,0.05); border: 1px solid var(--border); }
+    
+    .info-grid { display: grid; gap: 20px; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+    .info-box { padding: 25px; border-radius: 20px; background: #f9f7ff; border: 1px solid transparent; transition: 0.3s; }
+    .info-box:hover { border-color: var(--secondary); background: white; transform: translateY(-5px); }
+    .info-box strong { color: var(--primary); font-size: 1.2rem; display: block; margin-bottom: 10px; }
+
+    /* Promo */
+    .featured-price {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: white; padding: 40px; border-radius: 24px; text-align: center;
+      text-decoration: none; display: block; margin: 40px 0; transition: 0.3s;
     }
+    .featured-price:hover { transform: scale(1.01); }
+    .price-tag { font-size: 48px; font-weight: 800; margin: 15px 0; color: var(--accent); }
 
-    h2{margin:0 0 18px; font-size:26px; color:var(--accent); text-align:center;}
-    h3{margin:25px 0 15px; font-size:20px; color:var(--accent); border-bottom:1px solid var(--border); padding-bottom:8px;}
+    /* Footer & Contact */
+    .contact-section { background: #f4f1f8; padding: 60px 0; border-radius: 24px; margin-top: 60px; text-align: center; }
+    .social-links { display: flex; justify-content: center; gap: 30px; margin-top: 30px; }
+    .social-links a { color: var(--primary); text-decoration: none; font-weight: bold; }
 
-    /* Mejoras en las cajas de información */
-    .info-grid{display:grid; gap:16px; margin-top:20px;}
-    @media(min-width:700px){.info-grid{grid-template-columns: 1fr 1fr;}}
-    .info-box{
-      background: rgba(255,255,255,0.02); padding: 20px; border-radius: 16px;
-      border: 1px solid rgba(214,186,255,.1); transition: all 0.3s;
+    .wa-float {
+      position: fixed; bottom: 30px; right: 30px; background: var(--whatsapp);
+      width: 65px; height: 65px; border-radius: 50%; display: flex; align-items: center;
+      justify-content: center; box-shadow: 0 4px 15px rgba(0,0,0,0.2); z-index: 1000;
     }
-    .info-box:hover{ border-color: var(--accent); background: rgba(255,214,110,0.05); }
-    .info-box strong{color:var(--accent); display:block; margin-bottom:8px; font-size:19px;}
-    .info-box p{margin:0; font-size:15px; opacity:0.8; line-height:1.6;}
-
-    .price-row{
-      display:flex; justify-content:space-between; align-items:center;
-      padding:15px 12px; border-bottom:1px solid rgba(255,255,255,.05);
-      text-decoration:none; color:inherit; border-radius:10px; transition: background 0.2s;
-    }
-    .price-row:hover{background:rgba(255,255,255,0.07)}
-    .value{color:#ffe49a; font-weight:900;}
-
-    .featured-price{
-      background: rgba(255, 214, 110, 0.08); border: 2px solid var(--accent);
-      padding: 30px 20px; border-radius: 20px; text-align: center; margin-bottom: 40px;
-      text-decoration: none; display: block; color: inherit; transition: transform 0.3s;
-      box-shadow: 0 10px 30px rgba(255, 214, 110, 0.1);
-    }
-    .featured-price:hover{transform: scale(1.02); background: rgba(255, 214, 110, 0.12);}
-
-    /* WhatsApp Flotante */
-    .wa-float{
-      position: fixed; bottom: 20px; right: 20px; background: var(--brand);
-      width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center;
-      justify-content: center; box-shadow: 0 4px 15px rgba(0,0,0,0.3); z-index: 100;
-      transition: transform 0.3s;
-    }
-    .wa-float:hover{transform: scale(1.1);}
-
-    footer{opacity:0.5; text-align:center; padding:40px 0; font-size:13px; letter-spacing:1px;}
   </style>
 </head>
 <body>
 
-<a href="https://wa.me/542235931151?text=Hola,%20vi%20la%20web%20y%20tengo%20una%20consulta" class="wa-float" onclick="trackService(0, 'Floating-WA')">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" width="35" alt="WhatsApp">
+<nav>
+  <div class="nav-container">
+    <a href="#" class="logo">Sanación 11.11</a>
+    <ul class="nav-links">
+      <li class="dropdown">
+        <a href="#precios">Precios ▾</a>
+        <div class="dropdown-content">
+          <a href="https://wa.me/542235931151?text=Hola,%20quiero%20la%20Sesión%20Especial%20de%20$11.000" onclick="trackService(11000, 'Promo-Menu')">Promo Especial $11.000</a>
+          <a href="https://wa.me/542235931151?text=Hola,%20quiero%20una%20sesion%20de%20Pendulo" onclick="trackService(15000, 'Pendulo-Menu')">Péndulo $15.000</a>
+          <a href="https://wa.me/542235931151?text=Hola,%20quiero%20una%20Lectura%20Evolutiva" onclick="trackService(15000, 'Lectura-Menu')">Lectura $15.000</a>
+          <a href="https://wa.me/542235931151?text=Hola,%20quiero%20Biodecodificacion" onclick="trackService(30000, 'Biodeco-Menu')">Biodecodificación $30.000</a>
+        </div>
+      </li>
+      <li><a href="#herramientas">Servicios</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ul>
+  </div>
+</nav>
+
+<a href="https://wa.me/542235931151?text=Hola,%20tengo%20una%20consulta" class="wa-float" onclick="trackService(0, 'Floating-WA')">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" width="38" alt="WhatsApp">
 </a>
 
 <header class="wrap hero">
   <div>
     <h1>Si estás sintiendo ansiedad, cansancio o confusión…</h1>
-    <p class="sub">No es casualidad que estés buscando respuestas. Acá tenés un espacio para ordenar lo que te está pasando.</p>
-    <div class="cta">
-      <a class="btn primary" href="https://wa.me/542235931151?text=Hola,%20quiero%20reservar%20una%20sesión" onclick="trackService(0, 'Hero-CTA')">📅 Reservar sesión</a>
-      <a class="btn ghost" href="#herramientas">Conocé las técnicas</a>
+    <p class="sub">Te ofrezco un espacio seguro para sanar, comprender el origen de tus bloqueos y recuperar tu equilibrio vital.</p>
+    <div style="margin-top:30px;">
+      <a class="btn primary" href="https://wa.me/542235931151?text=Hola,%20quiero%20reservar%20una%20sesión" onclick="trackService(0, 'Hero-CTA')">📅 Reservar mi sesión</a>
     </div>
   </div>
   <div class="hero-img"></div>
@@ -136,82 +167,52 @@
 
 <main class="wrap">
   
-  <section class="card" id="herramientas">
-    <h2>Nuestras Herramientas de Sanación</h2>
+  <section id="herramientas">
+    <h2 class="section-title">Nuestras Herramientas de Sanación</h2>
     <div class="info-grid">
       <div class="info-box">
         <strong>Péndulo Karnak</strong>
-        <p>Alta precisión para detectar y limpiar energías densas, logrando una armonización profunda de tus centros vitales.</p>
+        <p>Limpieza de energías densas y armonización profunda de tus centros vitales.</p>
       </div>
       <div class="info-box">
         <strong>Cruz de Ankh</strong>
-        <p>La llave de la vida: restaura el flujo energético, sella el aura y elimina fugas de energía vital.</p>
+        <p>Restaura el flujo energético y elimina fugas de energía vital.</p>
       </div>
       <div class="info-box">
         <strong>Biodecodificación</strong>
-        <p>Identificamos el origen emocional de tus síntomas o bloqueos repetitivos para iniciar una sanación consciente.</p>
+        <p>Encontramos el origen emocional de tus síntomas para una sanación consciente.</p>
       </div>
       <div class="info-box">
         <strong>Mesa Cuántica</strong>
-        <p>Trabajo multidimensional para limpiar registros negativos y ajustar tu frecuencia hacia una realidad armónica.</p>
-      </div>
-      <div class="info-box" style="grid-column: 1 / -1;">
-        <strong>Lectura Evolutiva</strong>
-        <p>Una guía profunda sobre tu presente, diseñada para brindarte herramientas internas ante tus desafíos actuales.</p>
+        <p>Trabajo multidimensional para ajustar tu frecuencia hacia la armonía.</p>
       </div>
     </div>
   </section>
 
-  <!-- PROMOCIÓN DESTACADA -->
   <a href="https://wa.me/542235931151?text=Hola,%20quiero%20la%20Sesión%20Especial%20de%20$11.000" 
-     class="featured-price" id="costos" 
+     class="featured-price" id="precios" 
      onclick="trackService(11000, 'Sesion Especial')">
-    <h2 style="color:#fff; margin-bottom:5px;">🌟 Sesión Completa Especial</h2>
-    <p style="margin-bottom:15px; opacity:0.9; color:var(--accent);">Lectura Evolutiva + Péndulo + Armonización.</p>
-    <div style="font-size:38px; font-weight:900; color:#fff; margin-bottom:10px;">$11.000</div>
-    <p style="font-size:14px; opacity:0.8;">Audio y PDF personalizado por WhatsApp</p>
-    <span class="btn primary" style="margin-top:15px;">Solicitar por WhatsApp</span>
+    <span style="text-transform:uppercase; letter-spacing:2px; font-weight:bold;">Recomendado</span>
+    <h2>🌟 Sesión Completa Especial</h2>
+    <p>Lectura Evolutiva + Péndulo + Armonización.</p>
+    <div class="price-tag">$11.000</div>
+    <p>Audio y PDF personalizado por WhatsApp</p>
+    <span class="btn" style="background:white; color:var(--primary); margin-top:20px;">Solicitar ahora</span>
   </a>
 
-  <section class="card">
-    <h2>Inversión por modalidades</h2>
-    
-    <h3>🎥 Sesiones por Videollamada</h3>
-    <a href="https://wa.me/542235931151?text=Hola,%20quiero%20una%20Videollamada%20de%20Lectura%20Evolutiva" class="price-row" onclick="trackService(15000, 'Video-Lectura')">
-      <span>Lectura Evolutiva</span><span class="value">$15.000</span>
-    </a>
-    <a href="https://wa.me/542235931151?text=Hola,%20quiero%20una%20Videollamada%20de%20Pendulo%20Karnak" class="price-row" onclick="trackService(15000, 'Video-Pendulo')">
-      <span>Péndulo Karnak</span><span class="value">$15.000</span>
-    </a>
-    <a href="https://wa.me/542235931151?text=Hola,%20quiero%20una%20Videollamada%20de%20Cruz%20de%20Ankh" class="price-row" onclick="trackService(15000, 'Video-Ankh')">
-      <span>Cruz de Ankh</span><span class="value">$15.000</span>
-    </a>
-    <a href="https://wa.me/542235931151?text=Hola,%20quiero%20info%20sobre%20Biodecodificacion%20por%20Videollamada" class="price-row" onclick="trackService(30000, 'Video-Biodecodificacion')">
-      <span>Biodecodificación</span><span class="value">$30.000</span>
-    </a>
-    <a href="https://wa.me/542235931151?text=Hola,%20quiero%20info%20sobre%20Mesa%20Cuantica%20por%20Videollamada" class="price-row" onclick="trackService(30000, 'Video-Mesa')">
-      <span>Mesa Cuántica</span><span class="value">$30.000</span>
-    </a>
-
-    <h3 style="margin-top:30px;">🎧 Devolución por Audio y PDF</h3>
-    <a href="https://wa.me/542235931151?text=Hola,%20quiero%20una%20Lectura%20Evolutiva%20por%20Audio" class="price-row" onclick="trackService(8000, 'Audio-Lectura')">
-      <span>Lectura Evolutiva</span><span class="value">$8.000</span>
-    </a>
-    <a href="https://wa.me/542235931151?text=Hola,%20quiero%20un%20Pendulo%20Karnak%20por%20Audio" class="price-row" onclick="trackService(8000, 'Audio-Pendulo')">
-      <span>Péndulo Karnak</span><span class="value">$8.000</span>
-    </a>
-    <a href="https://wa.me/542235931151?text=Hola,%20quiero%20una%20Cruz%20de%20Ankh%20por%20Audio" class="price-row" onclick="trackService(8000, 'Audio-Ankh')">
-      <span>Cruz de Ankh</span><span class="value">$8.000</span>
-    </a>
-    <a href="https://wa.me/542235931151?text=Hola,%20quiero%20Biodecodificacion%20por%20Audio" class="price-row" onclick="trackService(15000, 'Audio-Biodecodificacion')">
-      <span>Biodecodificación</span><span class="value">$15.000</span>
-    </a>
-    <a href="https://wa.me/542235931151?text=Hola,%20quiero%20Mesa%20Cuantica%20por%20Audio" class="price-row" onclick="trackService(15000, 'Audio-Mesa')">
-      <span>Mesa Cuántica</span><span class="value">$15.000</span>
-    </a>
+  <section class="contact-section" id="contacto">
+    <h2 style="color:var(--primary);">Comunicate con nosotros</h2>
+    <p>¿Tenés dudas? Estamos para acompañarte en tu proceso.</p>
+    <p><strong>Email:</strong> marketingnaciente@gmail.com</p>
+    <div class="social-links">
+      <a href="https://www.instagram.com/sanacion11.11/" target="_blank">Instagram</a>
+      <a href="https://wa.me/542235931151">WhatsApp</a>
+    </div>
   </section>
 
-  <footer>SANACIÓN 11.11 — ACOMPAÑAMIENTO ENEGERGETICO - MAR DEL PLATA - BUENOS AIRES - ARGENTINA</footer>
+  <footer style="padding: 40px 0; text-align: center; font-size: 12px; opacity: 0.6;">
+    SANACIÓN 11.11 — MAR DEL PLATA, ARGENTINA
+  </footer>
 </main>
 
 </body>
