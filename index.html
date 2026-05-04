@@ -6,7 +6,7 @@
   <title>Sanación 11.11 – Acompañamiento energético</title>
   <meta name="description" content="Acompañamiento energético a distancia por WhatsApp. Orden emocional, limpieza energética y claridad personal." />
 
-  <!-- Meta Pixel Code (INTACTO) -->
+  <!-- Meta Pixel Code (MANTENIDO INTACTO) -->
   <script>
     !function(f,b,e,v,n,t,s)
     {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -48,7 +48,7 @@
       background-color: var(--bg); color: var(--text); line-height: 1.6;
     }
 
-    /* Navbar */
+    /* Navbar Sticky */
     nav {
       position: sticky; top: 0; background: rgba(255, 255, 255, 0.95);
       backdrop-filter: blur(10px); z-index: 1000; border-bottom: 1px solid var(--border);
@@ -64,7 +64,7 @@
 
     .dropdown { position: relative; }
     .dropdown-content {
-      display: none; position: absolute; background: white; min-width: 200px;
+      display: none; position: absolute; background: white; min-width: 210px;
       box-shadow: 0 8px 16px rgba(0,0,0,0.1); border-radius: 8px; top: 100%; right: 0;
     }
     .dropdown:hover .dropdown-content { display: block; }
@@ -72,9 +72,20 @@
 
     .wrap { max-width: 1050px; margin: auto; padding: 0 20px; }
     
-    /* Secciones */
     section { padding: 60px 0; }
     .section-title { text-align: center; margin-bottom: 40px; color: var(--primary); font-size: 2rem; }
+
+    /* Hero */
+    .hero { padding: 40px 0 60px; display: grid; gap: 40px; grid-template-columns: 1fr; align-items: center; }
+    @media(min-width: 900px){ .hero { grid-template-columns: 1.1fr 0.9fr; } }
+    h1 { font-size: clamp(32px, 5vw, 48px); color: var(--primary); margin: 0; line-height: 1.2; }
+    .sub { font-size: 20px; margin-top: 20px; color: #666; }
+
+    .hero-img {
+      border-radius: 30px; min-height: 400px;
+      background: url('https://github.com/Sanacionintegral/sanacionintegral.github.io/blob/main/Portadalandig.png?raw=true') center/cover no-repeat;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    }
 
     /* Quién Soy */
     .about-card {
@@ -83,22 +94,36 @@
       align-items: center;
     }
     @media(min-width: 750px){ .about-card { grid-template-columns: 1fr 1.5fr; } }
-    .about-text p { font-size: 1.1rem; color: #555; }
-    .signature {
-      font-family: 'Brush Script MT', cursive; font-size: 2.5rem;
-      color: var(--pink-pastel); margin-top: 20px; display: block;
+    .about-img {
+      border-radius: 20px; height: 400px;
+      background: #f9f7ff url('https://github.com/Sanacionintegral/sanacionintegral.github.io/blob/main/Portadalandig.png?raw=true') center center / contain no-repeat;
+      border: 1px solid var(--border);
     }
+    .signature {
+      font-family: 'Brush Script MT', cursive; font-size: 2.8rem;
+      color: var(--pink-pastel); margin-top: 15px; display: block;
+    }
+
+    /* Servicios */
+    .info-grid { display: grid; gap: 20px; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+    .info-box { padding: 30px; border-radius: 24px; background: white; border: 1px solid var(--border); transition: 0.3s; }
+    .info-box:hover { transform: translateY(-5px); border-color: var(--secondary); box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
+    .info-box strong { color: var(--primary); font-size: 1.2rem; display: block; margin: 10px 0; }
+
+    /* Promo */
+    .featured-price {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: white; padding: 40px; border-radius: 24px; text-align: center;
+      text-decoration: none; display: block; margin: 40px 0; transition: 0.3s;
+    }
+    .price-tag { font-size: 48px; font-weight: 800; margin: 15px 0; color: var(--accent); }
 
     /* Testimonios */
     .testi-grid { display: grid; gap: 20px; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
-    .testi-box {
-      background: white; padding: 30px; border-radius: 20px;
-      border: 1px solid var(--border); position: relative;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.02);
-    }
-    .testi-box i { color: var(--accent); font-size: 1.5rem; display: block; margin-bottom: 10px; }
-    .testi-name { font-weight: 800; color: var(--primary); display: block; margin-top: 15px; }
+    .testi-box { background: white; padding: 30px; border-radius: 20px; border: 1px solid var(--border); }
+    .testi-name { font-weight: 800; color: var(--primary); display: block; margin-top: 15px; font-size: 0.9rem; }
 
+    /* Botones */
     .btn {
       padding: 14px 28px; border-radius: 30px; font-weight: 700;
       text-decoration: none; display: inline-flex; align-items: center; gap: 8px;
@@ -126,7 +151,8 @@
           <a href="https://api.whatsapp.com/send?phone=542235931151&text=Hola,%20quiero%20la%20Sesión%20Especial%20de%20$11.000" onclick="trackService(11000, 'Promo-Menu')">Promo Especial $11.000</a>
           <a href="https://api.whatsapp.com/send?phone=542235931151&text=Hola,%20quiero%20una%20sesion%20de%20Pendulo" onclick="trackService(15000, 'Pendulo-Menu')">Péndulo $15.000</a>
           <a href="https://api.whatsapp.com/send?phone=542235931151&text=Hola,%20quiero%20Biodecodificacion" onclick="trackService(30000, 'Biodeco-Menu')">Biodecodificación $30.000</a>
-        </div>
+          <a href="https://api.whatsapp.com/send?phone=542235931151&text=Hola,%20quiero%20Mesa%20Cuantica" onclick="trackService(30000, 'Mesa-Menu')">Mesa Cuantica $30.000</a>
+          <a href="https://api.whatsapp.com/send?phone=542235931151&text=Hola,%20quiero%20Limpieza%20Hogar" onclick="trackService(30000, 'Limpieza-Menu')">Limpieza Hogar $Consultar</a>
       </li>
       <li><a href="#quien-soy">Quién Soy</a></li>
       <li><a href="#testimonios">Testimonios</a></li>
@@ -135,83 +161,102 @@
   </div>
 </nav>
 
-<a href="https://api.whatsapp.com/send?phone=542235931151&text=Hola,%20vi%20tu%20web%20y%20tengo%20una%20consulta" class="wa-float" onclick="trackService(0, 'Floating-WA')">
+<a href="https://api.whatsapp.com/send?phone=542235931151&text=Hola,%20tengo%20una%20consulta" class="wa-float" onclick="trackService(0, 'Floating-WA')">
   <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" width="38" alt="WhatsApp">
 </a>
 
 <main class="wrap">
   
- <!-- SECCIÓN QUIÉN SOY ACTUALIZADA -->
-<section id="quien-soy">
-  <h2 class="section-title">El Corazón detrás de Sanación 11.11</h2>
-  <div class="about-card">
-    <div class="about-img" style="
-      border-radius: 20px; 
-      height: 400px; 
-      background: url('https://github.com/Sanacionintegral/sanacionintegral.github.io/blob/main/Portadalandig.png?raw=true') center/cover no-repeat;
-      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-    ">
+  <header class="hero">
+    <div>
+      <h1>Si estás sintiendo ansiedad, cansancio o confusión…</h1>
+      <p class="sub">Te ofrezco un espacio seguro para sanar, comprender tus bloqueos y recuperar tu equilibrio vital.</p>
+      <div style="margin-top:30px;">
+        <a class="btn primary" href="https://api.whatsapp.com/send?phone=542235931151&text=Hola,%20quiero%20reservar%20una%20sesión" onclick="trackService(0, 'Hero-CTA')">📅 Reservar mi sesión</a>
+      </div>
     </div>
-    <div class="about-text">
-      <p>Soy <strong>Clara</strong>, especialista en psicoterapia holística. Mi misión es guiarte en un proceso de transformación profunda utilizando la sabiduría de la radiestesia, el <strong>Péndulo Karnak</strong> y la <strong>Cruz de Ankh</strong>.</p>
-      <p>Mi enfoque no es solo energético, es humano: te ayudo a identificar y liberar esas cargas emocionales y ancestrales que hoy bloquean tu presente. Trabajo a conciencia, desde el amor y la honestidad, asegurándome de que cada duda sea evacuada.</p>
-      <p>Una sesión conmigo termina solo cuando tu vibración ha subido y hemos logrado desbloquear tu campo áurico, devolviéndote la claridad que necesitás para avanzar.</p>
-      <span class="signature" style="font-family: 'Brush Script MT', cursive; font-size: 2.8rem; color: #ffb7ce; margin-top: 15px; display: block;">Clara</span>
-    </div>
-  </div>
-</section>
+    <div class="hero-img"></div>
+  </header>
 
-  <!-- SECCIÓN TESTIMONIOS -->
-  <section id="testimonios">
-    <h2 class="section-title">Experiencias de Transformación</h2>
-    <div class="testi-grid">
-      <div class="testi-box">
-        <p>"Luego de la sesión sentí que una mochila pesada desaparecía de mi espalda. Valoro mucho que siempre están presentes para evacuar mis dudas."</p>
-        <span class="testi-name">Liliana</span>
-      </div>
-      <div class="testi-box">
-        <p>"Dudé mucho al principio por desconfianza, pero después de ese primer mensaje mi vida cambió. Ahora me realizo limpiezas cada 20 días sin falta."</p>
-        <span class="testi-name">Mirtha</span>
-      </div>
-      <div class="testi-box">
-        <p>"Llevo 7 meses trabajando con Clara. Hay un antes y un después en mi energía; el alivio se siente a las pocas horas de terminar."</p>
-        <span class="testi-name">Rubén</span>
-      </div>
-      <div class="testi-box">
-        <p>"Pedí una sesión para mi hija porque no la veía bien. A los pocos días su humor cambió totalmente, volvió a tener ganas de salir y disfrutar."</p>
-        <span class="testi-name">Gladis</span>
-      </div>
-      <!-- Nuevos Testimonios -->
-      <div class="testi-box" style="border-color: var(--accent);">
-        <p>"Hicimos una limpieza en casa porque el ambiente estaba muy tenso y peleábamos por todo. Desde ese día, volvió la paz y la armonía al hogar."</p>
-        <span class="testi-name">Mónica (Limpieza de Hogar)</span>
-      </div>
-      <div class="testi-box" style="border-color: var(--accent);">
-        <p>"Increíble la limpieza del local. Sentía la energía estancada y las ventas no arrancaban; a la semana de trabajar con Clara, el movimiento de clientes subió muchísimo."</p>
-        <span class="testi-name">Ricardo (Local Comercial)</span>
-      </div>
-      <div class="testi-box">
-        <p>"Lo que más me gusta es la claridad con la que explica todo. No te vas con dudas, te vas con soluciones y una energía renovada."</p>
-        <span class="testi-name">Silvia</span>
+  <section id="quien-soy">
+    <h2 class="section-title">El Corazón detrás de Sanación 11.11</h2>
+    <div class="about-card">
+      <div class="about-img"></div>
+      <div class="about-text">
+        <p>Soy <strong>Clara</strong>, especialista en psicoterapia holística. Mi misión es guiarte en un proceso de transformación profunda utilizando la sabiduría de la radiestesia, el <strong>Péndulo Karnak</strong> y la <strong>Cruz de Ankh</strong>.</p>
+        <p>Mi enfoque es humano: te ayudo a liberar las cargas emocionales que hoy bloquean tu presente. Trabajo a conciencia, desde el amor, asegurándome de que cada duda sea evacuada.</p>
+        <p>Una sesión conmigo termina solo cuando tu vibración ha subido y hemos logrado desbloquear tu campo áurico.</p>
+        <span class="signature">Clara</span>
       </div>
     </div>
   </section>
 
-  <section class="contact-section" id="contacto" style="text-align:center; background:#f4f1f8; padding:40px; border-radius:24px;">
-    <h2 style="color:var(--primary);">Comunicate con nosotros</h2>
-    <p>Estamos para acompañarte en tu proceso de sanación.</p>
-    <p><strong>Email:</strong> marketingnaciente@gmail.com</p>
-    <p><strong>Instagram:</strong> @sanacion11.11</p>
+  <section id="herramientas">
+    <h2 class="section-title">Nuestras Herramientas de Sanación</h2>
+    <div class="info-grid">
+      <div class="info-box">
+        <div style="font-size: 2rem;">🔮</div>
+        <strong>Péndulo Karnak</strong>
+        <p>Detección y limpieza de energías densas para una armonización profunda.</p>
+      </div>
+      <div class="info-box">
+        <div style="font-size: 2rem;">☥</div>
+        <strong>Cruz de Ankh</strong>
+        <p>Restaura el flujo vital y sella las fugas en tu aura.</p>
+      </div>
+      <div class="info-box">
+        <div style="font-size: 2rem;">🧠</div>
+        <strong>Biodecodificación</strong>
+        <p>Identificamos el origen emocional de tus síntomas para sanar desde la raíz.</p>
+      </div>
+      <div class="info-box">
+        <div style="font-size: 2rem;">🏡</div>
+        <strong>Limpieza de Espacios</strong>
+        <p>Eliminamos el estancamiento en hogares y locales para que fluya la prosperidad.</p>
+      </div>
+    </div>
+  </section>
+
+  <a href="https://api.whatsapp.com/send?phone=542235931151&text=Hola,%20quiero%20la%20Sesión%20Especial%20de%20$11.000" 
+     class="featured-price" id="precios" onclick="trackService(11000, 'Sesion Especial')">
+    <span style="text-transform:uppercase; letter-spacing:2px; font-weight:bold;">Recomendado</span>
+    <h2>🌟 Sesión Completa Especial</h2>
+    <p>Lectura Evolutiva + Péndulo + Armonización.</p>
+    <div class="price-tag">$11.000</div>
+    <span class="btn" style="background:white; color:var(--primary);">Solicitar ahora</span>
+  </a>
+
+  <section id="testimonios">
+    <h2 class="section-title">Experiencias de Transformación</h2>
+    <div class="testi-grid">
+      <div class="testi-box">
+        <p>"Luego de la sesión sentí que una mochila desaparecía. Siempre evacuan mis dudas puntualmente."</p>
+        <span class="testi-name">Liliana</span>
+      </div>
+      <div class="testi-box">
+        <p>"Ya hace 7 meses que me realizo limpieza con Clara y es un antes y un después en mi alivio."</p>
+        <span class="testi-name">Rubén</span>
+      </div>
+      <div class="testi-box" style="border-color: var(--accent);">
+        <p>"Increíble la limpieza del local. Sentía la energía estancada y a la semana subió mucho el movimiento de clientes."</p>
+        <span class="testi-name">Ricardo (Local Comercial)</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact-section" id="contacto" style="text-align:center; background:#f4f1f8; padding:60px 0; border-radius:24px;">
+    <h2>Comunicate con nosotros</h2>
+    <p>Email: <strong>marketingnaciente@gmail.com</strong></p>
+    <p>Instagram: <strong>@sanacion11.11</strong></p>
     <div style="margin-top:20px;">
        <a class="btn primary" href="https://api.whatsapp.com/send?phone=542235931151&text=Hola,%20quiero%20más%20información">Escribinos por WhatsApp</a>
     </div>
   </section>
 
+  <footer style="padding: 40px 0; text-align: center; font-size: 12px; opacity: 0.6;">
+      SANACIÓN 11.11 — MAR DEL PLATA, ARGENTINA
+  </footer>
 </main>
-
-<footer style="padding: 40px 0; text-align: center; font-size: 12px; opacity: 0.6;">
-    SANACIÓN 11.11 — MAR DEL PLATA, ARGENTINA
-</footer>
 
 </body>
 </html>
