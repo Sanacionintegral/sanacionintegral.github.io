@@ -31,101 +31,85 @@
 
   <style>
     :root {
-      /* Nueva Paleta Armoniosa */
-      --primary: #5c4b8a; /* Violeta místico suave */
-      --secondary: #a288d9; /* Lavanda */
-      --accent: #d4af37; /* Oro para resaltar */
-      --bg: #fdfbff; /* Fondo claro y limpio */
+      --primary: #5c4b8a; 
+      --secondary: #a288d9; 
+      --accent: #d4af37; 
+      --bg: #fdfbff; 
       --card-bg: #ffffff;
       --text: #332d3d;
       --whatsapp: #25D366;
       --border: rgba(92, 75, 138, 0.1);
+      --pink-pastel: #ffb7ce;
     }
 
     * { box-sizing: border-box; scroll-behavior: smooth; }
     body {
       margin: 0; font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-      background-color: var(--bg);
-      color: var(--text); line-height: 1.6;
+      background-color: var(--bg); color: var(--text); line-height: 1.6;
     }
 
     /* Navbar */
     nav {
       position: sticky; top: 0; background: rgba(255, 255, 255, 0.95);
-      backdrop-filter: blur(10px); z-index: 1000;
-      border-bottom: 1px solid var(--border); box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      backdrop-filter: blur(10px); z-index: 1000; border-bottom: 1px solid var(--border);
     }
     .nav-container {
       max-width: 1050px; margin: auto; display: flex; justify-content: space-between;
       align-items: center; padding: 15px 20px;
     }
     .logo { font-weight: 800; font-size: 1.4rem; color: var(--primary); text-decoration: none; }
-    .nav-links { display: flex; gap: 20px; list-style: none; margin: 0; padding: 0; }
-    .nav-links a { text-decoration: none; color: var(--text); font-weight: 600; font-size: 0.9rem; transition: 0.3s; }
+    .nav-links { display: flex; gap: 15px; list-style: none; margin: 0; padding: 0; }
+    .nav-links a { text-decoration: none; color: var(--text); font-weight: 600; font-size: 0.85rem; transition: 0.3s; }
     .nav-links a:hover { color: var(--primary); }
 
-    /* Dropdown Precios */
     .dropdown { position: relative; }
     .dropdown-content {
       display: none; position: absolute; background: white; min-width: 200px;
-      box-shadow: 0 8px 16px rgba(0,0,0,0.1); border-radius: 8px; top: 100%;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.1); border-radius: 8px; top: 100%; right: 0;
     }
     .dropdown:hover .dropdown-content { display: block; }
-    .dropdown-content a {
-      padding: 12px 16px; display: block; border-bottom: 1px solid #f0f0f0;
-      font-size: 13px;
-    }
+    .dropdown-content a { padding: 12px 16px; display: block; border-bottom: 1px solid #f0f0f0; }
 
     .wrap { max-width: 1050px; margin: auto; padding: 0 20px; }
     
-    /* Hero Section */
-    .hero { padding: 80px 0 60px; display: grid; gap: 40px; grid-template-columns: 1fr; align-items: center; }
-    @media(min-width: 900px){ .hero { grid-template-columns: 1.1fr 0.9fr; } }
-    
-    h1 { font-size: clamp(32px, 5vw, 48px); color: var(--primary); margin: 0; line-height: 1.2; }
-    .sub { font-size: 20px; margin-top: 20px; color: #666; }
+    /* Secciones */
+    section { padding: 60px 0; }
+    .section-title { text-align: center; margin-bottom: 40px; color: var(--primary); font-size: 2rem; }
+
+    /* Quién Soy */
+    .about-card {
+      background: white; border-radius: 24px; padding: 40px;
+      display: grid; gap: 30px; border: 1px solid var(--border);
+      align-items: center;
+    }
+    @media(min-width: 750px){ .about-card { grid-template-columns: 1fr 1.5fr; } }
+    .about-text p { font-size: 1.1rem; color: #555; }
+    .signature {
+      font-family: 'Brush Script MT', cursive; font-size: 2.5rem;
+      color: var(--pink-pastel); margin-top: 20px; display: block;
+    }
+
+    /* Testimonios */
+    .testi-grid { display: grid; gap: 20px; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+    .testi-box {
+      background: white; padding: 30px; border-radius: 20px;
+      border: 1px solid var(--border); position: relative;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.02);
+    }
+    .testi-box i { color: var(--accent); font-size: 1.5rem; display: block; margin-bottom: 10px; }
+    .testi-name { font-weight: 800; color: var(--primary); display: block; margin-top: 15px; }
 
     .btn {
       padding: 14px 28px; border-radius: 30px; font-weight: 700;
       text-decoration: none; display: inline-flex; align-items: center; gap: 8px;
       transition: 0.3s; border: none; cursor: pointer;
     }
-    .primary { background: var(--whatsapp); color: white; box-shadow: 0 4px 15px rgba(37,211,102,0.3); }
-    .primary:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(37,211,102,0.4); }
-
-    .hero-img {
-      border-radius: 30px; min-height: 400px;
-      background: url('https://github.com/Sanacionintegral/sanacionintegral.github.io/blob/main/Portadalandig.png?raw=true') center/cover no-repeat;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-    }
-
-    /* Cards */
-    .section-title { text-align: center; margin-bottom: 40px; color: var(--primary); }
-    .card { background: white; border-radius: 24px; padding: 40px; box-shadow: 0 10px 30px rgba(92,75,138,0.05); border: 1px solid var(--border); }
+    .primary { background: var(--whatsapp); color: white; }
     
-    .info-grid { display: grid; gap: 20px; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
-    .info-box { padding: 25px; border-radius: 20px; background: #f9f7ff; border: 1px solid transparent; transition: 0.3s; }
-    .info-box:hover { border-color: var(--secondary); background: white; transform: translateY(-5px); }
-    .info-box strong { color: var(--primary); font-size: 1.2rem; display: block; margin-bottom: 10px; }
-
-    /* Promo */
-    .featured-price {
-      background: linear-gradient(135deg, var(--primary), var(--secondary));
-      color: white; padding: 40px; border-radius: 24px; text-align: center;
-      text-decoration: none; display: block; margin: 40px 0; transition: 0.3s;
-    }
-    .featured-price:hover { transform: scale(1.01); }
-    .price-tag { font-size: 48px; font-weight: 800; margin: 15px 0; color: var(--accent); }
-
-    /* Footer & Contact */
-    .contact-section { background: #f4f1f8; padding: 60px 0; border-radius: 24px; margin-top: 60px; text-align: center; }
-    .social-links { display: flex; justify-content: center; gap: 30px; margin-top: 30px; }
-    .social-links a { color: var(--primary); text-decoration: none; font-weight: bold; }
-
     .wa-float {
       position: fixed; bottom: 30px; right: 30px; background: var(--whatsapp);
       width: 65px; height: 65px; border-radius: 50%; display: flex; align-items: center;
-      justify-content: center; box-shadow: 0 4px 15px rgba(0,0,0,0.2); z-index: 1000;
+      justify-content: center; z-index: 1000; box-shadow: 0 4px 15px rgba(0,0,0,0.2);
     }
   </style>
 </head>
@@ -135,85 +119,95 @@
   <div class="nav-container">
     <a href="#" class="logo">Sanación 11.11</a>
     <ul class="nav-links">
+      <li><a href="#herramientas">Servicios</a></li>
       <li class="dropdown">
         <a href="#precios">Precios ▾</a>
         <div class="dropdown-content">
-          <a href="https://wa.me/542235931151?text=Hola,%20quiero%20la%20Sesión%20Especial%20de%20$11.000" onclick="trackService(11000, 'Promo-Menu')">Promo Especial $11.000</a>
-          <a href="https://wa.me/542235931151?text=Hola,%20quiero%20una%20sesion%20de%20Pendulo" onclick="trackService(15000, 'Pendulo-Menu')">Péndulo $15.000</a>
-          <a href="https://wa.me/542235931151?text=Hola,%20quiero%20una%20Lectura%20Evolutiva" onclick="trackService(15000, 'Lectura-Menu')">Lectura $15.000</a>
-          <a href="https://wa.me/542235931151?text=Hola,%20quiero%20Biodecodificacion" onclick="trackService(30000, 'Biodeco-Menu')">Biodecodificación $30.000</a>
+          <a href="https://api.whatsapp.com/send?phone=542235931151&text=Hola,%20quiero%20la%20Sesión%20Especial%20de%20$11.000" onclick="trackService(11000, 'Promo-Menu')">Promo Especial $11.000</a>
+          <a href="https://api.whatsapp.com/send?phone=542235931151&text=Hola,%20quiero%20una%20sesion%20de%20Pendulo" onclick="trackService(15000, 'Pendulo-Menu')">Péndulo $15.000</a>
+          <a href="https://api.whatsapp.com/send?phone=542235931151&text=Hola,%20quiero%20Biodecodificacion" onclick="trackService(30000, 'Biodeco-Menu')">Biodecodificación $30.000</a>
         </div>
       </li>
-      <li><a href="#herramientas">Servicios</a></li>
+      <li><a href="#quien-soy">Quién Soy</a></li>
+      <li><a href="#testimonios">Testimonios</a></li>
       <li><a href="#contacto">Contacto</a></li>
     </ul>
   </div>
 </nav>
 
-<a href="https://wa.me/542235931151?text=Hola,%20tengo%20una%20consulta" class="wa-float" onclick="trackService(0, 'Floating-WA')">
+<a href="https://api.whatsapp.com/send?phone=542235931151&text=Hola,%20vi%20tu%20web%20y%20tengo%20una%20consulta" class="wa-float" onclick="trackService(0, 'Floating-WA')">
   <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" width="38" alt="WhatsApp">
 </a>
 
-<header class="wrap hero">
-  <div>
-    <h1>Si estás sintiendo ansiedad, cansancio o confusión…</h1>
-    <p class="sub">Te ofrezco un espacio seguro para sanar, comprender el origen de tus bloqueos y recuperar tu equilibrio vital.</p>
-    <div style="margin-top:30px;">
-      <a class="btn primary" href="https://wa.me/542235931151?text=Hola,%20quiero%20reservar%20una%20sesión" onclick="trackService(0, 'Hero-CTA')">📅 Reservar mi sesión</a>
-    </div>
-  </div>
-  <div class="hero-img"></div>
-</header>
-
 <main class="wrap">
   
-  <section id="herramientas">
-    <h2 class="section-title">Nuestras Herramientas de Sanación</h2>
-    <div class="info-grid">
-      <div class="info-box">
-        <strong>Péndulo Karnak</strong>
-        <p>Limpieza de energías densas y armonización profunda de tus centros vitales.</p>
+  <!-- SECCIÓN QUIÉN SOY -->
+  <section id="quien-soy">
+    <h2 class="section-title">El Corazón detrás de Sanación 11.11</h2>
+    <div class="about-card">
+      <div style="background: var(--pink-pastel); border-radius: 20px; height: 300px; display:flex; align-items:center; justify-content:center; color:white; font-weight:bold;">
+        [Tu Foto Aquí]
       </div>
-      <div class="info-box">
-        <strong>Cruz de Ankh</strong>
-        <p>Restaura el flujo energético y elimina fugas de energía vital.</p>
-      </div>
-      <div class="info-box">
-        <strong>Biodecodificación</strong>
-        <p>Encontramos el origen emocional de tus síntomas para una sanación consciente.</p>
-      </div>
-      <div class="info-box">
-        <strong>Mesa Cuántica</strong>
-        <p>Trabajo multidimensional para ajustar tu frecuencia hacia la armonía.</p>
+      <div class="about-text">
+        <p>Soy <strong>Clara</strong>, especialista en psicoterapia holística. Mi misión es guiarte en un proceso de transformación profunda utilizando la sabiduría de la radiestesia, el <strong>Péndulo Karnak</strong> y la <strong>Cruz de Ankh</strong>.</p>
+        <p>Mi enfoque no es solo energético, es humano: te ayudo a identificar y liberar esas cargas emocionales y ancestrales que hoy bloquean tu presente. Trabajo a conciencia, desde el amor y la honestidad, asegurándome de que cada duda sea evacuada.</p>
+        <p>Una sesión conmigo termina solo cuando tu vibración ha subido y hemos logrado desbloquear tu campo áurico, devolviéndote la claridad que necesitás para avanzar.</p>
+        <span class="signature">Clara</span>
       </div>
     </div>
   </section>
 
-  <a href="https://wa.me/542235931151?text=Hola,%20quiero%20la%20Sesión%20Especial%20de%20$11.000" 
-     class="featured-price" id="precios" 
-     onclick="trackService(11000, 'Sesion Especial')">
-    <span style="text-transform:uppercase; letter-spacing:2px; font-weight:bold;">Recomendado</span>
-    <h2>🌟 Sesión Completa Especial</h2>
-    <p>Lectura Evolutiva + Péndulo + Armonización.</p>
-    <div class="price-tag">$11.000</div>
-    <p>Audio y PDF personalizado por WhatsApp</p>
-    <span class="btn" style="background:white; color:var(--primary); margin-top:20px;">Solicitar ahora</span>
-  </a>
+  <!-- SECCIÓN TESTIMONIOS -->
+  <section id="testimonios">
+    <h2 class="section-title">Experiencias de Transformación</h2>
+    <div class="testi-grid">
+      <div class="testi-box">
+        <p>"Luego de la sesión sentí que una mochila pesada desaparecía de mi espalda. Valoro mucho que siempre están presentes para evacuar mis dudas."</p>
+        <span class="testi-name">Liliana</span>
+      </div>
+      <div class="testi-box">
+        <p>"Dudé mucho al principio por desconfianza, pero después de ese primer mensaje mi vida cambió. Ahora me realizo limpiezas cada 20 días sin falta."</p>
+        <span class="testi-name">Mirtha</span>
+      </div>
+      <div class="testi-box">
+        <p>"Llevo 7 meses trabajando con Clara. Hay un antes y un después en mi energía; el alivio se siente a las pocas horas de terminar."</p>
+        <span class="testi-name">Rubén</span>
+      </div>
+      <div class="testi-box">
+        <p>"Pedí una sesión para mi hija porque no la veía bien. A los pocos días su humor cambió totalmente, volvió a tener ganas de salir y disfrutar."</p>
+        <span class="testi-name">Gladis</span>
+      </div>
+      <!-- Nuevos Testimonios -->
+      <div class="testi-box" style="border-color: var(--accent);">
+        <p>"Hicimos una limpieza en casa porque el ambiente estaba muy tenso y peleábamos por todo. Desde ese día, volvió la paz y la armonía al hogar."</p>
+        <span class="testi-name">Mónica (Limpieza de Hogar)</span>
+      </div>
+      <div class="testi-box" style="border-color: var(--accent);">
+        <p>"Increíble la limpieza del local. Sentía la energía estancada y las ventas no arrancaban; a la semana de trabajar con Clara, el movimiento de clientes subió muchísimo."</p>
+        <span class="testi-name">Ricardo (Local Comercial)</span>
+      </div>
+      <div class="testi-box">
+        <p>"Lo que más me gusta es la claridad con la que explica todo. No te vas con dudas, te vas con soluciones y una energía renovada."</p>
+        <span class="testi-name">Silvia</span>
+      </div>
+    </div>
+  </section>
 
-  <section class="contact-section" id="contacto">
+  <section class="contact-section" id="contacto" style="text-align:center; background:#f4f1f8; padding:40px; border-radius:24px;">
     <h2 style="color:var(--primary);">Comunicate con nosotros</h2>
-    <p>¿Tenés dudas? Estamos para acompañarte en tu proceso.</p>
+    <p>Estamos para acompañarte en tu proceso de sanación.</p>
     <p><strong>Email:</strong> marketingnaciente@gmail.com</p>
-    <div class="social-links">
-      <a href="https://www.instagram.com/sanacion11.11/" target="_blank">Instagram</a>
-      <a href="https://wa.me/542235931151">WhatsApp</a>
+    <p><strong>Instagram:</strong> @sanacion11.11</p>
+    <div style="margin-top:20px;">
+       <a class="btn primary" href="https://api.whatsapp.com/send?phone=542235931151&text=Hola,%20quiero%20más%20información">Escribinos por WhatsApp</a>
     </div>
   </section>
 
-  <footer style="padding: 40px 0; text-align: center; font-size: 12px; opacity: 0.6;">
-    SANACIÓN 11.11 — MAR DEL PLATA, ARGENTINA
-  </footer>
 </main>
+
+<footer style="padding: 40px 0; text-align: center; font-size: 12px; opacity: 0.6;">
+    SANACIÓN 11.11 — MAR DEL PLATA, ARGENTINA
+</footer>
 
 </body>
 </html>
