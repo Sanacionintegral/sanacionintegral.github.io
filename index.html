@@ -44,7 +44,6 @@
 
     .container { max-width: 600px; margin: auto; padding: 0 20px; }
 
-    /* Header & Nav */
     header {
       background: var(--white);
       padding: 15px 0;
@@ -57,17 +56,15 @@
     }
     .logo { font-weight: 800; font-size: 1.1rem; color: var(--primary); text-decoration: none; letter-spacing: 1px; }
 
-    /* Hero Section */
-    .hero { padding: 40px 0 20px; text-align: center; }
-    h1 { font-size: 28px; color: var(--primary); margin: 0; font-weight: 800; line-height: 1.2; }
-    .sub { font-size: 16px; color: #666; margin: 12px 0 25px; }
+    .hero { padding: 40px 0 10px; text-align: center; }
+    h1 { font-size: 26px; color: var(--primary); margin: 0; font-weight: 800; line-height: 1.2; }
+    .sub { font-size: 15px; color: #666; margin: 12px 0 20px; }
 
-    /* Price Cards - Grid Dinámica */
     .pricing-scroll {
       display: flex;
       gap: 15px;
       overflow-x: auto;
-      padding: 10px 5px 25px;
+      padding: 10px 5px 30px;
       margin: 0 -20px;
       padding-left: 20px;
       scrollbar-width: none;
@@ -75,7 +72,7 @@
     .pricing-scroll::-webkit-scrollbar { display: none; }
 
     .card {
-      min-width: 280px;
+      min-width: 290px;
       background: var(--white);
       border-radius: 24px;
       padding: 24px;
@@ -84,78 +81,37 @@
       flex-direction: column;
       border: 1px solid rgba(0,0,0,0.03);
     }
-    .card.popular {
-      border: 2px solid var(--secondary);
-      position: relative;
-    }
+    .card.popular { border: 2.5px solid var(--secondary); position: relative; }
+    .card.video { border: 2.5px solid var(--accent); position: relative; }
+    
     .badge {
-      position: absolute;
-      top: -12px;
-      left: 50%;
-      transform: translateX(-50%);
-      background: var(--secondary);
-      color: white;
-      padding: 4px 12px;
-      border-radius: 20px;
-      font-size: 10px;
-      font-weight: 800;
+      position: absolute; top: -12px; left: 50%; transform: translateX(-50%);
+      background: var(--secondary); color: white; padding: 4px 12px;
+      border-radius: 20px; font-size: 10px; font-weight: 800;
     }
+    .badge-video { background: var(--accent); }
 
-    .card h3 { margin: 0; font-size: 1.2rem; color: var(--primary); }
-    .price { font-size: 32px; font-weight: 800; margin: 15px 0; }
-    .features { list-style: none; padding: 0; margin: 0 0 20px 0; font-size: 0.9rem; flex-grow: 1; }
-    .features li { margin-bottom: 10px; display: flex; align-items: center; }
+    .card h3 { margin: 0; font-size: 1.1rem; color: var(--primary); line-height: 1.3; }
+    .price { font-size: 30px; font-weight: 800; margin: 12px 0; }
+    .features { list-style: none; padding: 0; margin: 0 0 20px 0; font-size: 0.85rem; flex-grow: 1; }
+    .features li { margin-bottom: 8px; display: flex; align-items: flex-start; text-align: left; }
     .features li::before { content: '✓'; color: var(--whatsapp); margin-right: 10px; font-weight: 900; }
 
-    /* Buttons */
-    .btn {
-      display: block;
-      text-align: center;
-      padding: 16px;
-      border-radius: 16px;
-      text-decoration: none;
-      font-weight: 700;
-      transition: 0.2s;
-    }
-    .btn-wa { background: var(--whatsapp); color: white; box-shadow: 0 4px 10px rgba(37, 211, 102, 0.2); }
+    .btn { display: block; text-align: center; padding: 14px; border-radius: 16px; text-decoration: none; font-weight: 700; font-size: 0.9rem; }
+    .btn-wa { background: var(--whatsapp); color: white; }
     .btn-outline { border: 1.5px solid var(--primary); color: var(--primary); }
 
-    /* Content Sections */
-    section { padding: 40px 0; }
-    h2 { font-size: 22px; color: var(--primary); margin-bottom: 20px; text-align: center; }
+    section { padding: 30px 0; }
+    h2 { font-size: 20px; color: var(--primary); margin-bottom: 20px; text-align: center; }
 
-    .bio-box {
-      background: white;
-      border-radius: 24px;
-      padding: 30px;
-      text-align: center;
-      box-shadow: var(--shadow);
-    }
-    .avatar {
-      width: 100px; height: 100px;
-      border-radius: 50%;
-      background: #ddd;
-      margin: 0 auto 15px;
-      border: 3px solid var(--secondary);
-      object-fit: cover;
-    }
+    .bio-box { background: white; border-radius: 24px; padding: 25px; text-align: center; box-shadow: var(--shadow); }
+    .avatar { width: 90px; height: 90px; border-radius: 50%; background: #eee; margin: 0 auto 15px; border: 3px solid var(--secondary); object-fit: cover; }
 
-    .trust-grid { display: grid; gap: 15px; }
-    .trust-item {
-      background: rgba(142, 116, 204, 0.05);
-      padding: 15px;
-      border-radius: 15px;
-      font-size: 0.9rem;
-      border: 1px dashed var(--secondary);
-    }
+    .trust-item { background: rgba(142, 116, 204, 0.05); padding: 12px; border-radius: 12px; font-size: 0.85rem; margin-bottom: 10px; border: 1px dashed var(--secondary); }
 
-    .wa-float {
-      position: fixed; bottom: 20px; right: 20px; background: var(--whatsapp);
-      width: 55px; height: 55px; border-radius: 50%; display: flex; align-items: center;
-      justify-content: center; z-index: 1000; box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-    }
+    .wa-float { position: fixed; bottom: 20px; right: 20px; background: var(--whatsapp); width: 55px; height: 55px; border-radius: 50%; display: flex; align-items: center; justify-content: center; z-index: 1000; box-shadow: 0 4px 15px rgba(0,0,0,0.2); }
 
-    footer { padding: 30px 0; text-align: center; font-size: 11px; color: #888; }
+    footer { padding: 30px 0; text-align: center; font-size: 10px; color: #888; border-top: 1px solid #eee; }
   </style>
 </head>
 <body>
@@ -188,41 +144,43 @@
 
       <div class="card popular">
         <div class="badge">MÁS SOLICITADA</div>
-        <h3>Sesión Integral</h3>
+        <h3>Sesión Integral <br>(Reporte PDF)</h3>
         <div class="price">$11.000</div>
         <ul class="features">
-          <li>Péndulo Karnak - Lectura Evolutiva y Sellado con Cruz de Ankh</li>
+          <li>Péndulo Karnak - Lectura Evolutiva</li>
+          <li>Sellado con Cruz de Ankh</li>
           <li>Alineación de 12 Chakras</li>
-          <li><b>Reporte Profesional PDF, mas Devolucion por audio</b></li>
-          <li>Limpieza energetica total</li>
+          <li><b>Reporte PDF + Audio</b></li>
+          <li>Limpieza energética total</li>
         </ul>
-        <a href="https://api.whatsapp.com/send?phone=542235931151&text=Hola%20Clara,%20quiero%20reservar%20la%20Sesión%20Integral%2011.11" class="btn btn-wa" onclick="trackService(11000, 'Integral')">RESERVAR TURNO</a>
+        <a href="https://api.whatsapp.com/send?phone=542235931151&text=Hola%20Clara,%20quiero%20reservar%20la%20Sesión%20Integral%2011.11" class="btn btn-wa" onclick="trackService(11000, 'Integral-PDF')">RESERVAR TURNO</a>
       </div>
 
-      <div class="card popular">
-        <h3>Sesión Integral Por VIDEOLLAMADA CON TURNO PREVIO</h3>
+      <div class="card video">
+        <div class="badge badge-video" style="color:white">RECOMENDADO</div>
+        <h3>Sesión Integral <br>por VIDEOLLAMADA</h3>
         <div class="price">$18.000</div>
         <ul class="features">
-          <li>Péndulo Karnak - Lectura Evolutiva y Sellado con Cruz de Ankh</li>
+          <li>Turno previo coordinado</li>
+          <li>Lectura y Sellado en vivo</li>
           <li>Alineación de 12 Chakras</li>
-          <li><b>Devolucion en el acto, durante la Videollamada</b></li>
-          <li>Limpieza energetica total</li>
+          <li><b>Devolución en el acto</b></li>
+          <li>Limpieza energética total</li>
         </ul>
-        <a href="https://api.whatsapp.com/send?phone=542235931151&text=Hola%20Clara,%20quiero%20reservar%20la%20Sesión%20por%20videollamada" class="btn btn-wa" onclick="trackService(18000, 'Integral')">RESERVAR TURNO</a>
+        <a href="https://api.whatsapp.com/send?phone=542235931151&text=Hola%20Clara,%20quiero%20reservar%20la%20Sesión%20por%20videollamada" class="btn btn-wa" style="background:var(--accent)" onclick="trackService(18000, 'Integral-Video')">RESERVAR TURNO</a>
       </div>
 
       <div class="card">
-        <h3>Limpieza Premium</h3>
+        <h3>Limpieza Premium <br>(Hogar + Personal)</h3>
         <div class="price">$28.000</div>
         <ul class="features">
           <li>Sesión Integral Personal</li>
           <li>Limpieza de Hogar/Local</li>
           <li>Sello de Protección</li>
-          <li>Devolucion en el acto mediante Videollamada</li>
-          <li>Sesion con turno previo, para coordinar dia y hora de la sesion</li>
+          <li><b>Videollamada en el acto</b></li>
           <li>Seguimiento Personalizado</li>
         </ul>
-        <a href="https://api.whatsapp.com/send?phone=542235931151&text=Hola%20Clara,%20quiero%20coordinar%20la%20Limpieza%20Premium" class="btn btn-outline" onclick="trackService(18500, 'Premium')">RESERVAR</a>
+        <a href="https://api.whatsapp.com/send?phone=542235931151&text=Hola%20Clara,%20quiero%20coordinar%20la%20Limpieza%20Premium" class="btn btn-outline" onclick="trackService(28000, 'Premium')">RESERVAR</a>
       </div>
     </div>
   </section>
@@ -231,8 +189,8 @@
     <div class="bio-box">
       <div class="avatar" style="display:flex; align-items:center; justify-content:center; color:#999; font-size:10px;">FOTO CLARA</div>
       <h2>Soy Clara, tu Guía</h2>
-      <p style="font-size: 0.95rem; color: #555;">Terapeuta especializada en bioenergética. Mi enfoque es darte claridad real y herramientas que puedas aplicar para que tu bienestar sea sostenible.</p>
-      <div class="trust-grid">
+      <p style="font-size: 0.9rem; color: #555;">Terapeuta especializada en bioenergética. Mi enfoque es darte claridad real y herramientas que puedas aplicar para que tu bienestar sea sostenible.</p>
+      <div style="margin-top:15px;">
         <div class="trust-item">✨ <b>Resultados:</b> Notarás el cambio en tu vibración desde la primera sesión.</div>
         <div class="trust-item">📋 <b>Profesionalismo:</b> Recibís un reporte detallado de tu estado energético.</div>
       </div>
@@ -241,23 +199,19 @@
 
   <section id="testimonios">
     <h2>Experiencias Reales</h2>
-    <div style="background: white; padding: 20px; border-radius: 20px; box-shadow: var(--shadow); margin-bottom: 15px;">
-      <p style="font-style: italic; font-size: 0.9rem; margin: 0;">"Tenía el negocio estancado y después de la limpieza de Clara todo empezó a fluir. Súper recomendable."</p>
-      <p style="margin-top: 10px; font-weight: 700; color: var(--secondary); font-size: 0.8rem;">- Ricardo P. (Comerciante) - Cordoba</p>
+    <div style="background: white; padding: 18px; border-radius: 20px; box-shadow: var(--shadow); margin-bottom: 12px; border-left: 4px solid var(--secondary);">
+      <p style="font-style: italic; font-size: 0.85rem; margin: 0;">"Tenía el negocio estancado y después de la limpieza de Clara todo empezó a fluir. Súper recomendable."</p>
+      <p style="margin-top: 8px; font-weight: 700; color: var(--secondary); font-size: 0.75rem;">- Ricardo P. (Cordoba)</p>
     </div>
-    <div style="background: white; padding: 20px; border-radius: 20px; box-shadow: var(--shadow);">
-      <p style="font-style: italic; font-size: 0.9rem; margin: 0;">"El reporte PDF me sirvió para entender mis bloqueos. Una atención muy cálida y profesional."</p>
-      <p style="margin-top: 10px; font-weight: 700; color: var(--secondary); font-size: 0.8rem;">- Silvia M. - Santa Cruz.</p>
-    </div>
-    <div style="background: white; padding: 20px; border-radius: 20px; box-shadow: var(--shadow);">
-      <p style="font-style: italic; font-size: 0.9rem; margin: 0;">"En la Videollamada me senti super comoda, Clara explica cada proceso con mucha fluidez y profesionalismo, la recomiendo."</p>
-      <p style="margin-top: 10px; font-weight: 700; color: var(--secondary); font-size: 0.8rem;">- Lili -Entre Rios.</p>
+    <div style="background: white; padding: 18px; border-radius: 20px; box-shadow: var(--shadow); margin-bottom: 12px; border-left: 4px solid var(--secondary);">
+      <p style="font-style: italic; font-size: 0.85rem; margin: 0;">"En la Videollamada me sentí super cómoda, Clara explica cada proceso con mucha fluidez."</p>
+      <p style="margin-top: 8px; font-weight: 700; color: var(--secondary); font-size: 0.75rem;">- Lili (Entre Rios)</p>
     </div>
   </section>
 
   <footer>
     <p>SANACIÓN 11.11 — MAR DEL PLATA, ARGENTINA</p>
-    <p style="opacity: 0.5; font-size: 9px; margin-top: 10px;">Atención Online a todo el país bajo protocolos de ética profesional.</p>
+    <p style="opacity: 0.6; font-size: 9px; margin-top: 5px;">Atención Online a todo el país bajo protocolos de ética profesional.</p>
   </footer>
 
 </main>
