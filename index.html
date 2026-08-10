@@ -26,39 +26,54 @@
 
   <style>
     :root {
-      --primary: #4a3b75; 
-      --secondary: #8e74cc; 
-      --accent: #c5a02d; 
-      --bg: #f8f7ff; 
-      --text: #2d2a32;
+      --primary: #0A1128;      /* Azul Noche Profundo */
+      --secondary: #2B3A67;    /* Azul Cobalto Elegante */
+      --accent: #E0E6ED;       /* Plata / Blanco Luminoso */
+      --bg: #070C1B;           /* Fondo general oscuro místico */
+      --card-bg: #101835;      /* Fondo de tarjetas */
+      --text: #E2E8F0;         /* Texto claro legible */
+      --text-muted: #94A3B8;   /* Texto secundario */
       --whatsapp: #25D366;
       --white: #ffffff;
-      --shadow: 0 4px 12px rgba(0,0,0,0.08);
+      --shadow: 0 8px 24px rgba(0,0,0,0.4);
     }
 
     * { box-sizing: border-box; scroll-behavior: smooth; }
     body {
       margin: 0; font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-      background-color: var(--bg); color: var(--text); line-height: 1.5;
+      background-color: var(--bg); color: var(--text); line-height: 1.6;
     }
 
     .container { max-width: 600px; margin: auto; padding: 0 20px; }
 
     header {
-      background: var(--white);
+      background: rgba(10, 17, 40, 0.95);
+      backdrop-filter: blur(10px);
       padding: 15px 0;
       text-align: center;
       position: sticky;
       top: 0;
       z-index: 100;
-      border-bottom: 1px solid rgba(0,0,0,0.05);
+      border-bottom: 1px solid rgba(226, 232, 240, 0.1);
       box-shadow: var(--shadow);
     }
-    .logo { font-weight: 800; font-size: 1.1rem; color: var(--primary); text-decoration: none; letter-spacing: 1px; }
+    .logo { font-weight: 800; font-size: 1.2rem; color: var(--accent); text-decoration: none; letter-spacing: 2px; }
 
-    .hero { padding: 40px 0 10px; text-align: center; }
-    h1 { font-size: 26px; color: var(--primary); margin: 0; font-weight: 800; line-height: 1.2; }
-    .sub { font-size: 15px; color: #666; margin: 12px 0 20px; }
+    .hero { padding: 40px 0 20px; text-align: center; }
+    .badge-top {
+      display: inline-block;
+      background: rgba(43, 58, 103, 0.6);
+      color: var(--accent);
+      border: 1px solid rgba(226, 232, 240, 0.2);
+      padding: 6px 16px;
+      border-radius: 20px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      margin-bottom: 15px;
+    }
+    h1 { font-size: 28px; color: var(--white); margin: 0 0 10px; font-weight: 800; line-height: 1.2; }
+    .sub { font-size: 15px; color: var(--text-muted); margin: 0 auto 30px; max-width: 500px; }
 
     .pricing-scroll {
       display: flex;
@@ -73,56 +88,60 @@
 
     .card {
       min-width: 290px;
-      background: var(--white);
+      background: var(--card-bg);
       border-radius: 24px;
       padding: 24px;
       box-shadow: var(--shadow);
       display: flex;
       flex-direction: column;
-      border: 1px solid rgba(0,0,0,0.03);
+      border: 1px solid rgba(226, 232, 240, 0.1);
+      text-align: left;
     }
-    .card.popular { border: 2.5px solid var(--secondary); position: relative; }
-    .card.video { border: 2.5px solid var(--accent); position: relative; }
+    .card.popular { border: 2px solid var(--secondary); position: relative; }
     
     .badge {
       position: absolute; top: -12px; left: 50%; transform: translateX(-50%);
-      background: var(--secondary); color: white; padding: 4px 12px;
-      border-radius: 20px; font-size: 10px; font-weight: 800;
+      background: var(--secondary); color: var(--white); padding: 4px 12px;
+      border-radius: 20px; font-size: 10px; font-weight: 850; letter-spacing: 0.5px;
+      border: 1px solid rgba(226, 232, 240, 0.2);
     }
-    .badge-video { background: var(--accent); }
 
-    .card h3 { margin: 0; font-size: 1.1rem; color: var(--primary); line-height: 1.3; }
-    .price { font-size: 30px; font-weight: 800; margin: 12px 0; }
-    .features { list-style: none; padding: 0; margin: 0 0 20px 0; font-size: 0.85rem; flex-grow: 1; }
+    .card h3 { margin: 0; font-size: 1.1rem; color: var(--white); line-height: 1.3; }
+    .price { font-size: 28px; font-weight: 800; margin: 12px 0; color: var(--white); }
+    .features { list-style: none; padding: 0; margin: 0 0 20px 0; font-size: 0.85rem; flex-grow: 1; color: var(--text-muted); }
     .features li { margin-bottom: 8px; display: flex; align-items: flex-start; text-align: left; }
     .features li::before { content: '✓'; color: var(--whatsapp); margin-right: 10px; font-weight: 900; }
 
-    .btn { display: block; text-align: center; padding: 14px; border-radius: 16px; text-decoration: none; font-weight: 700; font-size: 0.9rem; }
+    .btn { display: block; text-align: center; padding: 14px; border-radius: 16px; text-decoration: none; font-weight: 700; font-size: 0.9rem; transition: opacity 0.2s; }
+    .btn:hover { opacity: 0.9; }
     .btn-wa { background: var(--whatsapp); color: white; }
-    .btn-outline { border: 1.5px solid var(--primary); color: var(--primary); }
+    .btn-outline { border: 1.5px solid rgba(226, 232, 240, 0.3); color: var(--white); background: transparent; }
 
     section { padding: 30px 0; }
-    h2 { font-size: 20px; color: var(--primary); margin-bottom: 20px; text-align: center; }
+    h2 { font-size: 22px; color: var(--white); margin-bottom: 20px; text-align: center; font-weight: 800; }
 
-    .bio-box { background: white; border-radius: 24px; padding: 25px; text-align: center; box-shadow: var(--shadow); }
+    .bio-box { background: var(--card-bg); border-radius: 24px; padding: 25px; text-align: center; box-shadow: var(--shadow); border: 1px solid rgba(226, 232, 240, 0.1); }
     
-    /* Imagen de Clara Optimizada */
     .avatar-clara { 
         width: 110px; 
         height: 110px; 
         border-radius: 50%; 
         margin: 0 auto 20px; 
-        border: 4px solid var(--secondary); 
-        object-fit: cover; /* Asegura que la imagen no se estire */
-        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        border: 3px solid var(--secondary); 
+        object-fit: cover;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.3);
         display: block;
     }
 
-    .trust-item { background: rgba(142, 116, 204, 0.05); padding: 12px; border-radius: 12px; font-size: 0.85rem; margin-bottom: 10px; border: 1px dashed var(--secondary); }
+    .trust-item { background: rgba(43, 58, 103, 0.3); padding: 12px; border-radius: 12px; font-size: 0.85rem; margin-bottom: 10px; border: 1px solid rgba(226, 232, 240, 0.1); color: var(--text); text-align: left; }
 
-    .wa-float { position: fixed; bottom: 20px; right: 20px; background: var(--whatsapp); width: 55px; height: 55px; border-radius: 50%; display: flex; align-items: center; justify-content: center; z-index: 1000; box-shadow: 0 4px 15px rgba(0,0,0,0.2); }
+    .faq-box { background: var(--card-bg); border-radius: 20px; padding: 20px; margin-bottom: 12px; border: 1px solid rgba(226, 232, 240, 0.1); }
+    .faq-box h4 { margin: 0 0 8px; color: var(--white); font-size: 0.95rem; }
+    .faq-box p { margin: 0; color: var(--text-muted); font-size: 0.85rem; }
 
-    footer { padding: 30px 0; text-align: center; font-size: 10px; color: #888; border-top: 1px solid #eee; }
+    .wa-float { position: fixed; bottom: 20px; right: 20px; background: var(--whatsapp); width: 55px; height: 55px; border-radius: 50%; display: flex; align-items: center; justify-content: center; z-index: 1000; box-shadow: 0 4px 15px rgba(0,0,0,0.4); }
+
+    footer { padding: 30px 0; text-align: center; font-size: 10px; color: var(--text-muted); border-top: 1px solid rgba(226, 232, 240, 0.1); }
   </style>
 </head>
 <body>
@@ -138,61 +157,68 @@
 <main class="container">
   
   <section class="hero">
-    <h1>Recuperá tu energía y equilibrio personal</h1>
-    <p class="sub">Sesiones holísticas profesionales con reporte digital de resultados.</p>
+    <div class="badge-top">✨ 100% A DISTANCIA POR VIDEOLLAMADA (45 a 60 min)</div>
+    <h1>Sanación y Bienestar Integral</h1>
+    <p class="sub">Espacios personalizados para acompañar tus procesos de evolución, desbloqueo y crecimiento personal.</p>
     
     <div class="pricing-scroll">
+      
       <div class="card">
-        <h3>Consulta Express</h3>
-        <div class="price">$8.000</div>
+        <h3>Lectura Evolutiva</h3>
+        <div class="price">$15.000</div>
         <ul class="features">
-          <li>Chequeo vibratorio</li>
-          <li>Alineación de 4 Chakras principales</li>
-          <li>Devolución por Audio</li>
+          <li>Orientación a través de cartas</li>
+          <li>Comprensión del presente</li>
+          <li>Claridad para la toma de decisiones</li>
         </ul>
-        <a href="https://api.whatsapp.com/send?phone=542235931151&text=Hola%20Clara,%20quiero%20reservar%20la%20Consulta%20Express" class="btn btn-outline" onclick="trackService(8000, 'Express')">RESERVAR</a>
+        <a href="https://api.whatsapp.com/send?phone=542235931151&text=Hola%20Clara,%20quiero%20reservar%20la%20Lectura%20Evolutiva" class="btn btn-outline" onclick="trackService(15000, 'Lectura-Evolutiva')">RESERVAR</a>
       </div>
 
       <div class="card popular">
         <div class="badge">MÁS SOLICITADA</div>
-        <h3>Sesión Integral <br>(Reporte PDF)</h3>
-        <div class="price">$11.000</div>
+        <h3>Péndulo Karnak</h3>
+        <div class="price">$15.000</div>
         <ul class="features">
-          <li>Péndulo Karnak - Lectura Evolutiva</li>
-          <li>Sellado con Cruz de Ankh</li>
-          <li>Alineación de 12 Chakras</li>
-          <li><b>Reporte PDF + Audio</b></li>
-          <li>Limpieza energética total</li>
+          <li>Armonización energética</li>
+          <li>Equilibrio del campo áurico</li>
+          <li>Bienestar integral profundo</li>
         </ul>
-        <a href="https://api.whatsapp.com/send?phone=542235931151&text=Hola%20Clara,%20quiero%20reservar%20la%20Sesión%20Integral%2011.11" class="btn btn-wa" onclick="trackService(11000, 'Integral-PDF')">RESERVAR TURNO</a>
-      </div>
-
-      <div class="card video">
-        <div class="badge badge-video" style="color:white">RECOMENDADO</div>
-        <h3>Sesión Integral <br>por VIDEOLLAMADA</h3>
-        <div class="price">$25.000</div>
-        <ul class="features">
-          <li>Turno previo coordinado</li>
-          <li>Lectura y Sellado en vivo</li>
-          <li>Alineación de 12 Chakras</li>
-          <li><b>Devolución en el acto</b></li>
-          <li>Limpieza energética total</li>
-        </ul>
-        <a href="https://api.whatsapp.com/send?phone=542235931151&text=Hola%20Clara,%20quiero%20reservar%20la%20Sesión%20por%20videollamada" class="btn btn-wa" style="background:var(--accent)" onclick="trackService(25000, 'Integral-Video')">RESERVAR TURNO</a>
+        <a href="https://api.whatsapp.com/send?phone=542235931151&text=Hola%20Clara,%20quiero%20reservar%20Sanación%20con%20Péndulo%20Karnak" class="btn btn-wa" onclick="trackService(15000, 'Pendulo-Karnak')">RESERVAR TURNO</a>
       </div>
 
       <div class="card">
-        <h3>Limpieza Premium <br>(Hogar + Personal)</h3>
-        <div class="price">$38.000</div>
+        <h3>Biodescodificación</h3>
+        <div class="price">$30.000</div>
         <ul class="features">
-          <li>Sesión Integral Personal</li>
-          <li>Limpieza de Hogar/Local</li>
-          <li>Sello de Protección</li>
-          <li><b>Videollamada en el acto</b></li>
-          <li>Seguimiento Personalizado</li>
+          <li>Origen emocional de síntomas</li>
+          <li>Tratamiento de patrones repetitivos</li>
+          <li>Comprensión y crecimiento personal</li>
         </ul>
-        <a href="https://api.whatsapp.com/send?phone=542235931151&text=Hola%20Clara,%20quiero%20coordinar%20la%20Limpieza%20Premium" class="btn btn-outline" onclick="trackService(38000, 'Premium')">RESERVAR</a>
+        <a href="https://api.whatsapp.com/send?phone=542235931151&text=Hola%20Clara,%20quiero%20reservar%20Biodescodificación" class="btn btn-outline" onclick="trackService(30000, 'Biodescodificacion')">RESERVAR</a>
       </div>
+
+      <div class="card">
+        <h3>Hipnosis</h3>
+        <div class="price">$50.000</div>
+        <ul class="features">
+          <li>Relajación profunda guiada</li>
+          <li>Trabajo sobre creencias y hábitos</li>
+          <li>Liberación de bloqueos inconscientes</li>
+        </ul>
+        <a href="https://api.whatsapp.com/send?phone=542235931151&text=Hola%20Clara,%20quiero%20reservar%20Sesión%20de%20Hipnosis" class="btn btn-outline" onclick="trackService(50000, 'Hipnosis')">RESERVAR</a>
+      </div>
+
+      <div class="card">
+        <h3>Liberación y Desbloqueo</h3>
+        <div class="price">$50.000</div>
+        <ul class="features">
+          <li>Liberación emocional profunda</li>
+          <li>Limpieza energética avanzada</li>
+          <li>Recuperación de equilibrio y liviandad</li>
+        </ul>
+        <a href="https://api.whatsapp.com/send?phone=542235931151&text=Hola%20Clara,%20quiero%20reservar%20Liberación%20y%20Desbloqueo" class="btn btn-outline" onclick="trackService(50000, 'Desbloqueo-Energetico')">RESERVAR</a>
+      </div>
+
     </div>
   </section>
 
@@ -200,30 +226,36 @@
     <div class="bio-box">
       <img src="Portadalandig.png" alt="Clara, Terapeuta Holística" class="avatar-clara">
       
-      <h2>Soy Clara, tu Guía</h2>
-      <p style="font-size: 0.9rem; color: #555;">Terapeuta especializada en bioenergética. Mi enfoque es darte claridad real y herramientas que puedas aplicar para que tu bienestar sea sostenible.</p>
+      <h2>¿Quién soy? / Sobre Clara</h2>
+      <p style="font-size: 0.9rem; color: var(--text-muted); text-align: left; margin-bottom: 15px;">
+        ¡Hola! Soy <b>Clara</b>, terapeuta holística especializada en bioenergética, biodescodificación y procesos de evolución personal. 
+      </p>
+      <p style="font-size: 0.9rem; color: var(--text-muted); text-align: left; margin-bottom: 20px;">
+        Mi propósito es brindarte un espacio seguro, profesional y de contención donde puedas comprender lo que te pasa, soltar cargas emocionales y encontrar herramientas prácticas que te permitan transitar tu día a día con mayor liviandad, claridad y bienestar sostenible.
+      </p>
+      
       <div style="margin-top:15px;">
-        <div class="trust-item">✨ <b>Resultados:</b> Notarás el cambio en tu vibración desde la primera sesión.</div>
-        <div class="trust-item">📋 <b>Profesionalismo:</b> Recibís un reporte detallado de tu estado energético.</div>
+        <div class="trust-item">✨ <b>Acompañamiento cercano:</b> Sesiones 100% online, humanas y adaptadas a tu momento actual.</div>
+        <div class="trust-item">📋 <b>Profesionalismo y Ética:</b> Un enfoque terapéutico riguroso enfocado en tu autonomía y evolución.</div>
       </div>
     </div>
   </section>
 
-  <section id="testimonios">
-    <h2>Experiencias Reales</h2>
-    <div style="background: white; padding: 18px; border-radius: 20px; box-shadow: var(--shadow); margin-bottom: 12px; border-left: 4px solid var(--secondary);">
-      <p style="font-style: italic; font-size: 0.85rem; margin: 0;">"Tenía el negocio estancado y después de la limpieza de Clara todo empezó a fluir. Súper recomendable."</p>
-      <p style="margin-top: 8px; font-weight: 700; color: var(--secondary); font-size: 0.75rem;">- Ricardo P. (Cordoba)</p>
+  <section id="faq">
+    <h2>Preguntas Frecuentes</h2>
+    <div class="faq-box">
+      <h4>¿Cómo se realizan las sesiones?</h4>
+      <p>Todas las sesiones se realizan 100% a distancia por videollamada (con una duración aproximada de 45 a 60 minutos), para que puedas vivirlas desde la tranquilidad de tu hogar.</p>
     </div>
-    <div style="background: white; padding: 18px; border-radius: 20px; box-shadow: var(--shadow); margin-bottom: 12px; border-left: 4px solid var(--secondary);">
-      <p style="font-style: italic; font-size: 0.85rem; margin: 0;">"En la Videollamada me sentí super cómoda, Clara explica cada proceso con mucha fluidez."</p>
-      <p style="margin-top: 8px; font-weight: 700; color: var(--secondary); font-size: 0.75rem;">- Lili (Entre Rios)</p>
+    <div class="faq-box">
+      <h4>¿Cómo sé qué sesión elegir?</h4>
+      <p>Podes escribirme directamente por WhatsApp contándome qué te está pasando o qué te gustaría trabajar, y con gusto te orientaré sobre cuál de las opciones es la más adecuada para vos.</p>
     </div>
   </section>
 
   <footer>
     <p>SANACIÓN 11.11 — MAR DEL PLATA, ARGENTINA</p>
-    <p style="opacity: 0.6; font-size: 9px; margin-top: 5px;">Atención Online a todo el país bajo protocolos de ética profesional.</p>
+    <p style="opacity: 0.6; font-size: 9px; margin-top: 5px;">Atención Online a todo el país bajo estrictos protocolos de ética profesional.</p>
   </footer>
 
 </main>
