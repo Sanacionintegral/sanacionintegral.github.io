@@ -44,7 +44,7 @@
       background-color: var(--bg); color: var(--text); line-height: 1.6;
     }
 
-    .container { max-width: 600px; margin: auto; padding: 0 20px; }
+    .container { max-width: 900px; margin: auto; padding: 0 20px; }
 
     header {
       background: rgba(10, 17, 40, 0.95);
@@ -73,21 +73,38 @@
       margin-bottom: 15px;
     }
     h1 { font-size: 28px; color: var(--white); margin: 0 0 10px; font-weight: 800; line-height: 1.2; }
-    .sub { font-size: 15px; color: var(--text-muted); margin: 0 auto 30px; max-width: 500px; }
+    .sub { font-size: 15px; color: var(--text-muted); margin: 0 auto 30px; max-width: 600px; }
 
-    .pricing-scroll {
+    /* CONTENEDOR INTELIGENTE: Carrusel en celular, Cuadrícula en PC */
+    .services-container {
       display: flex;
-      gap: 15px;
+      gap: 20px;
       overflow-x: auto;
       padding: 10px 5px 30px;
       margin: 0 -20px;
       padding-left: 20px;
       scrollbar-width: none;
     }
-    .pricing-scroll::-webkit-scrollbar { display: none; }
+    .services-container::-webkit-scrollbar { display: none; }
+
+    /* En pantallas medianas y grandes (PC/Tablets), se transforma en una hermosa cuadrícula de 2 o 3 columnas */
+    @media (min-width: 768px) {
+      .services-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        overflow-x: visible;
+        margin: 0;
+        padding-left: 0;
+      }
+    }
+    @media (min-width: 1024px) {
+      .services-container {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
 
     .card {
-      min-width: 290px;
+      min-width: 280px;
       background: var(--card-bg);
       border-radius: 24px;
       padding: 24px;
@@ -96,6 +113,11 @@
       flex-direction: column;
       border: 1px solid rgba(226, 232, 240, 0.1);
       text-align: left;
+      transition: transform 0.2s ease, border-color 0.2s ease;
+    }
+    .card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(226, 232, 240, 0.3);
     }
     .card.popular { border: 2px solid var(--secondary); position: relative; }
     
@@ -120,7 +142,7 @@
     section { padding: 30px 0; }
     h2 { font-size: 22px; color: var(--white); margin-bottom: 20px; text-align: center; font-weight: 800; }
 
-    .bio-box { background: var(--card-bg); border-radius: 24px; padding: 25px; text-align: center; box-shadow: var(--shadow); border: 1px solid rgba(226, 232, 240, 0.1); }
+    .bio-box { background: var(--card-bg); border-radius: 24px; padding: 25px; text-align: center; box-shadow: var(--shadow); border: 1px solid rgba(226, 232, 240, 0.1); max-width: 600px; margin: 0 auto; }
     
     .avatar-clara { 
         width: 110px; 
@@ -135,6 +157,7 @@
 
     .trust-item { background: rgba(43, 58, 103, 0.3); padding: 12px; border-radius: 12px; font-size: 0.85rem; margin-bottom: 10px; border: 1px solid rgba(226, 232, 240, 0.1); color: var(--text); text-align: left; }
 
+    .faq-container { max-width: 600px; margin: 0 auto; }
     .faq-box { background: var(--card-bg); border-radius: 20px; padding: 20px; margin-bottom: 12px; border: 1px solid rgba(226, 232, 240, 0.1); }
     .faq-box h4 { margin: 0 0 8px; color: var(--white); font-size: 0.95rem; }
     .faq-box p { margin: 0; color: var(--text-muted); font-size: 0.85rem; }
@@ -161,7 +184,7 @@
     <h1>Sanación y Bienestar Integral</h1>
     <p class="sub">Espacios personalizados para acompañar tus procesos de evolución, desbloqueo y crecimiento personal.</p>
     
-    <div class="pricing-scroll">
+    <div class="services-container">
       
       <div class="card">
         <h3>Lectura Evolutiva</h3>
@@ -243,13 +266,15 @@
 
   <section id="faq">
     <h2>Preguntas Frecuentes</h2>
-    <div class="faq-box">
-      <h4>¿Cómo se realizan las sesiones?</h4>
-      <p>Todas las sesiones se realizan 100% a distancia por videollamada (con una duración aproximada de 45 a 60 minutos), para que puedas vivirlas desde la tranquilidad de tu hogar.</p>
-    </div>
-    <div class="faq-box">
-      <h4>¿Cómo sé qué sesión elegir?</h4>
-      <p>Podes escribirme directamente por WhatsApp contándome qué te está pasando o qué te gustaría trabajar, y con gusto te orientaré sobre cuál de las opciones es la más adecuada para vos.</p>
+    <div class="faq-container">
+      <div class="faq-box">
+        <h4>¿Cómo se realizan las sesiones?</h4>
+        <p>Todas las sesiones se realizan 100% a distancia por videollamada (con una duración aproximada de 45 a 60 minutos), para que puedas vivirlas desde la tranquilidad de tu hogar.</p>
+      </div>
+      <div class="faq-box">
+        <h4>¿Cómo sé qué sesión elegir?</h4>
+        <p>Podes escribirme directamente por WhatsApp contándome qué te está pasando o qué te gustaría trabajar, y con gusto te orientaré sobre cuál de las opciones es la más adecuada para vos.</p>
+      </div>
     </div>
   </section>
 
